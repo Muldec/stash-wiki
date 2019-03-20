@@ -22,6 +22,16 @@ The setting screen should support [configuring any FFMPEG option](https://github
 
 Add a watch later boolean to scenes for scenes which you're interested in, but don't necessarily want to assign a rating to yet.
 
+### JSON Schema
+
+The exported JSON needs to be defined using the [JSON Schema Spec](https://json-schema.org/).  The spec should be generic enough that other apps could use it.  The schema should be used to validate any imported JSON.
+
+Right now the schema uses the performer / studio image as the thing which is hashed as a unique identifier.  I'm unsure if it might be better to take the images out of the JSON...
+
+### Multiple Performer Images
+
+Adding multiple images for a performer seems like a good change.  Make them taggable so the user can configure what type of images they see when they see a performer card.  TBD how this would change the JSON schema.
+
 ## Medium Term
 
 ### DVDs / Collections
