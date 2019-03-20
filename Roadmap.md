@@ -1,1 +1,51 @@
-TODO
+## Any Time
+
+Any of [the issues](https://github.com/stashapp/stash/issues) can be picked up by anyone at any time
+
+## Near Term
+
+### [Multiple content folders](https://github.com/stashapp/stash/issues/2)
+
+The `config.json` "stash" property would need to go from a string to an array.  Scanning would need to iterate through each folder given.  Error handling might need to be improved if one of the folders is unavailiable (unplugged drive?)
+
+### [Logical Filters](https://github.com/stashapp/stash/issues/29)
+
+Right now most filters are AND'ed, meaning that the result of multiple filters must meet all of the criteria to be shown.  We should support AND and OR for more flexibility.  UI V2 has started paving the way for this.  The Database queries still need to be modified.
+
+### Settings Screen improvements
+
+The settings screen should display logs in real time via web socket connection.  It would be nice to have a persistent status indicator on all pages to display what Stash is doing at any particular moment.  The web socket connection would be kept open for the entire session.
+
+The setting screen should support [configuring any FFMPEG option](https://github.com/stashapp/stash/issues/10).
+
+### Watch later
+
+Add a watch later boolean to scenes for scenes which you're interested in, but don't necessarily want to assign a rating to yet.
+
+## Medium Term
+
+### DVDs / Collections
+
+It would be nice to group scenes.  I've been thinking of a concept of a "Collection".  A collection would be a group of scenes / galleries.  There are times when web scenes have behind the scenes additions, collections would be a way to group those.
+
+I'm not sure if it makes more sense to have a DVD data model, or have a DVD collection "type" with additional metadata (like the director / covers / etc)
+
+### Tag Improvements
+
+Tags should be able to have sub-tags and images... this still needs to be fleshed out more.
+
+### Parent Studios
+
+Some studios actually contain other studios.  For example Team Skeet would be the parent studio to Teens Like It Big, etc.  Add support for this and mock up how this would change the studio list.
+
+## Long Term
+
+### Access Control
+
+[Account System](https://github.com/stashapp/stash/issues/12)
+[Passwords](https://github.com/stashapp/stash/issues/3)
+[Sharing](https://github.com/stashapp/stash/issues/4)
+
+As a first step add admin user credentials to the `config.json` file.  The UI should be read only unless the user authenticates as the admin.
+
+Expanding on that would mean adding a `users` database table with access rights for each user. 
