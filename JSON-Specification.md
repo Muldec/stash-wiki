@@ -13,12 +13,13 @@ The mappings file contains a reference to all files within the folders, by inclu
 # Content of the jsons
 
 In the following, the values of the according jsons will be shown. The meaning from most of them should be obvious due to the previous explanation or from the possible values stash offers when editing, otherwise a short comment will be added.  
-The json values are given as strings, if not stated otherwise. Every new line will stand for a new value in the json. If the value is a list of objects, the values of that object will be shown indented. 
-Talking about the performer.json and the later ones is referring to a singular json contained within the directory the name is referring to, named by the checksum which is given from the mappings.json.
+The json values are given as strings, if not stated otherwise. Every new line will stand for a new value in the json. If the value is a list of objects, the values of that object will be shown indented.  
+Talking about the performer.json and the later ones is referring to a singular json contained within the directory the name is referring to, named by the checksum which is given from the mappings.json.  
+If a value is empty in any but the mappings.json file, it can be left out of the file entirely. In the mappings.json however, all values must be present, if there are no objects of a type (for example, no performers), the value is simply null.  
 Many files have an created_at and updated_at, both are kept in the following format:  
 YYYY-MM-DDThh:mm:ssTZD  
 example:  
-"created_at": "2019-05-03T21:36:58+02:00"
+"created_at": "2019-05-03T21:36:58+01:00"
 
 ## mappings.json
 
