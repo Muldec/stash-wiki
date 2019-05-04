@@ -12,7 +12,7 @@ The mappings file contains a reference to all files within the folders, by inclu
 
 # Content of the jsons
 
-In the following, the values of the according jsons will be shown. The meaning from most of them should be obvious due to the previous explanation or from the possible values stash offers when editing, otherwise a short comment will be added.  
+In the following, the values of the according jsons will be shown. If the value should be a number, it is written with after comma values (like 29.98 or 50.0), but still as a string. the The meaning from most of them should be obvious due to the previous explanation or from the possible values stash offers when editing, otherwise a short comment will be added.  
 The json values are given as strings, if not stated otherwise. Every new line will stand for a new value in the json. If the value is a list of objects, the values of that object will be shown indented.  
 Talking about the performer.json and the later ones is referring to a singular json contained within the directory the name is referring to, named by the checksum which is given from the mappings.json.  
 If a value is empty in any but the mappings.json file, it can be left out of the file entirely. In the mappings.json however, all values must be present, if there are no objects of a type (for example, no performers), the value is simply null.  
@@ -81,7 +81,7 @@ markers
 	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;created_at  
 	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;updated_at  
 file (not a list, but a single object)  
-	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;size (in bytes)  
+	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;size (in bytes, no after comma values)  
 	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;duration (in seconds)  
 	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;video_codec (example value: h264)  
 	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;audio_codec (example value: aac)  
