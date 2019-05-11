@@ -94,8 +94,7 @@ updated_at
 
 ## gallery.json  
 
-title  
-performers (list of strings, performers name)  
+They do not exist yet. 
 
 
 # Again, in json-format
@@ -455,36 +454,6 @@ For those preferring the json-format, defined [here](https://json-schema.org/), 
 ```
 
 ## gallery.json
-``` json 
-{
-	"$schema": "http://json-schema.org/draft-07/schema#",
-	"$id": "https://github.com/stashapp/stash/wiki/JSON-Specification/gallery.json",
-	"title": "gallery",
-	"description": "A json file representing a gallery. The file is named by the MD5 Code of the file its data is referring to.",
-	"type": "object",
-	"properties": {
-		"title": {
-			"description": "Title of the gallery",
-			"type": "string"
-		},
-		"performers": {
-			"description": "A list of names of the performers in this gallery",
-			"type": "array",
-			"items": {
-				"type": "string"
-			},
-			"minItems": 1,
-			"uniqueItems": true
-		},
-		"created_at": {
-			"description": "The time this studios data was added to the database. Format is YYYY-MM-DDThh:mm:ssTZD",
-			"type": "string"
-		},
-		"updated_at": {
-			"description": "The time this studios data was last changed in the database. Format is YYYY-MM-DDThh:mm:ssTZD",
-			"type": "string"
-		}
-	},
-	"required": ["created_at", "updated_at"]
-}
+
+No files are created here yet
 ```
