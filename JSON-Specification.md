@@ -94,7 +94,7 @@ updated_at
 
 ## gallery.json  
 
-They do not exist yet. 
+No files of this kind are generated yet.
 
 
 # Again, in json-format
@@ -455,5 +455,5 @@ For those preferring the json-format, defined [here](https://json-schema.org/), 
 
 ## gallery.json
 
-No files are created here yet
+No files of this kind are created here yet
 ```
