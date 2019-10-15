@@ -15,11 +15,11 @@ _Example using curl_
 
 `curl -X POST -H "Content-Type: application/json" --data '{ "query": "{ metadataScan (input: { nameFromMetadata: false} ) }" }' localhost:9998/graphql`
 
-### Generate previews
+### Generate content
 
 Request: `HTTP-POST`
 
-Payload (set desired files to generate (sprites,previews,markers,transcodes) to ```true``` or ```false```):
+Payload (set desired content to generate (sprites,previews,markers,transcodes) to ```true``` or ```false```):
 ```json
 {
   "query": "{ metadataGenerate ( input : { sprites: true previews: false markers:false transcodes:false } ) }" 
