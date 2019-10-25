@@ -17,5 +17,12 @@ The `ffmpeg(.exe)` and `ffprobe(.exe)` files should be placed in `~/.stash` on m
 # I'm unable to run the app on OSX or Linux
 Try running `chmod u+x stash-osx` or `chmod u+x stash-linux` to make the file executable.
 
+# How do I recover a forgotten username or password?
+User authentication was added as of Stash build 707bd09. Stash saves login credentials in the config.yml file. You must reset both login and password if you have forgotten your password by doing the following:
+* Close your Stash process
+* Open the `config.yml` file found in your Stash directory with a text editor
+* Delete the `login` and `password` lines from the file and save
+Stash authentication should now be reset with no authentication credentials.
+
 # I have a question not answered here.
 Join the Stash [Discord server](https://discord.gg/2TsNFKt).
