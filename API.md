@@ -75,6 +75,7 @@ Payload ( $q is the name or alias (or partial name , alias) of the performer you
   "query": "{ scrapeFreeonesPerformerList(query: $q) }" 
 }
 ```
+1. Caution is needed when used in a script.Always set a waiting/sleep period between calls to avoid getting blacklisted by Freeones
 
 _Example using curl_
 
