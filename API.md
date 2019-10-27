@@ -41,3 +41,42 @@ Payload ( must be at least one of ```id``` ```checksum``` ```url``` ```name``` `
 _Example using curl_
 
 `curl -X POST -H "Content-Type: application/json" --data '{ "query": "{ allStudios { name url scene_count} }" }' localhost:9998/graphql`
+
+### Scrape perfomer attributes from Freeones
+
+Request: `HTTP-POST`
+
+Payload (
+* ```$performer name``` is the name of the Performer you are scraping for
+* return values must be at least one of ```name``` ```url``` ```twitter``` ```instagram``` ```birthdate``` ```ethnicity``` ```country``` ```eye_color``` ```height``` ```measurements``` ```fake_tits``` ```career_length``` ```tattoos``` ```piercings``` ```aliases```
+
+):
+```json
+{
+  "query": "{ scrapeFreeones(performer_name: $performer_name) { name url twitter instagram birthdate ethnicity country eye_color height measurements fake_tits career_length tattoos piercings aliases } }" 
+}
+```
+1. Caution is needed when used in a script.Always set a waiting/sleep period between calls to avoid getting blacklisted by Freeones
+2. Due to way it's used in Stash and to work reliably it requires the prior use of **scrapeFreeonesPerfomerList** (described beneath) to make sure the name of the performer exists in the list returned and thus in the Freeones db
+
+
+_Example using curl_
+
+`curl -u username:password -X POST -H "Content-Type: application/json" --data '{ "query": "{ scrapeFreeones ( performer_name : \"Abella Danger\" ) { name height birthdate} }" }' localhost:9998/graphql`
+
+### Get list of perfomer names that match a name or alias from Freeones
+
+Request: `HTTP-POST`
+
+Payload ( $q is the name or alias (or partial name , alias) of the performer you are looking for
+):
+```json
+{
+  "query": "{ scrapeFreeonesPerformerList(query: $q) }" 
+}
+```
+
+_Example using curl_
+
+
+`curl -u username:password -X POST -H "Content-Type: application/json" --data '{ "query": "{ scrapeFreeonesPerformerList (query: \"bella\" ) }" }' localhost:9998/graphql`
