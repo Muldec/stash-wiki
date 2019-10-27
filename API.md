@@ -10,9 +10,9 @@ Payload (set **nameFromMetadata** to ```true``` or ```false``` if you want to ge
   "query": "{ metadataScan ( input: { nameFromMetadata: true } ) } "
 }
 ```
-_Example using curl_
+_Example using curl (use of **-u username:password** is needed only if you added a password to the configuration )_
 
-`curl -X POST -H "Content-Type: application/json" --data '{ "query": "{ metadataScan (input: { nameFromMetadata: false} ) }" }' localhost:9998/graphql`
+`curl -u username:password -X POST -H "Content-Type: application/json" --data '{ "query": "{ metadataScan (input: { nameFromMetadata: false} ) }" }' localhost:9998/graphql`
 
 ### Generate content
 
