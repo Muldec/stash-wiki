@@ -24,5 +24,9 @@ User authentication was added as of Stash build 707bd09. Stash saves login crede
 * Delete the `login` and `password` lines from the file and save
 Stash authentication should now be reset with no authentication credentials.
 
+# How do I add galleries?
+Galleries need to be ZIP archives to be recognized by stash. To increase read speed of galleries, zip the folders up without compresseion (on linux: `zip -0 -r gallery.zip foldertozip/`). If the images resolution is too high, the thumbnails might not load and it will take stash a long time to display them. 
+
+
 # I have a question not answered here.
 Join the Stash [Discord server](https://discord.gg/2TsNFKt).
