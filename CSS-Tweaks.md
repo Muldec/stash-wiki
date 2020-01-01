@@ -9,6 +9,7 @@ Reduce left and right padding on Scene and Performer grid pages allowing for mor
 
 ```css
 .grid { padding: 0px !important; }`
+```
 
 ## Allow for longer string when displaying "Studio as Text" on scene thumbnails
 
@@ -19,3 +20,4 @@ Reduce left and right padding on Scene and Performer grid pages allowing for mor
 	width: 60% !important;
 	text-overflow: ellipsis !important;
 }
+```
