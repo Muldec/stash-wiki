@@ -13,7 +13,7 @@ Reduce left and right padding on Scene and Performer grid pages allowing for mor
 
 ## Allow for longer string when displaying "Studio as Text" on scene thumbnails
 
-```
+```css
 .scene-studio-overlay {
 	font-weight: 600 !important;
 	opacity: 1 !important;
