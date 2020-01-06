@@ -1,74 +1,70 @@
-As of develop release 1724706, custom scraping of performer details is now supported.
+As of develop release 5078402, custom scraping of performer and scene details is now supported.
 
 By default, Stash looks for scraper configurations in the `scrapers` sub-directory of the directory where the stash `config.yml` is read. This will either be the `$HOME/.stash` directory or the current working directory.
 
-Custom scrapers are added by adding configuration json files to the `scrapers` directory. The configuration file looks like the following:
+Custom scrapers are added by adding configuration yaml files to the `scrapers` directory. The configuration file looks like the following:
+
+# Basic scraper configuration file structure
 
 ```
-{
- "name": "<site>",
- "type": "PERFORMER",
- "method": "SCRIPT",
- "urls": ["site.com"],	
- "get_performer_names": ["python", "iafdScrape.py", "query"],
- "get_performer": ["python", "iafdScrape.py", "scrape"],
- "get_performer_url": ["python", "iafdScrape.py", "scrapeURL"]
-}
+name: <site>
+performerByName:
+  <single scraper config>
+performerByFragment:
+  <single scraper config>
+performerByURL:
+  <multiple scraper URL configs>
+sceneByFragment:
+  <single scraper config>
+sceneByURL:
+  <multiple scraper URL configs>
+<other configurations>
 ```
 
-An explanation of the fields is shown below:
+`name` is mandatory, all other top-level fields are optional. The inclusion of each top-level field determines what capabilities the scraper has.
 
-| Field  | Explanation |
-|--------|-------------|
-| `name`   | This is displayed in the `Scrape...` dropdown button. |
-| `type`    | Must be `PERFORMER` currently. |
-| `method` | Must be `SCRIPT` currently. |
-| `urls`   | A list of url fragments. Used to match URL when parsing from URL. |
-| `get_performer_names` | Script to run to perform a query from an input performer name. Used in the scrape performer dialog. |
-| `get_performer` | Script to run to scrape a specific performer's details. |
-| `get_performer_url` | Script to run to scrape performer details from a provided URL. |
+A scraper configuration in any of the top-level fields must at least have an `action` field. The other fields are required based on the value of the `action` field.
+
+The scraping types and their required fields are outlined in the following table:
+
+| Behaviour | Required configuration |
+|-----------|------------------------|
+| Scraper in `Scrape...` dropdown button in Performer Edit page | Valid `performerByName` and `performerByFragment` configurations. |
+| Scrape performer from URL | Valid `performerByURL` configuration with matching URL. |
+| Scraper in `Scrape...` dropdown button in Scene Edit page | Valid `sceneByFragment` configuration. |
+| Scrape scene from URL | Valid `sceneByURL` configuration with matching URL. |
+
+URL-based scraping accepts multiple scrape configurations, and each configuration requires a `url` field. stash iterates through these configurations, attempting to match the entered URL against the `url` fields in the configuration. It executes the first scraping configuration where the entered URL contains the value of the `url` field. 
+
+# Scraper Actions
+
+## Script
+
+Executes a script to perform the scrape. The `script` field is required for this action and accepts a list of string arguments. For example:
+
+```
+action: script
+script:
+  - python
+  - iafdScrape.py
+  - query
+```
+
+This configuration would execute `python iafdScrape.py query`.
 
 Stash sends data to the script process's `stdin` stream and expects the output to be streamed to the `stdout` stream. Any errors and progress messages should be output to `stderr`.
 
-The `get_performer` and `get_performer_names` fields must be present in order for the scraper to appear in the `Scrape...` dropdown button. The `urls` and `get_performer_url` fields must be present for URL parsing to be enabled.
+The script is sent input and expects output based on the scraping type, as detailed in the following table:
 
-The `get_performer_names` script is sent the following information to its `stdin` stream:
-```
-{"name": "<performer query string>"}
-```
+| Scrape type | Input | Output |
+|-------------|-------|--------|
+| `performerByName` | `{"name": "<performer query string>"}` | Array of JSON-encoded performer fragments (including at least `name`) |
+| `performerByFragment` | JSON-encoded performer fragment | JSON-encoded performer fragment |
+| `performerByURL` | `{"url": "<url>"}` | JSON-encoded performer fragment |
+| `sceneByFragment` | JSON-encoded scene fragment | JSON-encoded scene fragment |
+| `sceneByURL` | `{"url": "<url>"}` | JSON-encoded scene fragment |
 
-Stash expects the `get_performer_names` script to return data in the following format:
-```
-[
- {
-  "name": "<string>",
-  "url": "<string>",
-  "twitter": "<string>",
-  "instagram": "<string>",
-  "birthdate": "<string>",
-  "ethnicity": "<string>",
-  "country": "<string>",
-  "eye_color": "<string>",
-  "height": "<string>",
-  "measurements": "<string>",
-  "fake_tits": "<string>",
-  "career_length": "<string>",
-  "tattoos": "<string>",
-  "piercings": "<string>",
-  "aliases": "<string>"
- },
- ...
-]
-```
-
-Only `name` is required. One entire object is sent back to `get_performer` to scrape a specific performer, so the other fields may be included to assist in scraping a performer. For example, the `url` field may be filled in for the specific performer page, then `get_performer` can extract by using its value.
-
-`get_performer` and `get_performer_url` both return a single instance of the object above, not an array.
-
-The `get_performer_url` script is sent the following information to its `stdin` stream:
-```
-{"url": "<url>"}
-```
+For `performerByName`, only `name` is required in the returned performer fragments. One entire object is sent back to `performerByFragment` to scrape a specific performer, so the other fields may be included to assist in scraping a performer. For example, the `url` field may be filled in for the specific performer page, then `performerByFragment` can extract by using its value.
 
 As an example, the following python code snippet can be used to scrape a performer:
 
@@ -132,4 +128,101 @@ elif sys.argv[1] == "scrape":
 elif sys.argv[1] == "scrapeURL":
     ret = scrapePerformerURL(i['url'])
     print(json.dumps(ret))
+```
+
+## scrapeXPath
+
+This action scrapes a web page using an xpath configuration to parse. This action is valid for `performerByURL` and `sceneByURL` only.
+
+This action requires that the top-level `xPathScrapers` configuration is populated. The `scraper` field is required and must match the name of a scraper name configured in `xPathScrapers`. For example:
+
+```
+sceneByURL:
+- action: scrapeXPath
+  url: 
+    - pornhub.com/view_video.php
+  scraper: sceneScraper
+```
+
+The above configuration requires that `sceneScraper` exists in the `xPathScrapers` configuration.
+
+### XPath scrapers configuration
+
+The top-level `xPathScrapers` field contains xpath scraping configurations, freely named. The scraping configuration may contain a `common` field, and must contain `performer` or `scene` depending on the scraping type it is configured for. 
+
+Within the `performer`/`scene` field are key/value pairs corresponding to the golang fields on the performer/scene object. These fields are case-sensitive. The values of these are xpaths that tell the system where to get the value of the field from. For example:
+
+```
+performer:
+  Name: //h1[@itemprop="name"]
+```
+
+This will set the `Name` attribute of the returned performer to the text content of the element that matches `<h1 itemprop="name">...`.
+
+The `common` field is used to configure xpath fragments that can be referenced in the xpath strings. These are key-value pairs where the key is the string to reference the fragment, and the value is the string that the fragment will be replaced with. For example:
+
+```
+common:
+  $infoPiece: //div[@class="infoPiece"]/span
+performer:
+  Measurements: $infoPiece[text() = 'Measurements:']/../span[@class="smallInfo"]  
+```
+
+The `Measurements` xpath string will replace `$infoPiece` with `//div[@class="infoPiece"]/span`, resulting in: `//div[@class="infoPiece"]/span[text() = 'Measurements:']/../span[@class="smallInfo"]`.
+
+A minimal performer and scene xpath scraper is shown as an example below:
+
+```
+name: Pornhub
+performerByURL:
+  - action: scrapeXPath
+    url: 
+      - pornhub.com
+    scraper: performerScraper
+sceneByURL:
+  - action: scrapeXPath
+    url: 
+      - pornhub.com/view_video.php
+    scraper: sceneScraper
+xPathScrapers:
+  performerScraper:
+    common:
+      $infoPiece: //div[@class="infoPiece"]/span
+    performer:
+      Name: //h1[@itemprop="name"]
+      Measurements: $infoPiece[text() = 'Measurements:']/../span[@class="smallInfo"]
+  sceneScraper:
+    common:
+      $performer: //div[@class="pornstarsWrapper"]/a[@data-mxptype="Pornstar"]
+      $studio: //div[@data-type="channel"]/a
+    scene:
+      Title: //div[@id="main-container"]/@data-video-title
+      Tags: 
+        Name: //div[@class="categoriesWrapper"]//a[not(@class="add-btn-small ")]
+      Performers:
+        Name: $performer/@data-mxptext
+        URL: $performer/@href
+      Studio:
+        Name: $studio
+        URL: $studio/@href    
+```
+
+## Stash
+
+A different stash server can be configured as a scraping source. This action applies only to `performerByName`, `performerByFragment`, and `sceneByFragment` types. This action requires that the top-level `stashServer` field is configured.
+
+`stashServer` contains a single `url` field for the remote stash server. The username and password can be embedded in this string using `username:password@host`.
+
+An example stash scrape configuration is below:
+
+```
+name: stash
+performerByName:
+  action: stash
+performerByFragment:
+  action: stash
+sceneByFragment:
+  - action: stash
+stashServer:
+  url: http://stashserver.com:9999
 ```
