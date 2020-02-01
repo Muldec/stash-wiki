@@ -12,9 +12,9 @@ If needed you can change the `Network Type` from `bridge` to `host`.
 You only need to adjust the volume settings.
 * data: where your media collection is
 * config: where the config file and the stash database file will be stored
-* transcodes: location of the transcoded files to be generated
+* <del> transcodes: location of the transcoded files to be generated </del> transcodes isn't actually used here.The transcodes directory is created by default in the generated volume. 
 * metadata: the main metadata folder , used for import/export functions
 * cache: a folder to use as cache
-* generated: where the previews,screenshots and sprites will be generated
+* generated: where the previews,screenshots,transcoded files and sprites will be generated
 
 
