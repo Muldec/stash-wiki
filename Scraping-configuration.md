@@ -132,7 +132,7 @@ elif sys.argv[1] == "scrapeURL":
 
 ## scrapeXPath
 
-This action scrapes a web page using an xpath configuration to parse. This action is valid for `performerByURL` and `sceneByURL` only.
+This action scrapes a web page using an xpath configuration to parse. This action is valid for `performerByName`, `performerByURL` and `sceneByURL` only.
 
 This action requires that the top-level `xPathScrapers` configuration is populated. The `scraper` field is required and must match the name of a scraper name configured in `xPathScrapers`. For example:
 
@@ -146,11 +146,35 @@ sceneByURL:
 
 The above configuration requires that `sceneScraper` exists in the `xPathScrapers` configuration.
 
+### Use with `performerByName`
+
+For `performerByName`, the `queryURL` field must be present also. This field is used to perform a search query URL for performer names. The placeholder string sequence `{}` is replaced with the performer name search string. For the subsequent performer scrape to work, the `URL` field must be filled in with the URL of the performer page that matches a URL given in a `performerByURL` scraping configuration. For example:
+
+```
+name: Boobpedia
+performerByName:
+  action: scrapeXPath
+  queryURL: http://www.boobpedia.com/wiki/index.php?title=Special%3ASearch&search={}&fulltext=Search
+  scraper: performerSearch
+performerByURL:
+  - action: scrapeXPath
+    url: 
+      - boobpedia.com/boobs/
+    scraper: performerScraper
+xPathScrapers:
+  performerSearch:
+    performer:
+      Name: # name element
+      URL: # URL element that matches the boobpedia.com/boobs/ URL above
+  performerScraper:
+    # ... performer scraper details ...
+```
+
 ### XPath scrapers configuration
 
 The top-level `xPathScrapers` field contains xpath scraping configurations, freely named. The scraping configuration may contain a `common` field, and must contain `performer` or `scene` depending on the scraping type it is configured for. 
 
-Within the `performer`/`scene` field are key/value pairs corresponding to the golang fields on the performer/scene object. These fields are case-sensitive. The values of these are xpaths that tell the system where to get the value of the field from. For example:
+Within the `performer`/`scene` field are key/value pairs corresponding to the golang fields on the performer/scene object. These fields are case-sensitive. The values of these may be either a simple xpath value, which tells the system where to get the value of the field from, or a more advanced configuration (see below). For example:
 
 ```
 performer:
@@ -158,6 +182,17 @@ performer:
 ```
 
 This will set the `Name` attribute of the returned performer to the text content of the element that matches `<h1 itemprop="name">...`.
+
+The value may also be a sub-object, indicating that post-processing is required. If it is a sub-object, then the xpath must be set to the `selector` key of the sub-object. For example, using the same xpath as above:
+
+```
+performer:
+  Name: 
+    selector: //h1[@itemprop="name"]
+    # post-processing config values
+```
+
+#### Common fragments
 
 The `common` field is used to configure xpath fragments that can be referenced in the xpath strings. These are key-value pairs where the key is the string to reference the fragment, and the value is the string that the fragment will be replaced with. For example:
 
@@ -170,7 +205,18 @@ performer:
 
 The `Measurements` xpath string will replace `$infoPiece` with `//div[@class="infoPiece"]/span`, resulting in: `//div[@class="infoPiece"]/span[text() = 'Measurements:']/../span[@class="smallInfo"]`.
 
-A minimal performer and scene xpath scraper is shown as an example below:
+#### Post-processing options
+
+The following post-processing keys are available:
+* `concat`: if an xpath matches multiple elements, and `concat` is present, then all of the elements will be concatenated together
+* `replace`: contains an array of sub-objects. Each sub-object must have a `regex` and `with` field. The `regex` field is the regex pattern to replace, and `with` is the string to replace it with. `$` is used to reference capture groups - `` is the first capture group, `` the second and so on. Replacements are performed in order of the array.
+* `parseDate`: if present, the value is the date format using go's reference date (2006-01-02). For example, if an example date was `14-Mar-2003`, then the date format would be `02-Jan-2006`. See the [time.Parse documentation](https://golang.org/pkg/time/#Parse) for details. When present, the scraper will convert the input string into a date, then convert it to the string format used by stash (`YYYY-MM-DD`).
+
+Post-processing is done in order of the fields above - `concat`, then `regex`, then `parseDate`.
+
+#### Example
+
+A performer and scene xpath scraper is shown as an example below:
 
 ```
 name: Pornhub
@@ -190,7 +236,26 @@ xPathScrapers:
       $infoPiece: //div[@class="infoPiece"]/span
     performer:
       Name: //h1[@itemprop="name"]
+      Birthdate: 
+        selector: //span[@itemprop="birthDate"]
+        parseDate: Jan 2, 2006
+      Twitter: //span[text() = 'Twitter']/../@href
+      Instagram: //span[text() = 'Instagram']/../@href
       Measurements: $infoPiece[text() = 'Measurements:']/../span[@class="smallInfo"]
+      Height: 
+        selector: $infoPiece[text() = 'Height:']/../span[@class="smallInfo"]
+        replace: 
+          - regex: .*\((\d+) cm\)
+            with: $1
+      Ethnicity: $infoPiece[text() = 'Ethnicity:']/../span[@class="smallInfo"]
+      FakeTits: $infoPiece[text() = 'Fake Boobs:']/../span[@class="smallInfo"]
+      Piercings: $infoPiece[text() = 'Piercings:']/../span[@class="smallInfo"]
+      Tattoos: $infoPiece[text() = 'Tattoos:']/../span[@class="smallInfo"]
+      CareerLength: 
+        selector: $infoPiece[text() = 'Career Start and End:']/../span[@class="smallInfo"]
+        replace:
+          - regex: \s+to\s+
+            with: "-"
   sceneScraper:
     common:
       $performer: //div[@class="pornstarsWrapper"]/a[@data-mxptype="Pornstar"]
@@ -206,6 +271,8 @@ xPathScrapers:
         Name: $studio
         URL: $studio/@href    
 ```
+
+See also [#333](https://github.com/stashapp/stash/pull/333) for more examples.
 
 ## Stash
 
