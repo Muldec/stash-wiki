@@ -192,6 +192,10 @@ performer:
     # post-processing config values
 ```
 
+#### Developing XPathScrapers:
+
+Useful Firefox-Addon: https://addons.mozilla.org/en-US/firefox/addon/try-xpath/
+
 #### Common fragments
 
 The `common` field is used to configure xpath fragments that can be referenced in the xpath strings. These are key-value pairs where the key is the string to reference the fragment, and the value is the string that the fragment will be replaced with. For example:
