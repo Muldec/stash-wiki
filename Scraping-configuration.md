@@ -2,7 +2,7 @@ As of develop release 5078402, custom scraping of performer and scene details is
 
 By default, Stash looks for scraper configurations in the `scrapers` sub-directory of the directory where the stash `config.yml` is read. This will either be the `$HOME/.stash` directory or the current working directory.
 
-Custom scrapers are added by adding configuration yaml files to the `scrapers` directory. The configuration file looks like the following:
+Custom scrapers are added by adding configuration yaml files (format: `scrapername.yml`) to the `scrapers` directory. The configuration file looks like the following:
 
 # Basic scraper configuration file structure
 
