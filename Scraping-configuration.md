@@ -194,7 +194,8 @@ performer:
 
 #### Developing XPathScrapers:
 
-Useful Firefox-Addon: https://addons.mozilla.org/en-US/firefox/addon/try-xpath/
+- Test XPaths in Firefox: https://addons.mozilla.org/en-US/firefox/addon/try-xpath/
+- XPath cheatsheet: https://devhints.io/xpath
 
 #### Common fragments
 
