@@ -5,7 +5,7 @@ Selecting **stash** and getting the latest update from dockerhub should get you 
 A sample container configuration is shown below.
 ![unraid-stash-docker](https://i.imgur.com/GzCIjA3.jpg)
 
-Here we changed the default repository to `stashapp/stash:development-x86_64` to get the latest development docker image  as it provides a lot more features (optional but recommended for now) .
+Here we changed the default and recommended repository `stashapp/stash:latest` to `stashapp/stash:development-x86_64` to test the latest development docker image (optional).
 
 If needed you can change the `Network Type` from `bridge` to `host`.
 
