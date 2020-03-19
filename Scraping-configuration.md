@@ -298,3 +298,5 @@ sceneByFragment:
 stashServer:
   url: http://stashserver.com:9999
 ```
+## Community Scrapers
+You can always have a look at the scrapers provided by the stash community over [here](https://github.com/stashapp/CommunityScrapers)
