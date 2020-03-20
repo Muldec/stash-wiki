@@ -298,5 +298,13 @@ sceneByFragment:
 stashServer:
   url: http://stashserver.com:9999
 ```
+
+## Debugging support
+To print the received html from a scraper request to the log file, add the following to your scraper yml file:
+```
+debug:
+  printHTML: true
+```
+
 ## Community Scrapers
 You can always have a look at the scrapers provided by the stash community over [here](https://github.com/stashapp/CommunityScrapers)
