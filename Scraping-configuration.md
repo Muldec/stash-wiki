@@ -174,7 +174,9 @@ xPathScrapers:
 
 The top-level `xPathScrapers` field contains xpath scraping configurations, freely named. The scraping configuration may contain a `common` field, and must contain `performer` or `scene` depending on the scraping type it is configured for. 
 
-Within the `performer`/`scene` field are key/value pairs corresponding to the golang fields on the performer/scene object. These fields are case-sensitive. The values of these may be either a simple xpath value, which tells the system where to get the value of the field from, or a more advanced configuration (see below). For example:
+Within the `performer`/`scene` field are key/value pairs corresponding to the golang fields (see below) on the performer/scene object. These fields are case-sensitive. 
+
+The values of these may be either a simple xpath value, which tells the system where to get the value of the field from, or a more advanced configuration (see below). For example:
 
 ```
 performer:
@@ -191,11 +193,6 @@ performer:
     selector: //h1[@itemprop="name"]
     # post-processing config values
 ```
-
-#### Developing XPathScrapers:
-
-- Test XPaths in Firefox: https://addons.mozilla.org/en-US/firefox/addon/try-xpath/
-- XPath cheatsheet: https://devhints.io/xpath
 
 #### Common fragments
 
@@ -278,6 +275,71 @@ xPathScrapers:
 ```
 
 See also [#333](https://github.com/stashapp/stash/pull/333) for more examples.
+
+### XPath resources:
+
+- Test XPaths in Firefox: https://addons.mozilla.org/en-US/firefox/addon/try-xpath/
+- XPath cheatsheet: https://devhints.io/xpath
+
+### Object fields
+#### Performer
+
+```
+Name
+Gender
+URL
+Twitter
+Instagram
+Birthdate
+Ethnicity
+Country
+EyeColor
+Height
+Measurements
+FakeTits
+CareerLength
+Tattoos
+Piercings
+Aliases
+Image
+```
+
+*Note:*  - `Gender` must be one of `male`, `female`, `transgender_male`, `transgender_female` (case insensitive).
+
+#### Scene
+```
+Title
+Details
+URL
+Date
+Image
+Studio (see Studio Fields)
+Movies (see Movie Fields)
+Tags (see Tag fields)
+Performers (list of Performer fields)
+```
+#### Studio
+```
+Name
+URL
+```
+
+#### Tag
+```
+Name
+```
+
+#### Movie
+```
+Name
+Aliases
+Duration
+Date
+Rating
+Director
+Synopsis
+URL
+```
 
 ## Stash
 
