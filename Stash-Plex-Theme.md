@@ -55,7 +55,7 @@ Enjoy!
 
 ```
 /*
-StashApp Plex Theme - Fidelio 2020 v1.0.1
+StashApp Plex Theme - Fidelio 2020 v1.0.2
  
 !CHANGE PATH FOR BACKGROUND in Body and Root in case it does not load!
 You can put image files into .stash folder or upload it on imgur, or upload it to your gallery and then link it.
@@ -247,5 +247,8 @@ a:hover {
 
 option {
 	background-color: #1f2326;
+}
+.btn.btn-link {
+    color: #2c2e30;
 }
 ```
