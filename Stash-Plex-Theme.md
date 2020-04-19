@@ -248,7 +248,7 @@ a:hover {
 option {
 	background-color: #1f2326;
 }
-.btn.btn-link {
+.folder-list .btn-link {
     color: #2c2e30;
 }
 ```
