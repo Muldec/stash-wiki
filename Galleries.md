@@ -5,4 +5,5 @@ Here are some remarks on using them:
 - Stash searches for zip galleries in the same paths it searches for videos.
 - If you want to add a gallery to a scene, make sure that the zip file and the video file are in the same folder.
 - As of commit **9dacad7** stash adds a gallery to its related scene during the scanning process if they have matching names. Gallery `/my/stash/collection/media_filename.zip` will be auto assigned to `/my/stash/collection/media_filename.mp4` (where **mp4** can be _avi_, _mkv_, _wmv_ ... or any other media file we support).
-- Stash always reads image files directly from the zip files. With huge images, this can be slow and cause visual errors in the ui.
+- When storing images in zip file make sure to disable compression ( copy , store or no compression options depending on the software you use). This impacts **heavily** on the zip read performance.
+- Stash uses the golang native ( pure go ) image decoders ( more suitable for cross compilation ). With huge images, decoding and converting to thumbnails can be slow and  in cases cause visual errors or delays in the gallery page.
