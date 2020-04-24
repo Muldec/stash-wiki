@@ -6,15 +6,13 @@ Any of [the issues](https://github.com/stashapp/stash/issues) can be picked up b
 
 ### [Multiple content folders](https://github.com/stashapp/stash/issues/2)
 
-The `config.json` "stash" property would need to go from a string to an array.  Scanning would need to iterate through each folder given.  Error handling might need to be improved if one of the folders is unavailiable (unplugged drive?)
+Error handling might need to be improved if one of the folders is unavailiable (unplugged drive?)
 
 ### [Logical Filters](https://github.com/stashapp/stash/issues/29)
 
 Right now most filters are AND'ed, meaning that the result of multiple filters must meet all of the criteria to be shown.  We should support AND and OR for more flexibility.  UI V2 has started paving the way for this.  The Database queries still need to be modified.
 
 ### Settings Screen improvements
-
-The settings screen should display logs in real time via web socket connection.  It would be nice to have a persistent status indicator on all pages to display what Stash is doing at any particular moment.  The web socket connection would be kept open for the entire session.
 
 The setting screen should support [configuring any FFMPEG option](https://github.com/stashapp/stash/issues/10).
 
@@ -24,11 +22,9 @@ Add a watch later boolean to scenes for scenes which you're interested in, but d
 
 ## Medium Term
 
-### DVDs / Collections
+### Collections
 
 It would be nice to group scenes.  I've been thinking of a concept of a "Collection".  A collection would be a group of scenes / galleries.  There are times when web scenes have behind the scenes additions, collections would be a way to group those.
-
-I'm not sure if it makes more sense to have a DVD data model, or have a DVD collection "type" with additional metadata (like the director / covers / etc)
 
 ### Tag Improvements
 
