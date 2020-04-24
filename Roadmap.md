@@ -8,9 +8,9 @@ Any of [the issues](https://github.com/stashapp/stash/issues) can be picked up b
 
 Error handling might need to be improved if one of the folders is unavailiable (unplugged drive?)
 
-### [Logical Filters](https://github.com/stashapp/stash/issues/29)
+### Logical Filters
 
-Right now most filters are AND'ed, meaning that the result of multiple filters must meet all of the criteria to be shown.  We should support AND and OR for more flexibility.  UI V2 has started paving the way for this.  The Database queries still need to be modified.
+Right now most filters are AND'ed, meaning that the result of multiple filters must meet all of the criteria to be shown.  We should support AND and OR for more flexibility.  The Database queries still need to be modified.
 
 ### Settings Screen improvements
 
