@@ -4,7 +4,7 @@ Any of [the issues](https://github.com/stashapp/stash/issues) can be picked up b
 
 ## Near Term
 
-### [Multiple content folders](https://github.com/stashapp/stash/issues/2)
+### Multiple content folders
 
 Error handling might need to be improved if one of the folders is unavailiable (unplugged drive?)
 
