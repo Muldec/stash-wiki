@@ -15,6 +15,12 @@
   display: none;
 }
 ```
+## Make the list of tags take up less width
+```
+.bs-popover-bottom {
+  max-width: 500px
+}
+```
 
 # Performers
 
