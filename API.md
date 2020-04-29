@@ -4,15 +4,15 @@ All http requests have to go to ``http://IP:PORT/graphql``
 ### Scan for new files
 Request: `HTTP-POST`
 
-Payload (set **nameFromMetadata** to ```true``` or ```false``` if you want to get metadata from the media file ):
+Payload (set **useFileMetadata** to ```true``` or ```false``` if you want to get metadata from the media file ):
 ```json
 {
-  "query": "{ metadataScan ( input: { nameFromMetadata: true } ) } "
+  "query": "mutation { metadataScan ( input: { useFileMetadata: true } ) } "
 }
 ```
 _Example using curl (use of **-u username:password** is needed only if you added a password to the configuration )_
 
-`curl -u username:password -X POST -H "Content-Type: application/json" --data '{ "query": "{ metadataScan (input: { nameFromMetadata: false} ) }" }' localhost:9998/graphql`
+`curl -u username:password -X POST -H "Content-Type: application/json" --data '{ "query": " mutation { metadataScan (input: { useFileMetadata: false} ) }" }' localhost:9998/graphql`
 
 ### Generate content
 
