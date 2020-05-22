@@ -26,7 +26,7 @@ Reduce left and right padding on Scene and Performer grid pages allowing for mor
 
 ## Hide scene specs (resolution, duration) from scene card
 
-```
+```css
 .scene-specs-overlay {
   display: none;
 }
@@ -34,13 +34,13 @@ Reduce left and right padding on Scene and Performer grid pages allowing for mor
 
 ## Hide studio logo/text from scene card
 
-```
+```css
 .scene-studio-overlay {
   display: none;
 }
 ```
 ## Make the list of tags take up less width
-```
+```css
 .bs-popover-bottom {
   max-width: 500px
 }
@@ -50,7 +50,7 @@ Reduce left and right padding on Scene and Performer grid pages allowing for mor
 
 ## Show entire performer image in performer card
 
-```
+```css
 .performer.image {
   background-size: contain !important;
 }
@@ -60,7 +60,7 @@ Reduce left and right padding on Scene and Performer grid pages allowing for mor
 
 ## Grid view for galleries
 
-```
+```css
 .col.col-sm-6.mx-auto.table .d-none.d-sm-block {
     display: none !important;
 }
