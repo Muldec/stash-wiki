@@ -11,3 +11,11 @@ location / {
 }
 ```
 As of commit **7767271**, if needed you can adjust the **external_host** setting to your external address as mentioned [here](https://github.com/stashapp/stash/pull/369)
+
+In order for the websocket to work, you may need to also add these lines to your server block (`proxy.conf` file in the Letencrypt Unraid docker container for instance) as mentioned [here](https://github.com/stashapp/stash/issues/532)
+
+```
+proxy_http_version 1.1;
+proxy_set_header Upgrade $http_upgrade;
+proxy_set_header Connection "upgrade";
+```
