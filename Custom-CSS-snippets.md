@@ -46,6 +46,22 @@ Reduce left and right padding on Scene and Performer grid pages allowing for mor
 }
 ```
 
+## Swap studio and resolution/duration positions
+```css
+.scene-studio-overlay {
+  bottom: 1rem;
+  right: 0.7rem;
+  height: inherit;
+  top: inherit;
+}
+
+.scene-specs-overlay {
+  right: 0.7rem;
+  top: 0.7rem;
+  bottom: inherit;
+}
+```
+
 # Performers
 
 ## Show entire performer image in performer card
