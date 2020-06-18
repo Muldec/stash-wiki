@@ -214,8 +214,9 @@ The following post-processing keys are available:
 * `replace`: contains an array of sub-objects. Each sub-object must have a `regex` and `with` field. The `regex` field is the regex pattern to replace, and `with` is the string to replace it with. `$` is used to reference capture groups - `` is the first capture group, `` the second and so on. Replacements are performed in order of the array.
 * `subScraper`: if present, the sub-scraper will be executed after all other post-processes are complete and before parseDate. It then takes the value and performs an http request, using the value as the URL. Within the `subScraper` config is a nested scraping configuration. This allows you to traverse to other webpages to get the attribute value you are after. For more info and examples have a look at [#370](https://github.com/stashapp/stash/pull/370), [#606](https://github.com/stashapp/stash/pull/606)
 * `parseDate`: if present, the value is the date format using go's reference date (2006-01-02). For example, if an example date was `14-Mar-2003`, then the date format would be `02-Jan-2006`. See the [time.Parse documentation](https://golang.org/pkg/time/#Parse) for details. When present, the scraper will convert the input string into a date, then convert it to the string format used by stash (`YYYY-MM-DD`).
+* `split`: Its the inverse of `concat`. Splits a string to more elements using the separator given. For more info and examples have a look at PR [#579](https://github.com/stashapp/stash/pull/579)
 
-Post-processing is done in order of the fields above - `concat`, then `regex`, `subscraper` then `parseDate`.
+Post-processing is done in order of the fields above - `concat`, `regex`, `subscraper`, `parseDate` and then `split`.
 
 #### Example
 
