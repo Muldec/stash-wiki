@@ -309,6 +309,7 @@ Image
 *Note:*  - `Gender` must be one of `male`, `female`, `transgender_male`, `transgender_female` (case insensitive).
 
 #### Scene
+_From the scene page, Studio, Movies, Tags, and Performers are matched based on their Name field._
 ```
 Title
 Details
