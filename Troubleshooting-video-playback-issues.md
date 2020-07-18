@@ -16,4 +16,12 @@ Another good test, is to see if remuxing the file into a new video file helps:
 ffmpeg -i big_buck_bunny.mkv -c:v copy -c:a copy remuxed_file.mkv
 ```
 
-The above command copies the video and audio streams out, and places it into a new file.
+# Extracing a sample of a video
+
+If you are asked for a sample of a video (e.g. for developers to analyse), you can use 
+
+```
+ffmpeg -ss 120 -i big_buck_bunny.mkv  -t 30 -c:v copy -c:a copy 30_second_sample.mkv
+```
+
+The above command starts at the 120-second marker, and takes a 30-second sample of the video file.
