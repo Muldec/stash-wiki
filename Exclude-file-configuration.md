@@ -29,4 +29,4 @@ and thats how it looks if you use UI (notice the difference for the `\` characte
 
 ![regexUI](https://i.imgur.com/3Oqvuja.png)
 
-_a useful [link](https://regex101.com/) to experiment with regexps (Make sure to select "Golang" as the flavour on the left hand side)_
+_a useful [link](https://regex101.com/?flavor=golang) to experiment with regexps (We use "Golang" as the regex flavour)_
