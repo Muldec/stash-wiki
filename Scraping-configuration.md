@@ -1,3 +1,8 @@
+# Deprecation notice
+This wiki page should be considered deprecated. The [manual page](https://github.com/stashapp/stash/blob/develop/ui/v2.5/src/docs/en/Scraping.md) should be considered as the up to date documentation for scraping. Changes to the documentation should be made via pull request.
+
+# Scraping Configuration
+
 As of develop release 5078402, custom scraping of performer and scene details is now supported.
 
 By default, Stash looks for scraper configurations in the `scrapers` sub-directory of the directory where the stash `config.yml` is read. This will either be the `$HOME/.stash` directory or the current working directory.
