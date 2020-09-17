@@ -91,7 +91,7 @@ Reduce left and right padding on Scene and Performer grid pages allowing for mor
 ```
 
 ## Don't crop preview thumbnails
-```
+```css
 .flexbin > * > img {
   object-fit: inherit;
   max-width: none;
