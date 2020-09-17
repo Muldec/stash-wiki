@@ -89,3 +89,12 @@ Reduce left and right padding on Scene and Performer grid pages allowing for mor
     display: inline-table;
 }
 ```
+
+## Don't crop preview thumbnails
+```
+.flexbin > * > img {
+  object-fit: inherit;
+  max-width: none;
+  min-width: initial;
+}
+```
