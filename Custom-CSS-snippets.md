@@ -98,3 +98,44 @@ Reduce left and right padding on Scene and Performer grid pages allowing for mor
   min-width: initial;
 }
 ```
+
+# Blur NSFW images
+
+Use for when working on stash but don't want to expose NSFW images and text. May not be exhaustive:
+
+```css
+.scene-card-preview-video,
+.scene-card-preview-image,
+.image-card-preview-image,
+.gallery-card-image,
+.performer-card-image,
+img.performer,
+.movie-card-image,
+.gallery .flexbin img,
+.wall-item-media,
+.scene-studio-overlay .image-thumbnail,
+.image-card-preview-image,
+#scene-details-container .text-input,
+#scene-details-container .scene-header,
+#scene-details-container .react-select__single-value,
+.scene-details .pre,
+#scene-tabs-tabpane-scene-file-info-panel span.col-8.text-truncate > a,
+.gallery .flexbin img,
+.movie-details .logo {
+ filter: blur(8px);
+}
+
+.jw-video,
+.jw-preview,
+.jw-flag-floating,
+.image-container,
+.studio-logo,
+.scene-cover {
+ filter: blur(20px);
+}
+
+.movie-card .text-truncate,
+.scene-card .card-section {
+ filter: blur(4px);
+}
+```
