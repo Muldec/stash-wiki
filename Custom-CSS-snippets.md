@@ -107,6 +107,7 @@ Use for when working on stash but don't want to expose NSFW images and text. May
 .scene-card-preview-video,
 .scene-card-preview-image,
 .image-card-preview-image,
+.image-thumbnail,
 .gallery-card-image,
 .performer-card-image,
 img.performer,
@@ -123,6 +124,10 @@ img.performer,
 .gallery .flexbin img,
 .movie-details .logo {
  filter: blur(8px);
+}
+
+.scene-card-video {
+ filter: blur(13px);
 }
 
 .jw-video,
