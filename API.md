@@ -10,9 +10,15 @@ Payload (set **useFileMetadata** to ```true``` or ```false``` if you want to get
   "query": "mutation { metadataScan ( input: { useFileMetadata: true } ) } "
 }
 ```
-_Example using curl (use of **-u username:password** is needed only if you added a password to the configuration )_
+_Example using curl_
 
-`curl -u username:password -X POST -H "Content-Type: application/json" --data '{ "query": " mutation { metadataScan (input: { useFileMetadata: false} ) }" }' localhost:9998/graphql`
+`curl -X POST -H "Content-Type: application/json" --data '{ "query": " mutation { metadataScan (input: { useFileMetadata: false} ) }" }' localhost:9998/graphql`
+
+If you have configured a username/password
+```
+curl --verbose --cookie-jar cookie.txt  --data 'username=stash&password=**' localhost:9998/login
+curl --cookie cookie.txt -H "Content-Type: application/json"  --data '{  "query": "mutation { metadataScan ( input: { useFileMetadata: false } ) } "}' localhost:9998/graphql
+```
 
 ### Generate content
 
@@ -62,7 +68,7 @@ Payload (
 
 _Example using curl_
 
-`curl -u username:password -X POST -H "Content-Type: application/json" --data '{ "query": "{ scrapeFreeones ( performer_name : \"Abella Danger\" ) { name height birthdate} }" }' localhost:9998/graphql`
+`curl -X POST -H "Content-Type: application/json" --data '{ "query": "{ scrapeFreeones ( performer_name : \"Abella Danger\" ) { name height birthdate} }" }' localhost:9998/graphql`
 
 ### Get list of perfomer names that match a name or alias from Freeones
 
@@ -80,4 +86,4 @@ Payload ( $q is the name or alias (or partial name , alias) of the performer you
 _Example using curl_
 
 
-`curl -u username:password -X POST -H "Content-Type: application/json" --data '{ "query": "{ scrapeFreeonesPerformerList (query: \"bella\" ) }" }' localhost:9998/graphql`
+`curl -X POST -H "Content-Type: application/json" --data '{ "query": "{ scrapeFreeonesPerformerList (query: \"bella\" ) }" }' localhost:9998/graphql`
