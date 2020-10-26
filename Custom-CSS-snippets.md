@@ -10,7 +10,7 @@ Note: Future releases of Stash may break these CSS tweaks. CSS tweaks may not ap
 Reduce left and right padding on Scene and Performer grid pages allowing for more thumbnails on each row.
 
 ```css
-.grid { padding: 0px !important; }`
+.grid { padding: 0px !important; }
 ```
 
 ## Allow for longer string when displaying "Studio as Text" on scene thumbnails
