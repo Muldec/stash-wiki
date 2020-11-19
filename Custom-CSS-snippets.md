@@ -62,6 +62,19 @@ Reduce left and right padding on Scene and Performer grid pages allowing for mor
 }
 ```
 
+## Adjust the mouse over behaviour in wall mode
+```css
+@media (min-width: 576px) {
+ .wall-item:hover::before {
+   opacity: 0;  
+ }
+
+ .wall-item:hover .wall-item-container {
+   transform: scale(1.5);
+ }
+}
+```
+
 # Performers
 
 ## Show entire performer image in performer card
