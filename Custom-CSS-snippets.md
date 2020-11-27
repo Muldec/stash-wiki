@@ -125,7 +125,7 @@ and values above 1 to move them to the right of the non-ordered buttons.
 ![image](https://user-images.githubusercontent.com/66393006/100487468-6b56fc80-3111-11eb-817b-5f14f1d7b2f8.png)  
 
 ```css
-.navbar-collapse > .navbar-nav {
+nav .navbar-nav:first-child {
   display: flex;
   flex-direction: row;
 }
