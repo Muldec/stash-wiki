@@ -112,7 +112,20 @@ Reduce left and right padding on Scene and Performer grid pages allowing for mor
 }
 ```
 
-# Blur NSFW images
+# Global
+
+## Hide navigation bar items
+
+Hide links to specific sections from the header.
+
+```css
+/* Example: Hide markers */
+div[data-rb-event-key="/markers"] {
+  display: none;
+}
+```
+
+## Blur NSFW images
 
 Use for when working on stash but don't want to expose NSFW images and text. May not be exhaustive:
 
