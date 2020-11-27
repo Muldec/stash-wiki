@@ -120,7 +120,7 @@ Hide links to specific sections from the header.
 
 ```css
 /* Example: Hide markers */
-div[data-rb-event-key="/markers"] {
+div.nav-link[data-rb-event-key="/scenes/markers"] {
   display: none;
 }
 ```
