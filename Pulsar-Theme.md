@@ -48,7 +48,7 @@ Enjoy!
 
 
 ```
-/*	StashApp Pulsar Theme - Dawson 2020 v1.1.0	*/
+/*	StashApp Pulsar Theme - Fonzie 2020 v1.1.0	*/
 
 /* ================= General ===================== */
 
