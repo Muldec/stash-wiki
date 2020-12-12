@@ -602,6 +602,39 @@ h5.card-section-title {font-family: Helvetica, "Helvetica Neue", "The Sans", "Se
 
 
 
+
+/* ==============  IMAGES ==============  */
+
+div.image-section .rating-banner {
+	font-size: .002rem;
+	padding: 8px 41px 6px;
+	line-height: 1.1rem;
+	transform: rotate(0deg);
+	padding: 0;
+	left: 3px;
+	top: 80% !important;
+	height: 25px;
+	background-size: 135px 25px;
+	background-position: left;
+}
+
+div.image-section .rating-1 {width:28px}
+div.image-section .rating-2 {width:55px}
+div.image-section .rating-3 {width:83px} 
+div.image-section .rating-4 {width:110px}  
+div.image-section .rating-5 {width:138px}
+
+div.image-section .rating-5 {
+	background:none;
+	height: 25px;
+	background-size: 135px 25px;
+}
+
+
+
+
+
+
 /* ==============  MISC ==============  */
 
 
