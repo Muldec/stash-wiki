@@ -48,7 +48,7 @@ Enjoy!
 
 
 ```
-/*	StashApp Pulsar Theme - Fonzie 2020 v1.1.2	*/
+/*	StashApp Pulsar Theme - Fonzie 2020 v1.1.4	*/
 
 /* ========= General ========= */
 
@@ -293,10 +293,10 @@ div.react-select__control {
 
 /* --- Moves the Flag icon from the right side of the card to the left and makes the Flag image a little bit bigger --- */
 .performer-card .flag-icon {
-	height: 2rem;
-	left: 0.6rem;
-	bottom: 0.15rem;
-	width: 28px; 
+    height: 2rem;
+    left: 0.6rem;
+    bottom: 0.15rem;
+    width: 28px; 
 }
 
 /* --- Age and # of Scenes move from the left side to the right of the card --- */
@@ -311,11 +311,10 @@ div.card.performer-card div.text-muted a {text-shadow: 1px 2px 2px #333}
 
 /* --- Moves the "Favorite" banner a little more to the top left corner --- */
 .rating-banner {
-	padding: 8px 41px 6px;
-	line-height: 1.1rem;
-	transform: rotate(-41deg);
-	top: 8px 
-}
+padding: 8px 41px 6px;
+line-height: 1.1rem;
+transform: rotate(-41deg);
+top: 8px }
 
 
 
@@ -383,7 +382,7 @@ h5.card-section-title {font-family: Helvetica, "Helvetica Neue", "The Sans", "Se
 
 /* --- Removes the horizontal line that separates the date/description text from the Tags/Performer/etc. icons --- */
 .scene-card.card hr, .scene-card.card>hr{
-	border-top: 0px solid rgba(0,0,0,.01); 
+	border-top: 0px solid rgba(0,0,0,.1); 
 }
 
 
@@ -414,16 +413,8 @@ h5.card-section-title {font-family: Helvetica, "Helvetica Neue", "The Sans", "Se
 /* Improves the way the scene picture is displayed when the resolution isn't 16:9 (e.g. 4:3) --- */
 .zoom-1 .video-section {object-fit: cover !important;height:187px;overflow:hidden;}
 .zoom-1 .scene-card-preview { height: 188px; }
-.zoom-1 .scene-card-video {
-	width: 348px; 
-	min-height:209px; 
-	max-height: 405px; 
-	height:auto; 
-	object-fit: cover !important; 
-	margin-top:-2%; 
-	margin-left:-6px; 
-	zoom:103%;  
-}
+.zoom-1 .scene-card-video {width: 348px; min-height:209px; max-height: 405px; height:auto; object-fit: cover !important; margin-top:-2%; margin-left:-6px; zoom:103%;  }
+
 .zoom-2 .video-section {height:240px; object-fit: cover !important; overflow:hidden;}
 .zoom-2 .scene-card-video {min-height:199px; height:auto; object-fit: cover !important; margin-top:-2%; zoom:103%;  }
 
@@ -433,9 +424,9 @@ h5.card-section-title {font-family: Helvetica, "Helvetica Neue", "The Sans", "Se
 
 /* --- Moves the Tags-, Performer-, O-Counter-, Gallery- and Movie-Icon from below the description to the bottom right corner of the card --- */
 .scene-popovers, .card-popovers { 
-	margin-bottom: 3px;
-	margin-top:-44px;
-	justify-content: flex-end;
+margin-bottom: 3px;
+margin-top:-44px;
+justify-content: flex-end;
 }
 
 
@@ -496,24 +487,24 @@ h5.card-section-title {font-family: Helvetica, "Helvetica Neue", "The Sans", "Se
 
 
 .studio-card {
-	padding: 0 !important;
-	padding-bottom:14px !important;
+    padding: 0 !important;
+padding-bottom:14px !important;
 }
 
 .studio-card-image {
-	max-height: 175px;
-	height:175px;
+max-height: 175px;
+height:175px;
 }
 .studio-card .card-section {
-	margin-top: 22px !important;
+    margin-top: 22px !important;
 }
 
 
 
 .zoom-1 {width:350px} 
 .col-sm-9 {
-	flex: 0 0 80%;
-	max-width: 80%;
+    flex: 0 0 80%;
+    max-width: 80%;
 }
 
 
@@ -531,26 +522,26 @@ h5.card-section-title {font-family: Helvetica, "Helvetica Neue", "The Sans", "Se
 #tags .card {padding:0 0 10px 0; }
 
 .zoom-0 .gallery-card-image, .zoom-0 .tag-card-image {
-	max-height: 195px;height:190px
+    max-height: 195px;height:190px
 }
 
 
 .tag-card-header {height:190px;overflow:hidden;}
 
 .zoom-0 .tag-card-image {
-	zoom: 101%;
-	object-fit: cover;
-	overflow:hidden;
-	width: 338px;
-	margin-top: -2px;
-	margin-left: -1%;
+zoom: 101%;
+object-fit: cover;
+overflow:hidden;
+width: 338px;
+margin-top: -2px;
+margin-left: -1%;
 /*margin-bottom:7px;*/
 }
 
 .tag-card .scene-popovers, .tag-card .card-popovers { 
-	margin-bottom: 4px;
-	margin-top:-34px;
-	padding-left:17px;
+margin-bottom: 4px;
+margin-top:-34px;
+padding-left:17px;
 }
 
 .zoom-0 .tab-pane .card-image { height:210px }
@@ -575,7 +566,7 @@ h5.card-section-title {font-family: Helvetica, "Helvetica Neue", "The Sans", "Se
 	transform: rotate(0deg);
 	padding: 0;
 	left: 3px;
-	top: 75% !important;
+	top: 76% !important;
 	height: 25px;
 	background-size: 135px 25px;
 	background-position: left;
@@ -589,6 +580,7 @@ h5.card-section-title {font-family: Helvetica, "Helvetica Neue", "The Sans", "Se
 
 .movie-card-header .rating-5 {
 	background:none;
+	background-image:url("https://i.imgur.com/YM1nCqo.png");
 	height: 25px;
 	background-size: 135px 25px;
 }
@@ -596,50 +588,90 @@ h5.card-section-title {font-family: Helvetica, "Helvetica Neue", "The Sans", "Se
 .movie-card-image {
 	height:330px;
 	max-height: 330px;
-	width: 233px;
+     width: 233px;
 }
-
-
-
 
 
 /* ==============  IMAGES ==============  */
 
-div.image-section .rating-banner {
+div.image-card .rating-banner {
 	font-size: .002rem;
 	padding: 8px 41px 6px;
 	line-height: 1.1rem;
 	transform: rotate(0deg);
 	padding: 0;
 	left: 3px;
-	top: 80% !important;
+	top: 72% !important;
 	height: 25px;
 	background-size: 135px 25px;
 	background-position: left;
 }
 
-div.image-section .rating-1 {width:28px}
-div.image-section .rating-2 {width:55px}
-div.image-section .rating-3 {width:83px} 
-div.image-section .rating-4 {width:110px}  
-div.image-section .rating-5 {width:138px}
+div.image-card .rating-1 {width:28px}
+div.image-card .rating-2 {width:55px}
+div.image-card .rating-3 {width:83px} 
+div.image-card .rating-4 {width:110px}  
+div.image-card .rating-5 {width:138px}
 
-div.image-section .rating-5 {
+div.image-card .rating-5 {
 	background:none;
+	background-image:url("https://i.imgur.com/YM1nCqo.png");
 	height: 25px;
 	background-size: 135px 25px;
 }
 
+div.image-card .scene-popovers, div.image-card .card-popovers {
+	margin-top: -2px; 
+	justify-content: flex-end;
+}
+div.image-card hr, .scene-card.card>hr{
+	border-top: 0px solid rgba(0,0,0,.1); 
+}
 
+/* ==============  GALLERIES ==============  */
 
+div.gallery-card hr, .scene-card.card>hr{
+	border-top: 0px solid rgba(0,0,0,.1); 
+}
 
+div.gallery-card .rating-banner {
+	font-size: .002rem;
+	padding: 8px 41px 6px;
+	line-height: 1.1rem;
+	transform: rotate(0deg);
+	padding: 0;
+	left: 3px;
+	top: 70% !important;
+	height: 25px;
+	background-size: 135px 25px;
+	background-position: left;
+}
+
+div.gallery-card .rating-1 {width:28px}
+div.gallery-card .rating-2 {width:55px}
+div.gallery-card .rating-3 {width:83px} 
+div.gallery-card .rating-4 {width:110px}  
+div.gallery-card .rating-5 {width:138px}
+
+div.gallery-card .rating-5 {
+	background:none;
+	background-image:url("https://i.imgur.com/YM1nCqo.png");
+	height: 25px;
+	background-size: 135px 25px;
+}
+
+div.gallery-card .scene-popovers, div.gallery-card .card-popovers {
+	margin-bottom: -8px;
+	margin-top: -24px; 
+	justify-content: flex-end;
+}
 
 
 /* ==============  MISC ==============  */
 
 
 .svg-inline--fa.fa-w-18 {
-	width: 1.4em;
+    width: 1.4em;
 }
 
 
@@ -667,12 +699,12 @@ input[type=range].zoom-slider{ max-width:140px;width:140px; }
 }
 
 .search-item {
-	background-color: none;
-	background-color: rgba(16,22,26,0.27) !important;
+    background-color: none;
+    background-color: rgba(16,22,26,0.27) !important;
 }
 
 .btn-secondary.disabled, .btn-secondary:disabled {
-	background-color: none;
-	background-color: rgba(16,22,26,0.67) !important;
+    background-color: none;
+    background-color: rgba(16,22,26,0.67) !important;
 }
-```
+
