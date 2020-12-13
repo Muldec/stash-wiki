@@ -48,7 +48,7 @@ Enjoy!
 
 
 ```
-/*	StashApp Pulsar Theme - Fonzie 2020 v1.1.4	*/
+/*	StashApp Pulsar Theme - Fonzie 2020 v1.1.5	*/
 
 /* ========= General ========= */
 
@@ -119,7 +119,7 @@ transparent background, rounded corners, etc. */
 .card {
 	padding: 20px; 
 	margin: 4px 0.50% 12px;
-	background-color: rgba(6, 20, 25, .32);
+	background-color: rgba(16, 20, 25, .33); 
 	box-shadow: 2px 2px 6px rgba(0, 0, 0, .55);
 }
 
@@ -352,12 +352,16 @@ table#performer-details tbody tr td:nth-child(1), td:first-child {padding-left: 
 
 
 /* --- Changes the way the name of the performer is displayed --- */
-.performer-head h2 {font-family: Helvetica, "Helvetica Neue", "The Sans", "Segoe UI" !important; font-weight:bold; text-shadow: 2px 2px 2px #111 }
+.performer-head h2 {font-family: Helvetica, "Helvetica Neue", "The Sans", "Segoe UI" !important; 
+	font-weight:bold; text-shadow: 2px 2px 2px #111 }
 
 /* --- Leave some space between the name and the Fav/Link/Twitter/IG icons --- */
 #performer-page .performer-head .name-icons {margin-left: 22px}
 
-
+/* --- Highlighter for active Details/Scenes/Images/Edit/Operations --- */
+.nav-tabs .nav-item.show .nav-link, .nav-tabs .nav-link.active {
+	background-color: rgba(5,30,35,0.46);
+}
 
 
 
@@ -377,7 +381,8 @@ table#performer-details tbody tr td:nth-child(1), td:first-child {padding-left: 
 
 
 /* --- The name of the Scene. Different font, less space to the left and to the top, Text-Shadow --- */
-h5.card-section-title {font-family: Helvetica, "Helvetica Neue", "The Sans", "Segoe UI" !important; font-size: 1.22rem; font-weight:bold; line-height:132%; text-shadow: 2px 2px 1px #000 !important}
+h5.card-section-title {font-family: Helvetica, "Helvetica Neue", "The Sans", "Segoe UI" !important; 
+	font-size: 1.22rem; font-weight:bold; line-height:132%; text-shadow: 2px 2px 1px #000 !important}
 
 
 /* --- Removes the horizontal line that separates the date/description text from the Tags/Performer/etc. icons --- */
@@ -413,7 +418,8 @@ h5.card-section-title {font-family: Helvetica, "Helvetica Neue", "The Sans", "Se
 /* Improves the way the scene picture is displayed when the resolution isn't 16:9 (e.g. 4:3) --- */
 .zoom-1 .video-section {object-fit: cover !important;height:187px;overflow:hidden;}
 .zoom-1 .scene-card-preview { height: 188px; }
-.zoom-1 .scene-card-video {width: 348px; min-height:209px; max-height: 405px; height:auto; object-fit: cover !important; margin-top:-2%; margin-left:-6px; zoom:103%;  }
+.zoom-1 .scene-card-video {width: 348px; min-height:209px; max-height: 405px; height:auto; 
+	object-fit: cover !important; margin-top:-2%; margin-left:-6px; zoom:103%;  }
 
 .zoom-2 .video-section {height:240px; object-fit: cover !important; overflow:hidden;}
 .zoom-2 .scene-card-video {min-height:199px; height:auto; object-fit: cover !important; margin-top:-2%; zoom:103%;  }
@@ -422,16 +428,29 @@ h5.card-section-title {font-family: Helvetica, "Helvetica Neue", "The Sans", "Se
 .scene-card-link {height:195px; overflow:hidden;}
 
 
-/* --- Moves the Tags-, Performer-, O-Counter-, Gallery- and Movie-Icon from below the description to the bottom right corner of the card --- */
-.scene-popovers, .card-popovers { 
-margin-bottom: 3px;
-margin-top:-44px;
-justify-content: flex-end;
-}
-
 
 /* --- Tightens the space between the Tags-, Performer-, O-Counter-, Gallery- and Movie-Icons --- */
 .btn-primary { margin:0 -3px 0 -10px}
+
+/* --- Moves the Tags-, Performer-, O-Counter-, Gallery- and Movie-Icon from below the description 
+	to the bottom right corner of the card --- */
+.scene-popovers, .card-popovers { 
+min-width:0;
+margin-bottom: 3px;
+margin-top:-40px; 
+justify-content: flex-end;
+}
+
+/* --- Adds an invisible dot after the description text, Also leaves 80 pixels space to enforce a line break, 
+	so it leaves some space in the bottom right corner of the card for the icons in the Selector above --- */
+.card-section p:after 
+{
+	font-size: 1px;
+	color: rgba(0,0,0, .01);
+	padding-right: 40px;
+	margin-right: 40px;
+	content: ".";
+}
 
 
 
@@ -592,6 +611,8 @@ padding-left:17px;
 }
 
 
+
+
 /* ==============  IMAGES ==============  */
 
 div.image-card .rating-banner {
@@ -621,12 +642,15 @@ div.image-card .rating-5 {
 }
 
 div.image-card .scene-popovers, div.image-card .card-popovers {
-	margin-top: -2px; 
+	margin-top: -2px;
 	justify-content: flex-end;
 }
 div.image-card hr, .scene-card.card>hr{
 	border-top: 0px solid rgba(0,0,0,.1); 
 }
+
+
+
 
 /* ==============  GALLERIES ==============  */
 
@@ -667,13 +691,12 @@ div.gallery-card .scene-popovers, div.gallery-card .card-popovers {
 }
 
 
+
+
 /* ==============  MISC ==============  */
 
 
-.svg-inline--fa.fa-w-18 {
-    width: 1.4em;
-}
-
+.svg-inline--fa.fa-w-18 {width: 1.4em;}
 
 .nav-link > .minimal {  margin: 1px;}
 
@@ -682,15 +705,7 @@ div.gallery-card .scene-popovers, div.gallery-card .card-popovers {
 input[type=range].zoom-slider{ max-width:140px;width:140px; }
 
 
-.tag-item {
-	background-color: #126a95;
-	color: #EEE;
-	font-weight:bold;
-	font-size: 13px;
-	line-height: 18px;
-	margin: 4px;
-	padding: 4px 7px;
-}
+
 
 .tag-details .logo {
     background-color: rgba(0, 0, 0, .48);
@@ -700,11 +715,39 @@ input[type=range].zoom-slider{ max-width:140px;width:140px; }
 
 .search-item {
     background-color: none;
-    background-color: rgba(16,22,26,0.27) !important;
+    background-color: rgba(16,22,26,0.27);
 }
 
 .btn-secondary.disabled, .btn-secondary:disabled {
     background-color: none;
-    background-color: rgba(16,22,26,0.67) !important;
+    background-color: rgba(16,22,26,0.67);
 }
 
+
+
+
+/* --- Adds a text shadow to the statistics on the startpage --- */
+.stats .title {
+	text-shadow: 2px 2px 4px #282828;
+}
+
+
+.popover {
+	padding:7px;
+	background-color: rgba(5,30,35,0.85) !important;
+	box-shadow: 3px 3px 6px rgba(20, 20, 20, .8);
+}
+
+.tag-item {
+	font: normal 13px "Lucida Grande", sans-serif, Arial, Verdana;
+	background-color: #1d6b8d;
+	color: #fff;
+	font-weight:bold;
+	letter-spacing: 0.05rem;
+	line-height: 18px;
+	margin: 4px;
+	padding: 4px 7px;
+}
+
+
+```
