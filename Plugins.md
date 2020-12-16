@@ -7,3 +7,4 @@ To install a plugin, save them to `%USERPROFILE%\.stash\plugins` on Windows or `
 Plugin | Author | Description
 -|-|-
 [Duplicate Finder](https://github.com/WithoutPants/stash-plugin-duplicate-finder) | WithoutPants | Detects and marks duplicate scenes within Stash
+[Performer Creator](https://github.com/com1234475/stash-plugin-performer-creator) | com1234475 | Creates performers from scenes
