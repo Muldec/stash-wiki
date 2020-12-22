@@ -749,5 +749,19 @@ input[type=range].zoom-slider{ max-width:140px;width:140px; }
 	padding: 4px 7px;
 }
 
+/* --- Adjust the lengths of the Performer, Movies and Tags fields when editing a scene while the scene plays --- */
+#scene-edit-details .col-sm-9 {
+    flex: 0 0 100%;
+    max-width: 100%;
+}
+
+/* --- Cuts the name of Performers, Movies and Tags short if they go longer than the length of the field --- */
+div.react-select__control .react-select__multi-value {
+  max-width: 285px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
 
 ```
