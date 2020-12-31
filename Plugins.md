@@ -8,3 +8,4 @@ Plugin | Author | Description
 -|-|-
 [Duplicate Finder](https://github.com/WithoutPants/stash-plugin-duplicate-finder) | WithoutPants | Detects and marks duplicate scenes within Stash
 [Performer Creator](https://github.com/com1234475/stash-plugin-performer-creator) | com1234475 | Creates performers from scenes
+[StashPlugins](https://github.com/niemands/StashPlugins) | niemands | Add urls to scenes downloaded by Youtube-dl. Copy information from attached scene to galleries. Bulk scene url scraping. Update all image titles (Fixes natural sort)
