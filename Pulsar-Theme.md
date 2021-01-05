@@ -7,7 +7,8 @@
     </a>
 </p>
 
-<img src="https://i.imgur.com/I8A2PwH.jpg" />
+<img src="https://i.imgur.com/olaWUAJ.jpg" />
+<img src="https://i.imgur.com/9yI7ePB.jpg" />
 &nbsp;
 
 A new custom theme for Stash. Installation is quick and easy so you should be ready to install it in just a few simple steps. 
@@ -48,13 +49,13 @@ Enjoy!
 
 
 ```
-/*	StashApp Pulsar Theme - Fonzie 2020 v1.1.5	*/
+/*	StashApp Pulsar Theme - Fonzie 2020-21 v1.2.0	*/
 
 /* ========= General ========= */
 
 body {
 	background-image:url("https://i.imgur.com/gQtSoev.jpg");	/*	Aphonus	*/
-/*	background-image:url("https://i.imgur.com/6BBd6aa.jpg");	/*	Plex		*/
+/*	background-image:url("https://i.imgur.com/6BBd6aa.jpg");	/*	Plex	*/
 /*	background-image:url("https://i.imgur.com/xAzxryr.jpg");	/*	Almora	*/
 /*	background-image:url("https://i.imgur.com/0iN75zD.jpg");	/*	Dacirus	*/
 /*	background-image:url("https://i.imgur.com/g5ECcdD.jpg");	/*	Drionope	*/
@@ -65,7 +66,10 @@ body {
 /*	background-image:url("https://i.imgur.com/190rDim.jpg");	/*	Ongion	*/
 /*	background-image:url("https://i.imgur.com/IpvdJVn.jpg");	/*	PurpleRough */
 /*	background-image:url("https://i.imgur.com/hAHylub.jpg");	/*	Tesioria	*/
-/*	background-image:url("./background.jpg");				/*			*/
+/*	background-image:url("https://i.imgur.com/QKiFSvE.jpg");	/*	Ichix	*/
+/*	background-image:url("https://i.imgur.com/8cIqGWj.jpg");	/*	SeaGreen	*/
+/*	background-image:url("https://i.imgur.com/WNXNwV3.jpg");	/*	BrownBlur	*/
+/*	background-image:url("./background.jpg");			/*	Local BG	*/
     
 	width: 100%;
 	height: 100%;
@@ -75,9 +79,25 @@ body {
 	background-color:#127aa5;
 	background-attachment: fixed;
 	background-position: center;
+	color: #f9fbfd;
+}
+
+:root {
+	--HeaderFont: Helvetica, "Helvetica Neue", "The Sans", "Segoe UI";
+	--std-txt-shadow: 2px 2px 1px #000;
+	--white: #ffffff;
 }
 
 
+/* --- The Home button in the top left corner of each page. Remove the last 3 lines if you don't like the logo --- */
+button.minimal.brand-link.d-none.d-md-inline-block.btn.btn-primary {
+	text-transform: uppercase;
+	font-weight: bold;
+	margin-left:1px;
+	background-image:url("./favicon.ico");
+	padding-left:40px;
+	background-repeat: no-repeat;
+}
 
 /* --- Makes the background of the Navigation Bar at the Top half-transparent --- */
 .bg-dark {background: rgba(10, 20, 25, 0.50)!important;}
@@ -86,42 +106,41 @@ body {
 .main { margin-top:18px }
 .top-nav { padding: .13rem 1rem; }
 
+
 /* --- Changes how the Bar at the top of the page behaves --- */
-.fixed-bottom, .fixed-top { position: relative !important; top:0px !important}
+.fixed-bottom, .fixed-top { position: relative !important; top:0px !important} 
+
 
 /* The pagination at the top and at the bottom of the Scenes/Performer/Images/... pages; 
 transparent background, rounded corners, etc. */
 .filter-container, .operation-container {
-    background-color: rgba(0, 0, 0, .22);
-    box-shadow: none;
-    margin-top: 6px;
-    border-radius: 5px;
-    padding: 5px;
+	background-color: rgba(0, 0, 0, .22);
+	box-shadow: none;
+	margin-top: 6px;
+	border-radius: 5px;
+	padding: 5px;
 }
-
-
-/* --- The width of the page. Leaves some more space left and right. --- */
-.container-fluid {
-	width:96%!important; 
-	min-width:920px; 
-	margin-left: auto !important; 
-	margin-right: auto !important; 
-}
-
 
 
 
 /* --- Changes the space between the button in the top right corner of the page --- */
 .order-2 button { margin-left: 4px }
 
+/* --- Space between the items in the Nav bar --- */
+.nav-link > .minimal {  margin: 0px;}
+
 
 /* Each item on the Scenes/Performers/Tags/... pages */
 .card {
 	padding: 20px; 
-	margin: 4px 0.50% 12px;
-	background-color: rgba(16, 20, 25, .33); 
+	margin: 4px 0.5% 12px;
+	background-color: rgba(15, 20, 30, .35); 
 	box-shadow: 2px 2px 6px rgba(0, 0, 0, .55);
 }
+
+/* --- Color that is used within .card secments --- */
+.text-muted {	color: #f0f0f0 !important}
+
 
 /* --- Increases the rounded borders of each item on the Scenes/Performers/... pages for 6px in 10px --- */
  .card { border-radius: 10px; }
@@ -129,19 +148,11 @@ transparent background, rounded corners, etc. */
 
 .bg-secondary {
 	background: none;
-	background-color: rgba(5, 20, 25, .6) !important;
+	background-color: rgba(10, 25, 30, .62) !important;
 }
  
-.text-white {
-	color: #eee !important;
-}
-
-
-
-
-.border-secondary {
-    border-color: #2f3335 !important;
-}
+.text-white {	color: #f0f0f0 }
+.border-secondary {	border-color: #2f3335 }
  
 .btn-secondary.filter-item.col-1.d-none.d-sm-inline.form-control {
     background-color: rgba(0, 0, 0, .08);
@@ -151,115 +162,61 @@ transparent background, rounded corners, etc. */
 .btn-secondary {
     color: #f2f2f2;
     background-color: rgba(0, 0, 0, .08);
-}
- 
-a {
-    color: hsla(0, 10%, 95%, .75);
-}
- 
-.btn.active {
-    background-color: #2f3335;
-    color: #f5f8fa;
-}
- 
-minimal.w-100.active.btn.btn-primary {
-    background-color: #2f4E72;
-    color: #f5f8fa;
-}
- 
-.btn-primary {
-    color: #fff;
-    background-color: #1f2326;
-    border-color: #374242;
-}
+/*    border-color: #393b39;*/
+    border-color: #2c2f35;
 
-/*
-.nav-tabs .nav-link.active {
-    color: #eee;
 }
-*/
+ 
+a {	color: hsla(0, 10%, 95%, .75);}
 
 
 
-
-
-.nav-tabs .nav-link.active:hover {
-    border-bottom-color: #eee;
-    outline: 0;
-}
- 
-.nav-tabs .nav-link {
-    outline: 0;
-}
- 
-.input-control,
-.input-control:focus {
-    background-color: rgba(16, 22, 26, .3);
-}
- 
- 
-.btn-primary:not(:disabled):not(.disabled).active,
-.btn-primary:not(:disabled):not(.disabled):active,
-.show>.btn-primary.dropdown-toggle {
-    color: #fff;
-    border-color: #eee;
-}
- 
-.nav-pills .nav-link.active,
-.nav-pills .show>.nav-link {
-    color: #eee;
-    background-color: #1f2326;
-}
- 
-.btn-primary.focus,
-.btn-primary:focus,
-.btn-primary:not(:disabled):not(.disabled).active:focus,
-.btn-primary:not(:disabled):not(.disabled):active:focus,
-.show>.btn-primary.dropdown-toggle:focus {
-	    box-shadow: none;
-}
-
- 
- 
 /* --- Changes the color of the active page in the Navgation Bar --- */ 
 .btn-primary:not(:disabled):not(.disabled).active,
 .btn-primary:not(:disabled):not(.disabled):active,
 .show>.btn-primary.dropdown-toggle {
 	color: #fff;
 	background-color: rgba(22, 50, 60, .75);
+	border-color: #fff;
+}
+
+/* --- No border of the active element in the Navgation Bar --- */
+.btn-primary.focus,
+.btn-primary:focus,
+.btn-primary:not(:disabled):not(.disabled).active:focus,
+.btn-primary:not(:disabled):not(.disabled):active:focus,
+.show>.btn-primary.dropdown-toggle:focus {box-shadow: none;}
+
+.btn-primary:not(:disabled):not(.disabled).active,
+.btn-primary:not(:disabled):not(.disabled):active,
+.show>.btn-primary.dropdown-toggle {
+	color: #fff;
 	border-color: #eee;
 }
- 
- 
- 
-input[type="range"]::-moz-range-track {
-	background: hsla(0, 0%, 100%, .25);
+
+/* 
+.nav-pills .nav-link.active, .nav-pills .show>.nav-link {
+	color: #eee;
+	background-color: #1f2326;
 }
- 
-input[type="range"]::-moz-range-thumb {
-	background: #bcbcbc;
-}
- 
+
 div.react-select__control {
-    background-color: hsla(0, 0%, 39.2%, .4);
-    color: #182026;
-    border-color: #394b59;
-    cursor: pointer;
+	background: rgba(15,15,25,0.35);
+	border-color: #394b59;
+	cursor: pointer;
 }
- 
+
 .scene-wall-item-text-container {
-    background: radial-gradient(farthest-corner at 50% 50%, rgba(50, 50, 50, .5) 50%, #323232 100%);
-    color: #eee;
+	background: radial-gradient(farthest-corner at 50% 50%, rgba(50, 50, 50, .5) 50%, #323232 100%);
+	color: #ee;
 }
- 
- 
+*/
+
 .container-fluid,.container-lg,.container-md,.container-sm,.container-xl {
-    width: 100%;
-    margin-right: 0px;
-    margin-left: 0px;
- }
-
-
+	width: 100%;
+	margin-right: 0px;
+	 margin-left: 0px;
+}
 
 
 
@@ -268,26 +225,26 @@ div.react-select__control {
 /* ================ Performer =============== */
 
 
-
-/* --- Changes the width of the Performer Card from 280px to 205px and therefore the size of the image --- */
+/* --- Changes the width of the Performer Card from 280px to a dynamic system and therefore the size of the image --- */
 /* --- In Full screen HD 1920x1080 you now see 8 performers per row instead of 6 --- */
- .performer-card, .card-image {  width: 205px; }
+/*.performer-card-image, .performer-card, .card-image {  min-width: 160px; width: calc(108px + 10.625vw / 2); max-width: 230px }  */
+.performer-card-image, .performer-card, .card-image {  min-width: 160px; width: calc(112px + 19vw / 3.8); max-width: 230px } 
 
-/* --- Changes the height of the Performer Card from 420px to 306px to keep the 2x3 picture ratio --- */
-.performer-card-image, .justify-content-center .card-image { height:306px } 
-
+/* --- Changes the height of the Performer Card to keep the 2x3 picture ratio --- */
+/*.performer-card-image, .justify-content-center .card-image { min-height:240px; height: calc((108px + 10.625vw / 2) * 1.5); max-height: 345px}  */
+.performer-card-image, .justify-content-center .card-image { min-height:240px; height: calc((112px + 19vw / 3.8) * 1.5); max-height: 345px} 
 
 
 /* --- The name of the Performer. Different font, less space to the left & to the top, Text-Shadow --- */
-.text-truncate { 
-	margin-left:-2px; 
-	margin-top: -2px; 
-	width:120%; 
-	font-family: Helvetica, "Helvetica Neue", "The Sans", "Segoe UI" !important; 
-	font-size: 20px; 
-	line-height:26px; 
+.text-truncate, .card.performer-card .TruncatedText {
+	margin-left:-1.5%; 
+	margin-top: -1px; 
+	width: 120%; 
+	font-family: var(--HeaderFont);
+	font-size: 112%; 
+	line-height:122%; 
 	font-weight:bold; 
-	text-shadow: 2px 2px 1px #000 !important
+	text-shadow: var(--std-txt-shadow);
 }
 
 
@@ -310,18 +267,19 @@ div.card.performer-card div.text-muted a {text-shadow: 1px 2px 2px #333}
 .card-section span {margin-bottom:3px}
 
 /* --- Moves the "Favorite" banner a little more to the top left corner --- */
-.rating-banner {
-padding: 8px 41px 6px;
-line-height: 1.1rem;
-transform: rotate(-41deg);
-top: 8px }
+div.card.performer-card .rating-banner {
+	top: 8px 
+	padding: 8px 42px 6px;
+	line-height: 1.1rem;
+	transform: rotate(-41deg);
+	box-shadow: 2px 2px 5px rgba(0, 0, 0, .95);
+}
 
 
 
 
 
-
-/* ==================== Performer Page ======================= */
+/* ========================= Performer Page ================================= */
 /* === The page that you see when you click on the picture of a Performer === */
 
 /* --- The picture of the Performer on the left. 3D effect thanks to background shadows and more rounded corners --- */
@@ -336,24 +294,35 @@ top: 8px }
 .performer-image-container {padding-bottom: 11px}
 
 
-/* --- The following 9 Selectors change the way the details box is displayed --- */
+/* --- The following 10 Selectors change the way the details box is displayed --- */
 #performer-details-tabpane-details .text-input, #performer-details-tabpane-details .text-input:disabled, 
 #performer-details-tabpane-details .text-input[readonly] {background-color: rgba(16,22,26,0.0);}
 
 .text-input, input.form-control-plaintext { background-color:none;}
 #performer-details .input-control, .text-input {box-shadow: none;}
 
-#performer-details-tabpane-details { background-color: rgba(16,22,26,0.28); border-radius: 8px}
-#performer-details-tabpane-details td { padding: 9px; }
+#performer-details-tabpane-details { background-color: rgba(15,20,30,0.26); border-radius: 10px; max-width:1000px}
+#performer-details-tabpane-edit {max-width:1000px}
+
+@media (min-width: 1200px) {
+	#performer-details-tabpane-details td { padding: 9px; }
+	table#performer-details tbody tr td:nth-child(1), td:first-child {padding-left: 22px; width: 185px;}
+}
+@media (max-width: 1200px) {
+	table#performer-details tbody tr td:nth-child(1), td:first-child {padding-left: 11px; }
+	#performer-page .performer-head {    margin-bottom: 1rem; }
+	#performer-page { margin: 0 -6px 0 -15px; }
+}
+
+
 #performer-details-tabpane-details tr:nth-child(odd) {     background-color: rgba(16,22,26,0.1); }
 table#performer-details {color:#FFF; text-shadow: 1px 1px 1px #000;}
-table#performer-details tbody tr td:nth-child(1), td:first-child {padding-left: 22px; width: 185px;}
+
 
 
 
 /* --- Changes the way the name of the performer is displayed --- */
-.performer-head h2 {font-family: Helvetica, "Helvetica Neue", "The Sans", "Segoe UI" !important; 
-	font-weight:bold; text-shadow: 2px 2px 2px #111 }
+.performer-head h2 {font-family: var(--HeaderFont); font-weight:bold; text-shadow: 2px 2px 2px #111 }
 
 /* --- Leave some space between the name and the Fav/Link/Twitter/IG icons --- */
 #performer-page .performer-head .name-icons {margin-left: 22px}
@@ -368,7 +337,11 @@ table#performer-details tbody tr td:nth-child(1), td:first-child {padding-left: 
 
 
 
-/* ============ Scenes ============ */
+
+
+
+
+/* ======================= Scenes ======================== */
 
 
 /* --- Remove the comments if you don't want to see the Description Text of the scenes --- */
@@ -381,8 +354,14 @@ table#performer-details tbody tr td:nth-child(1), td:first-child {padding-left: 
 
 
 /* --- The name of the Scene. Different font, less space to the left and to the top, Text-Shadow --- */
-h5.card-section-title {font-family: Helvetica, "Helvetica Neue", "The Sans", "Segoe UI" !important; 
-	font-size: 1.22rem; font-weight:bold; line-height:132%; text-shadow: 2px 2px 1px #000 !important}
+h5.card-section-title, .scene-tabs .scene-header {	
+	font-family: var(--HeaderFont);
+	font-size: 1.25rem;
+	font-weight:bold;
+	line-height:132%;
+	text-shadow: var(--std-txt-shadow);
+}
+.scene-tabs .scene-header { font-size: 24px; margin-bottom:25px }
 
 
 /* --- Removes the horizontal line that separates the date/description text from the Tags/Performer/etc. icons --- */
@@ -403,26 +382,29 @@ h5.card-section-title {font-family: Helvetica, "Helvetica Neue", "The Sans", "Se
 	bottom:0px;
 	color: #FFF;
 	font-weight: bold;
-	letter-spacing: 0.00rem;
+	letter-spacing: 0.0rem;
 	text-shadow: 1px 1px 2px #000;
 }
 
-/* --- Changes the spaces between the items on the Scenes page --- */
-.zoom-0 {margin: 4px 0.25% 10px; !important }
 
+/* --- Changes the spaces between the items on the Scenes page --- */
+.zoom-0 {margin: 4px 0.50% 10px; !important }
+
+@media (min-width: 1380px) {
 /* --- Changes the size of the items on the Scenes page --- */
-.zoom-1 {width: 335px!important}
-.zoom-2 {width: 425px!important}
+.zoom-1 {width: 350px!important}
+.zoom-2 {width: 440px!important}
+}
 
 
 /* Improves the way the scene picture is displayed when the resolution isn't 16:9 (e.g. 4:3) --- */
 .zoom-1 .video-section {object-fit: cover !important;height:187px;overflow:hidden;}
 .zoom-1 .scene-card-preview { height: 188px; }
-.zoom-1 .scene-card-video {width: 348px; min-height:209px; max-height: 405px; height:auto; 
-	object-fit: cover !important; margin-top:-2%; margin-left:-6px; zoom:103%;  }
+.zoom-1 .scene-card-video {width: 348px; min-height:209px; max-height: 405px; height:auto; object-fit: cover !important; margin-top:-2%; margin-left:-6px; zoom:103%;  }
 
 .zoom-2 .video-section {height:240px; object-fit: cover !important; overflow:hidden;}
 .zoom-2 .scene-card-video {min-height:199px; height:auto; object-fit: cover !important; margin-top:-2%; zoom:103%;  }
+
 
 
 .scene-card-link {height:195px; overflow:hidden;}
@@ -430,25 +412,23 @@ h5.card-section-title {font-family: Helvetica, "Helvetica Neue", "The Sans", "Se
 
 
 /* --- Tightens the space between the Tags-, Performer-, O-Counter-, Gallery- and Movie-Icons --- */
-.btn-primary { margin:0 -3px 0 -10px}
+.btn-primary { margin:0 -3px 0 -9px}
 
-/* --- Moves the Tags-, Performer-, O-Counter-, Gallery- and Movie-Icon from below the description 
-	to the bottom right corner of the card --- */
+/* --- Moves the Tags-, Performer-, O-Counter-, Gallery- and Movie-Icon from below the description to the bottom right corner of the card --- */
 .scene-popovers, .card-popovers { 
-min-width:0;
-margin-bottom: 3px;
-margin-top:-40px; 
-justify-content: flex-end;
+	min-width:0;
+	margin-bottom: 3px;
+	margin-top:-40px;
+	justify-content: flex-end;
 }
 
-/* --- Adds an invisible dot after the description text, Also leaves 80 pixels space to enforce a line break, 
-	so it leaves some space in the bottom right corner of the card for the icons in the Selector above --- */
+/* --- Adds an invisible dot after the description text, Also leaves ~80 pixels space to enforce a line break, so it leaves some space in the bottom right corner of the card for the icons in the Selector above --- */
 .card-section p:after 
 {
 	font-size: 1px;
 	color: rgba(0,0,0, .01);
-	padding-right: 40px;
-	margin-right: 40px;
+	padding-right: 3.2vw; 
+	margin-right: 2.8vw; 
 	content: ".";
 }
 
@@ -460,7 +440,7 @@ justify-content: flex-end;
 .rating-2 {width:43px}
 .rating-3 {width:65px} 
 .rating-4 {width:86px}  
-.scene-card.card .rating-5 {background:none;width:108px}
+.scene-card.card .rating-5 {background:none; width:108px}
 .rating-1, .rating-2, .rating-3, .rating-4, .scene-card.card .rating-5 {
 	background:none;
 	background-image:url("https://i.imgur.com/YM1nCqo.png");
@@ -484,19 +464,18 @@ justify-content: flex-end;
 
 
 
-
-
-
 /* --- Improves how the Preview Videos in the Wall View are displayed --- */
-.wall-item-container { height: 100%; }
-.wall-item-media { height: auto;  width: 101%;     background-color: rgba(0, 0, 0, .0);}
-.wall-item-text {margin-bottom:2px; color: #222; text-shadow: 1px 1px 1px #fff }
-.wall-item-container {background-color: rgba(0, 0, 0, .20); }
-.wall-item { height: auto; max-height:254px }
-
+.wall-item-container {width: 100%; background-color: rgba(0, 0, 0, .10); overflow:hidden }
+.wall-item-media { height:100%; background-color: rgba(0, 0, 0, .0);overflow:hidden }
+.wall-item-anchor { width: 102%; overflow:hidden }
+.wall-item-text {margin-bottom:0px; color: #111; text-shadow: 1px 1px 1px #fff }	
 
 
 .scene-popovers .fa-icon {margin-right: 2px;}
+
+/* --- Changes the Organized Button color when watching a video. Organized = Green, Not Organized = Red --- */
+.organized-button.not-organized { color: rgba(207,10,20,.8); }
+.organized-button.organized {	color: #06e62e;}
 
 
 
@@ -505,27 +484,45 @@ justify-content: flex-end;
 /* ============== Studio ================= */
 
 
-.studio-card {
-    padding: 0 !important;
-padding-bottom:14px !important;
+.studio-card {	padding: 0 0 14px 0;}
+
+.studio-details input.form-control-plaintext {	background-color: rgba(16,22,26,.0); }
+.studio-details .react-select__control--is-disabled  {	background: none; border:0}
+
+.studio-details .form-group, .studio-details td { padding: 8px; }
+.studio-details table td:nth-child(1) {color:#FFF; text-shadow: 1px 1px 1px #000;}
+
+.studio-card-image {	max-height: 175px; height:175px;}
+.studio-card .card-section {	margin-top: 22px;}
+
+.tag-card .TruncatedText, div.card.studio-card .TruncatedText, .tagger-container .TruncatedText  {
+	font-family: var(--HeaderFont);
+	font-size: 125%; 
+	line-height:125%; 
+	font-weight:bold; 
+	text-shadow: var(--std-txt-shadow);
 }
 
-.studio-card-image {
-max-height: 175px;
-height:175px;
-}
-.studio-card .card-section {
-    margin-top: 22px !important;
-}
 
+/* --- The following 15 Selectors modify the info box on the left after clicking on a movie --- */
+.studio-details .text-input, #performer-details-tabpane-details .text-input:disabled, 
+.studio-details .text-input[readonly] {background-color: rgba(16,22,26,0.0);}
 
+.text-input, input.form-control-plaintext { background-color:none;}
+.studio-details .input-control, .text-input {box-shadow: none;}
 
-.zoom-1 {width:350px} 
-.col-sm-9 {
-    flex: 0 0 80%;
-    max-width: 80%;
-}
+.studio-details table { margin-top: 20px; background-color: rgba(15,20,30,0.20); border-radius: 10px; margin-bottom:20px;}
+.studio-details .form-group {background-color: rgba(15,20,30,0.20); margin:0;}
 
+.studio-details table div.react-select__control {background: none; border: 0px;margin:0}
+.studio-details table .css-1hwfws3 { padding:0px; }
+
+.studio-details .form-group, .movie-details td { padding: 8px; }
+.studio-details .form-group td:nth-child(1), 
+.studio-details table tbody tr td:nth-child(1), td:first-child {padding-left: 12px; width: 130px;}
+
+.studio-details table tr:nth-child(odd) {     background-color: rgba(16,22,26,0.1); }
+.studio-details .form-group, .studio-details table td:nth-child(1) {color:#FFF; text-shadow: 1px 1px 1px #000;}
 
 
 
@@ -535,35 +532,46 @@ height:175px;
 
 /* ============== TAGS =============== */
 
-
-.tag-card { margin: 4px 0.45% 10px; padding:0px;}
-.tag-card.zoom-0 { width: 335px; height:230px;}
+.tag-card { margin: 4px 0.5% 10px; padding:0px;}
+.tag-card.zoom-0 { width: 335px; height:230px; min-width:335px}
 #tags .card {padding:0 0 10px 0; }
 
 .zoom-0 .gallery-card-image, .zoom-0 .tag-card-image {
-    max-height: 195px;height:190px
+    max-height: 195px;height:190px;
 }
-
 
 .tag-card-header {height:190px;overflow:hidden;}
 
+.tag-card hr, .tag-card>hr{	border-top: 0px solid rgba(0,0,0,.1);	}
+
+.tag-details input.form-control-plaintext, .tag-card .TruncatedText, div.card.tag-card .TruncatedText  {
+	font-family: var(--HeaderFont);
+	font-size: 125%; 
+	line-height:125%; 
+	font-weight:bold; 
+	text-shadow: var(--std-txt-shadow);
+}
+
 .zoom-0 .tag-card-image {
-zoom: 101%;
-object-fit: cover;
-overflow:hidden;
-width: 338px;
-margin-top: -2px;
-margin-left: -1%;
-/*margin-bottom:7px;*/
+	zoom: 101%;
+	object-fit: cover;
+	overflow:hidden;
+	width: 338px;
+	margin-top: -2px;
+	margin-left: -1%;
 }
 
 .tag-card .scene-popovers, .tag-card .card-popovers { 
-margin-bottom: 4px;
-margin-top:-34px;
-padding-left:17px;
+	margin-bottom: 4px;
+	margin-top:-34px;
+	padding-left:17px;
 }
 
 .zoom-0 .tab-pane .card-image { height:210px }
+
+.tag-details input.form-control-plaintext {     background-color: rgba(16,22,26,.0); }
+
+
 
 
 
@@ -571,9 +579,16 @@ padding-left:17px;
 /* ==============  MOVIES ==============  */
 /* --- Changes the width of the items so only the front cover is displayed. Also replaces the ratings banner with a star rating --- */
 
-.movie-card .text-truncate {
+.movie-card .text-truncate, div.card.movie-card .TruncatedText {
 	font-size: 17px !important;
-	max-width:200px;
+	font-family: var(--HeaderFont);
+	text-shadow: var(--std-txt-shadow);
+	font-weight: bold;
+	max-width:210px;
+	white-space: nowrap;
+	overflow: hidden; 
+	text-overflow: ellipsis;
+
 }
 
 .movie-card-header {height:320px}
@@ -613,6 +628,35 @@ padding-left:17px;
 
 
 
+/* --- The following 15 Selectors modify the info box on the left after clicking on a movie --- */
+.movie-details .text-input, #performer-details-tabpane-details .text-input:disabled, 
+.movie-details .text-input[readonly] {background-color: rgba(16,22,26,0.0);}
+
+.text-input, input.form-control-plaintext { background-color:none;}
+.movie-details .input-control, .text-input {box-shadow: none;}
+
+.movie-details table { margin-top: 20px; background-color: rgba(15,20,30,0.20); border-radius: 10px 10px 0px 0px; margin-bottom:0;}
+.movie-details .form-group {background-color: rgba(15,20,30,0.20); margin:0;}
+
+.movie-details table div.react-select__control {background: none; border: 0px;margin:0}
+.movie-details table .css-1hwfws3 { padding:0px; }
+
+.movie-details .form-group, .movie-details td { padding: 8px; }
+.movie-details .form-group td:nth-child(1), 
+.movie-details table tbody tr td:nth-child(1), td:first-child {padding-left: 12px; width: 120px;}
+
+.movie-details table tr:nth-child(odd) {     background-color: rgba(16,22,26,0.1); }
+.movie-details .form-group, .movie-details table td:nth-child(1) {color:#FFF; text-shadow: 1px 1px 1px #000;}
+
+.movie-details div.form-group:nth-of-type(3) { border-radius: 0px 0px 20px 10px; background-color: rgba(16,22,26,0.3); margin-bottom:15px }
+.movie-details div.form-group {display: flex; flex-wrap: wrap;	overflow: hidden; 	text-overflow: ellipsis;}
+.movie-details div.form-group label.form-label {width: 120px; padding:0 20px 0 5px}
+.movie-details div.form-group div {width:65%; text-align:left; 	}
+
+
+
+
+
 /* ==============  IMAGES ==============  */
 
 div.image-card .rating-banner {
@@ -648,6 +692,9 @@ div.image-card .scene-popovers, div.image-card .card-popovers {
 div.image-card hr, .scene-card.card>hr{
 	border-top: 0px solid rgba(0,0,0,.1); 
 }
+
+
+
 
 
 
@@ -693,17 +740,18 @@ div.gallery-card .scene-popovers, div.gallery-card .card-popovers {
 
 
 
+
+
+
+
 /* ==============  MISC ==============  */
 
 
 .svg-inline--fa.fa-w-18 {width: 1.4em;}
 
-.nav-link > .minimal {  margin: 1px;}
-
 
 /* --- Makes the Zoom Slider on the Scenes, Images, Galleries and Tags pages longer and therefore easier to use --- */
 input[type=range].zoom-slider{ max-width:140px;width:140px; }
-
 
 
 
@@ -723,8 +771,8 @@ input[type=range].zoom-slider{ max-width:140px;width:140px; }
     background-color: rgba(16,22,26,0.67);
 }
 
-
-
+/* --- Edit & Delete buttons when clicking on a studio, tag or movie --- */
+.details-edit {margin-left:3%}
 
 /* --- Adds a text shadow to the statistics on the startpage --- */
 .stats .title {
@@ -733,23 +781,25 @@ input[type=range].zoom-slider{ max-width:140px;width:140px; }
 
 
 .popover {
-	padding:7px;
-	background-color: rgba(5,30,35,0.85) !important;
+	padding:2px;
+	background-color: rgba(5,30,35,0.85); 
 	box-shadow: 3px 3px 6px rgba(20, 20, 20, .8);
+}
+.hover-popover-content {
+	background-color: rgba(195,215,235,0.58) !important; 
 }
 
 .tag-item {
 	font: normal 13px "Lucida Grande", sans-serif, Arial, Verdana;
-	background-color: #1d6b8d;
+	background-color: rgba(20,80,110,1.0); 
 	color: #fff;
-	font-weight:bold;
-	letter-spacing: 0.05rem;
+	letter-spacing: 0.07rem;
 	line-height: 18px;
-	margin: 4px;
-	padding: 4px 7px;
+	margin: 4px 3px;
+	padding: 5px 7px;
 }
 
-/* --- Adjust the lengths of the Performer, Movies and Tags fields when editing a scene while the scene plays --- */
+/* --- Adjust the lengths of the Performer, Movies and Tags fields while editing a scene while the scene plays --- */
 #scene-edit-details .col-sm-9 {
     flex: 0 0 100%;
     max-width: 100%;
@@ -762,6 +812,65 @@ div.react-select__control .react-select__multi-value {
   overflow: hidden;
   text-overflow: ellipsis;
 }
+
+
+
+
+/* --- Performer and Scene Scaping --- */
+.modal-lg, .modal-xl{
+	max-width: 1400px; 
+	width:100%;
+	box-shadow: 5px 5px 9px rgba(15,15,15,.90);
+} 
+
+.modal-body, .modal-footer, .modal-header {
+	background: rgba(50,90,105,0.94);
+}
+
+.modal-body .col-form-label, .modal-footer, .modal-header .col-form-label {
+	text-shadow: var(--std-txt-shadow);
+}
+
+.modal-body .dialog-container .col-lg-3 {
+	flex: 0 0 12%;
+	max-width: 12%;
+	text-shadow: var(--std-txt-shadow);
+}
+
+.modal-body .dialog-container .offset-lg-3{margin-left:12%;} 
+.modal-body .dialog-container .col-lg-9{
+	flex:0 0 88%;
+	max-width:88%;
+} 
+
+
+.input-control, .input-control:disabled, .input-control:focus, .modal-body div.react-select__control, .modal-body .form-control {
+	background: rgba(15,15,20,0.36);
+}
+
+.scraper-table tr:nth-child(2n) {    background: rgba(15,15,20,0.18);}
+
+.nav-pills .nav-link.active, .nav-pills .show>.nav-link { 	background: rgba(15,15,20,0.50);}
+
+
+.btn-secondary:not(:disabled):not(.disabled).active, 
+.btn-secondary:not(:disabled):not(.disabled):active, 
+.show>.btn-secondary.dropdown-toggle { 	background: rgba(15,15,20,0.50);}
+
+
+/* Background when searching for a scene in Tagger view */
+.search-result { 	background: rgba(0,0,0,0.22);}
+.selected-result { 	background: rgba(25,120,25,0.33);}
+.search-result:hover { 	background: rgba(12,12,75,0.25);}
+
+
+.markdown table tr:nth-child(2n) {    background: rgba(25,20,25,0.20);}
+.markdown code, .markdown blockquote, .markdown pre {    background: rgba(25,20,25,0.30);}
+
+
+/* --- Changes the size of the Custum CSS field in the settings --- */
+#configuration-tabs-tabpane-interface  textarea.text-input { min-width:60ex; max-width:55vw !important; min-height: 50ex; }
+
 
 
 ```
