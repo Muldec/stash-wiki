@@ -53,7 +53,7 @@ Enjoy!
 
 
 
-```
+```css
 /*
 StashApp Plex Theme - Fidelio 2020 v1.0.2
  
@@ -252,3 +252,11 @@ option {
     color: #2c2e30;
 }
 ```
+
+For users that have a recent dev build ( after 2021-01-14) an extra part is needed
+```css
+#performer-scraper-popover {
+  z-index: 10;
+}
+```
+You may adjust the z-index if needed although values > 2 should be safe
