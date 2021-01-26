@@ -5,7 +5,7 @@ Depending on the option they can be configured either by editing the `config.yml
 As an example the `port` option can be changed from the default `9999` to `1234`  by one of the below methods
 
 * adding `port: 1234` to the config.yml file
-* setting the ENV variable **STASH_PORT** to **1234** eg `STASH_PORT=1234 ./stash-upload`
+* setting the ENV variable **STASH_PORT** to **1234** eg `STASH_PORT=1234 ./stash`
 * using the flag **--port** when running stash  `./stash --port 1234`
 
 
