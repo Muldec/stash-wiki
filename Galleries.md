@@ -1,3 +1,8 @@
+### Consider the following as outdated. For updated info check the Image Galleries section in stash's app help/manual.
+
+***
+
+ 
 Stash offers support for image galleries.
 Here are some remarks on using them:
 
