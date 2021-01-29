@@ -17,3 +17,4 @@ external host|external_host|STASH_EXTERNAL_HOST|-| Needed in some cases when you
 plugins path|plugins_path|-|-|The path to the stash plugins folder|Only use if you need to override the default
 scrapers path|scrapers_path|-|-|The path to the scrapers folder|Only use if you need to override the default
 custom served folders|custom_served_folders|-|-|Allows configuration of mapped URLs to file system folders|[PR](https://github.com/stashapp/stash/pull/620)
+maximum upload size|max_upload_size|-|-|Change the maximum size (in MB) for partial imports| default: 1024 (1GB)
