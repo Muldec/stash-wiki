@@ -5,4 +5,4 @@ Please install and use StashApp with that template.
 
 Unraid specific support can be found [here](https://forums.unraid.net/topic/90861-support-stash-corneliousjd-repo/).
 
-For users that want to try the development branch of stash you can change the repo to this one `stashapp/stash:development-x86_64`.
+For users that want to try the development branch of stash you can change the repo to this one `stashapp/stash:development`.
