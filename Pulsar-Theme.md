@@ -9,6 +9,9 @@
 
 <img src="https://i.imgur.com/olaWUAJ.jpg" />
 <img src="https://i.imgur.com/9yI7ePB.jpg" />
+<img src="https://i.imgur.com/MSUp4AL.jpg" />
+<img src="https://i.imgur.com/vhg1ZVq.jpg" />
+
 &nbsp;
 
 A new custom theme for Stash. Installation is quick and easy so you should be ready to install it in just a few simple steps. 
@@ -49,9 +52,11 @@ Enjoy!
 
 
 ```
-/*	StashApp Pulsar Theme - Fonzie 2020-21 v1.2.0	*/
+/*	StashApp Pulsar Theme - Fonzie 2020-21 v1.2.1	*/
+/*	------ Updated to Stash version 0.50 ---------- */
 
-/* ========= General ========= */
+
+/* ============== General =================== */
 
 body {
 	background-image:url("https://i.imgur.com/gQtSoev.jpg");	/*	Aphonus	*/
@@ -101,6 +106,7 @@ button.minimal.brand-link.d-none.d-md-inline-block.btn.btn-primary {
 
 /* --- Makes the background of the Navigation Bar at the Top half-transparent --- */
 .bg-dark {background: rgba(10, 20, 25, 0.50)!important;}
+.form-group .bg-dark {background: rgba(10, 20, 25, 0.20)!important;}
 
 /* --- The space between the Navigation Bar and the rest of the page --- */
 .main { margin-top:18px }
@@ -133,17 +139,23 @@ transparent background, rounded corners, etc. */
 /* Each item on the Scenes/Performers/Tags/... pages */
 .card {
 	padding: 20px; 
-	margin: 4px 0.5% 12px;
-	background-color: rgba(15, 20, 30, .35); 
+	margin: 4px 0.5% 14px;
+	/* --- Adds a glowing shimmer effect --- */
+	background-image: linear-gradient(130deg, rgba(60, 70, 85,0.21), rgba(150, 155, 160,0.30), rgba(35, 40, 45,0.22), rgba(160, 160, 165,0.21), rgba(50, 60, 65,0.30)); 
+	background-color: rgba(16, 20, 25, .25); 
 	box-shadow: 2px 2px 6px rgba(0, 0, 0, .55);
+	/* --- Increases the rounded borders of each item on the Scenes/Performers/... pages for 6px in 10px --- */
+	border-radius: 10px;
+}
+
+/* --- Removes the glowing shimmer effect on the start page and the settings for readability purpose --- */
+.mx-auto.card, .changelog-version.card {
+	background-image: none !important; 
+	background-color: rgba(16, 20, 25, .40) !important; 
 }
 
 /* --- Color that is used within .card secments --- */
 .text-muted {	color: #f0f0f0 !important}
-
-
-/* --- Increases the rounded borders of each item on the Scenes/Performers/... pages for 6px in 10px --- */
- .card { border-radius: 10px; }
 
 
 .bg-secondary {
@@ -232,8 +244,10 @@ div.react-select__control {
 
 /* --- Changes the height of the Performer Card to keep the 2x3 picture ratio --- */
 /*.performer-card-image, .justify-content-center .card-image { min-height:240px; height: calc((108px + 10.625vw / 2) * 1.5); max-height: 345px}  */
-.performer-card-image, .justify-content-center .card-image { min-height:240px; height: calc((112px + 19vw / 3.8) * 1.5); max-height: 345px} 
+.performer-card-image, .justify-content-center .card-image { min-height:240px; height: calc((112px + 19vw / 3.8) * 1.5); max-height: 345px;} 
 
+/* --- Fixes an issue of the card when watching a scene --- */
+.image-section { display: cover;}
 
 /* --- The name of the Performer. Different font, less space to the left & to the top, Text-Shadow --- */
 .text-truncate, .card.performer-card .TruncatedText {
@@ -241,8 +255,8 @@ div.react-select__control {
 	margin-top: -1px; 
 	width: 120%; 
 	font-family: var(--HeaderFont);
-	font-size: 112%; 
-	line-height:122%; 
+	font-size: 120%; 
+	line-height:130%; 
 	font-weight:bold; 
 	text-shadow: var(--std-txt-shadow);
 }
@@ -252,7 +266,7 @@ div.react-select__control {
 .performer-card .flag-icon {
     height: 2rem;
     left: 0.6rem;
-    bottom: 0.15rem;
+    bottom: 0.10rem;
     width: 28px; 
 }
 
@@ -301,8 +315,10 @@ div.card.performer-card .rating-banner {
 .text-input, input.form-control-plaintext { background-color:none;}
 #performer-details .input-control, .text-input {box-shadow: none;}
 
-#performer-details-tabpane-details { background-color: rgba(15,20,30,0.26); border-radius: 10px; max-width:1000px}
+div.react-select__control, #performer-details-tabpane-details {background-color: rgba(15,20,30,0.26); border-radius: 10px; max-width:1000px}
 #performer-details-tabpane-edit {max-width:1000px}
+
+div.react-select__control .css-12jo7m5 {text-shadow: none; }
 
 @media (min-width: 1200px) {
 	#performer-details-tabpane-details td { padding: 9px; }
@@ -317,7 +333,6 @@ div.card.performer-card .rating-banner {
 
 #performer-details-tabpane-details tr:nth-child(odd) {     background-color: rgba(16,22,26,0.1); }
 table#performer-details {color:#FFF; text-shadow: 1px 1px 1px #000;}
-
 
 
 
@@ -365,9 +380,7 @@ h5.card-section-title, .scene-tabs .scene-header {
 
 
 /* --- Removes the horizontal line that separates the date/description text from the Tags/Performer/etc. icons --- */
-.scene-card.card hr, .scene-card.card>hr{
-	border-top: 0px solid rgba(0,0,0,.1); 
-}
+.scene-card.card hr, .scene-card.card>hr{	border-top: 0px solid rgba(0,0,0,.1);	}
 
 
 /* --- Changes regarding the Scene Logo --- */
@@ -398,9 +411,19 @@ h5.card-section-title, .scene-tabs .scene-header {
 
 
 /* Improves the way the scene picture is displayed when the resolution isn't 16:9 (e.g. 4:3) --- */
-.zoom-1 .video-section {object-fit: cover !important;height:187px;overflow:hidden;}
-.zoom-1 .scene-card-preview { height: 188px; }
-.zoom-1 .scene-card-video {width: 348px; min-height:209px; max-height: 405px; height:auto; object-fit: cover !important; margin-top:-2%; margin-left:-6px; zoom:103%;  }
+.zoom-1 .video-section {object-fit: cover !important;height:210px;overflow:hidden;}
+
+
+.zoom-1 .scene-card-preview-image,
+.zoom-1 .scene-card-preview { height: 215px; }
+
+/*
+.gallery-card-preview-image, .gallery-card-preview-video, .scene-card-preview-image 
+*/
+.zoom-1 .scene-card-preview,
+.zoom-1 .scene-card-preview-video,
+.zoom-1 .scene-card-video {width: 350px; min-height:210px; max-height: 405px; height:auto; object-fit: cover !important; margin-top:-2%; margin-left:-6px; zoom:104%;  }
+
 
 .zoom-2 .video-section {height:240px; object-fit: cover !important; overflow:hidden;}
 .zoom-2 .scene-card-video {min-height:199px; height:auto; object-fit: cover !important; margin-top:-2%; zoom:103%;  }
@@ -429,7 +452,7 @@ h5.card-section-title, .scene-tabs .scene-header {
 	color: rgba(0,0,0, .01);
 	padding-right: 3.2vw; 
 	margin-right: 2.8vw; 
-	content: ".";
+	content: " ";
 }
 
 
@@ -451,7 +474,7 @@ h5.card-section-title, .scene-tabs .scene-header {
 .scene-card.card .rating-banner {
 	padding:0;
 	left:5px;
-	top:88%;
+	top:89%;
 	background-position: left;
 	font-size: .01rem;
 	-webkit-transform: rotate(0deg);
@@ -478,13 +501,24 @@ h5.card-section-title, .scene-tabs .scene-header {
 .organized-button.organized {	color: #06e62e;}
 
 
+/* --- Changes the font in the File Info section --- */
+div.scene-file-info .TruncatedText, div.scene-file-info .text-truncate {
+	margin-left:-1.5%; 
+	margin-top: -1px; 
+	width: 120%; 
+	font-family: var(--HeaderFont);
+	font-size: 110%; 
+	line-height:120%; 
+	font-weight:bold; 
+	text-shadow: var(--std-txt-shadow);
+}
 
 
 
 /* ============== Studio ================= */
 
 
-.studio-card {	padding: 0 0 14px 0;}
+.studio-card {	padding: 0 4px 14px;}
 
 .studio-details input.form-control-plaintext {	background-color: rgba(16,22,26,.0); }
 .studio-details .react-select__control--is-disabled  {	background: none; border:0}
@@ -493,9 +527,10 @@ h5.card-section-title, .scene-tabs .scene-header {
 .studio-details table td:nth-child(1) {color:#FFF; text-shadow: 1px 1px 1px #000;}
 
 .studio-card-image {	max-height: 175px; height:175px;}
+.studio-card-image { min-width: 260px; width: calc(238px + 19vw / 3.8); max-width: 360px; margin: 0 6px;}
 .studio-card .card-section {	margin-top: 22px;}
 
-.tag-card .TruncatedText, div.card.studio-card .TruncatedText, .tagger-container .TruncatedText  {
+.no-gutters .TruncatedText, .tag-card .TruncatedText, div.card.studio-card .TruncatedText, .tagger-container .TruncatedText  {
 	font-family: var(--HeaderFont);
 	font-size: 125%; 
 	line-height:125%; 
@@ -503,6 +538,7 @@ h5.card-section-title, .scene-tabs .scene-header {
 	text-shadow: var(--std-txt-shadow);
 }
 
+.no-gutters .TruncatedText {font-size: 115%;}
 
 /* --- The following 15 Selectors modify the info box on the left after clicking on a movie --- */
 .studio-details .text-input, #performer-details-tabpane-details .text-input:disabled, 
@@ -786,17 +822,19 @@ input[type=range].zoom-slider{ max-width:140px;width:140px; }
 	box-shadow: 3px 3px 6px rgba(20, 20, 20, .8);
 }
 .hover-popover-content {
-	background-color: rgba(195,215,235,0.58) !important; 
+	background-image: linear-gradient(160deg, rgba(230,255,240,0.80), rgba(120,130,155, 0.45), rgba(180,190,225, 0.45), rgba(120,130,165, 0.55), rgba(255,235,235,0.70)); 
+	background-color: rgba(205,210,225,0.31) !important; 
 }
 
 .tag-item {
 	font: normal 13px "Lucida Grande", sans-serif, Arial, Verdana;
-	background-color: rgba(20,80,110,1.0); 
+	background-image: linear-gradient(210deg, rgba(30,95,140,0.36), rgba(10,60,95, 0.45), rgba(20,65,105, 0.88), rgba(5,90,140,0.35)); 
+	background-color: rgba(20,80,110,0.9); 
 	color: #fff;
 	letter-spacing: 0.07rem;
 	line-height: 18px;
-	margin: 4px 3px;
-	padding: 5px 7px;
+	margin: 3px 3px;
+	padding: 6px 8px;
 }
 
 /* --- Adjust the lengths of the Performer, Movies and Tags fields while editing a scene while the scene plays --- */
@@ -824,8 +862,10 @@ div.react-select__control .react-select__multi-value {
 } 
 
 .modal-body, .modal-footer, .modal-header {
-	background: rgba(50,90,105,0.94);
+	background: rgba(50,90,105,0.92);
 }
+.performer-create-modal {max-width:1000px;}
+
 
 .modal-body .col-form-label, .modal-footer, .modal-header .col-form-label {
 	text-shadow: var(--std-txt-shadow);
@@ -860,16 +900,16 @@ div.react-select__control .react-select__multi-value {
 
 /* Background when searching for a scene in Tagger view */
 .search-result { 	background: rgba(0,0,0,0.22);}
-.selected-result { 	background: rgba(25,120,25,0.33);}
-.search-result:hover { 	background: rgba(12,12,75,0.25);}
+.selected-result { 	background: rgba(25,120,25,0.28);}
+.search-result:hover { 	background: rgba(12,62,75,0.35);}
 
 
-.markdown table tr:nth-child(2n) {    background: rgba(25,20,25,0.20);}
-.markdown code, .markdown blockquote, .markdown pre {    background: rgba(25,20,25,0.30);}
+.markdown table tr:nth-child(2n) {background: rgba(25,20,25,0.20);}
+.markdown code, .markdown blockquote, .markdown pre {background: rgba(25,20,25,0.30);}
 
 
-/* --- Changes the size of the Custum CSS field in the settings --- */
-#configuration-tabs-tabpane-interface  textarea.text-input { min-width:60ex; max-width:55vw !important; min-height: 50ex; }
+/* --- Changes the size of the Custom CSS field in the settings --- */
+#configuration-tabs-tabpane-interface textarea.text-input { min-width:60ex; max-width:55vw !important; min-height: 50ex; }
 
 
 
