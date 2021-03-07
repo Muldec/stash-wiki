@@ -52,8 +52,11 @@ Enjoy!
 
 
 ```
-/*	StashApp Pulsar Theme - Fonzie 2020-21 v1.2.1	*/
-/*	------ Updated to Stash version 0.50 ---------- */
+/*	StashApp Pulsar Theme - Fonzie 2020-21 v1.2.2	*/
+/*	------ Updated to Stash version 0.50 developmental ---- */
+/* Changes regarding the UI Improvement in the 0.50 developmental version, 
+as well as the truncated scene text, and File Info when playing a scene. */
+
 
 
 /* ============== General =================== */
@@ -247,7 +250,7 @@ div.react-select__control {
 .performer-card-image, .justify-content-center .card-image { min-height:240px; height: calc((112px + 19vw / 3.8) * 1.5); max-height: 345px;} 
 
 /* --- Fixes an issue of the card when watching a scene --- */
-.image-section { display: cover;}
+.image-section { display: flex;}
 
 /* --- The name of the Performer. Different font, less space to the left & to the top, Text-Shadow --- */
 .text-truncate, .card.performer-card .TruncatedText {
@@ -349,8 +352,34 @@ table#performer-details {color:#FFF; text-shadow: 1px 1px 1px #000;}
 
 
 
+/* --- Changes the display of Performer Details Tab in the 0.5 developmental version are arranged --- */
+#performer-details-tabpane-details dl.row { margin:0 0px;padding: 7px 0 4px}
+#performer-details-tabpane-details dl.row:nth-child(odd) {     background-color: rgba(16,22,26,0.1);}
+#performer-details-tabpane-details dt.col-xl-2 {	text-shadow: var(--std-txt-shadow); font-weight:normal;}
 
 
+/* --- Resets the fields in Performer Edit Tab in the 0.5 developmental version back to way it was in the 0.5 version --- */
+#performer-edit {margin:0 0 0 10px}
+#performer-edit .col-sm-auto, #performer-edit .col-sm-6, #performer-edit .col-md-auto, #performer-edit .col-lg-6, #performer-edit .col-sm-4, #performer-edit .col-sm-8 { width: 100%;max-width: 100%; flex: 0 0 100%; }
+#performer-edit .col-sm-auto div, #performer-edit label.form-label { float:left; width:17%;}
+#performer-edit .col-sm-auto div, #performer-edit label.form-label { font-weight:normal; color: #FFF; text-shadow: var(--std-txt-shadow); }
+
+#performer-edit select.form-control, #performer-edit .input-group, #performer-edit .text-input.form-control { float:right; width:83%; }
+#performer-edit .form-group, .col-12 button.mr-2 {margin-bottom: 0.35rem}
+#performer-edit .mt-3 label.form-label { float:none; width:auto; top:-2px; }
+
+@media (max-width: 750px) {
+#performer-edit .col-sm-auto div, #performer-edit label.form-label { float:left; width:22%;}
+#performer-edit select.form-control, #performer-edit .input-group, #performer-edit .text-input.form-control { float:right; width:78%; }
+}
+
+@media (max-width: 500px) {
+#performer-edit .col-sm-auto div, #performer-edit label.form-label { float:left; width:60%;}
+#performer-edit li.mb-1, 
+#performer-edit select.form-control, 
+#performer-edit .input-group, #performer-edit .text-input.form-control { float:left; width:89%; }
+
+}
 
 
 
@@ -368,6 +397,20 @@ table#performer-details {color:#FFF; text-shadow: 1px 1px 1px #000;}
 
 
 
+.scene-tabs .container.scene-file-info {
+	overflow:hidden;
+    margin-top: 10px;
+    background-color: rgba(15,20,30,0.20);
+    border-radius: 10px 10px 10px 10px;
+}
+.scene-tabs .container.scene-file-info div.row { padding:8px 5px 5px 2px}
+
+.scene-tabs .container.scene-file-info div.row:nth-child(odd) {
+    background-color: rgba(16,22,26,0.12);
+}
+
+.scene-player-container, .scene-tabs {padding-left: 10px; padding-right: 4px;}
+
 /* --- The name of the Scene. Different font, less space to the left and to the top, Text-Shadow --- */
 h5.card-section-title, .scene-tabs .scene-header {	
 	font-family: var(--HeaderFont);
@@ -378,6 +421,12 @@ h5.card-section-title, .scene-tabs .scene-header {
 }
 .scene-tabs .scene-header { font-size: 24px; margin-bottom:25px }
 
+
+#TruncatedText .tooltip-inner {width:365px; max-width:365px}
+.tooltip-inner {	font-family: var(--HeaderFont);
+	background-color: rgba(16, 20, 25, .99); 
+	box-shadow: 2px 2px 6px rgba(0, 0, 0, .55);
+ font-weight:bold;font-size:14px;}
 
 /* --- Removes the horizontal line that separates the date/description text from the Tags/Performer/etc. icons --- */
 .scene-card.card hr, .scene-card.card>hr{	border-top: 0px solid rgba(0,0,0,.1);	}
@@ -627,7 +676,7 @@ div.scene-file-info .TruncatedText, div.scene-file-info .text-truncate {
 
 }
 
-.movie-card-header {height:320px}
+.movie-card-header {height:335px}
 
 .movie-card-header .rating-banner {
 	font-size: .002rem;
@@ -656,9 +705,9 @@ div.scene-file-info .TruncatedText, div.scene-file-info .text-truncate {
 }
 
 .movie-card-image {
-	height:330px;
-	max-height: 330px;
-     width: 233px;
+	height:333px;
+	max-height: 333px;
+     width: 240px;
 }
 
 
@@ -910,6 +959,7 @@ div.react-select__control .react-select__multi-value {
 
 /* --- Changes the size of the Custom CSS field in the settings --- */
 #configuration-tabs-tabpane-interface textarea.text-input { min-width:60ex; max-width:55vw !important; min-height: 50ex; }
+
 
 
 
