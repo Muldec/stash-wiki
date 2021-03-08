@@ -151,6 +151,14 @@ div.nav-link[data-rb-event-key="/scenes/markers"] {
 }
 ```
 
+## Hide the Donate button
+
+```css
+.btn-primary.btn.donate.minimal {
+  display: none;
+}
+```
+
 ## Blur NSFW images
 
 Use for when working on stash but don't want to expose NSFW images and text. May not be exhaustive:
