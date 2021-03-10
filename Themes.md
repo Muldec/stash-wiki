@@ -1,5 +1,5 @@
 # Themes
-Stash supports Custom CSS themes. There are several that have been created by the maintainers and users.  
+Stash supports Custom CSS themes to adjust the look-and-feel of the interface. There are several that have been created by the maintainers and users.  
 
 ## Installing Themes
 To Install a theme
