@@ -1,4 +1,4 @@
-# Frequently Asked Questions
+# Frequently Asked Questions Index
 - [What Is Stash?](#what-is-stash)
 - [How Is Stash Installed?](#how-is-stash-installed)
 - [How do I recover a forgotten username or password?](#how-do-i-recover-a-forgotten-username-or-password)
@@ -7,7 +7,7 @@
 - [How do I run stash on OSX or Linux?](#how-do-i-run-stash-on-osx-or-linux)
 - [I have a question not answered here.](#i-have-a-question-not-answered-here)
 
-# What is Stash?
+## What is Stash?
 Stash is a Go app with a web front-end which organizes and serves your porn. Stash supports macOS, Windows, and Linux (including Docker). Download the latest version [here](https://github.com/stashapp/stash/releases).
 
 ## How is Stash installed?
@@ -51,6 +51,11 @@ Try running `chmod u+x stash-osx` or `chmod u+x stash-linux` to make the file ex
 ## How can I connect to my server from elsewhere within my network?
 
 Change the address of the server from 0.0.0.0 to the IP address of the computer on which you are running Stash.
+
+## How do I rename or relocate my library folder?
+**If you need to move or rename a folder**, you can remove the existing directory from your library and readd the new location. Stash will recognize the files and re-link to the new location. **Do not run a Clean in between these steps, or you will lose the information from your relocated folders** (your files will not be affected).
+
+> **⚠️ Note:** Don't forget to click `Save` after updating these directories!
 
 ## I have a question not answered here.
 Join the Stash [Discord server](https://discord.gg/2TsNFKt).
