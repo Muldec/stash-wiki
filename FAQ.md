@@ -35,5 +35,13 @@ For gallery related issues check the relevant Wiki [section](https://github.com/
 * Pierre Delecto wrote [a Python script](https://github.com/pierre-delecto/stash_theporndb_scraper) for scraping from ThePornDB. This is arguably the fastest way to mass create studios / performers and populate scene data.
 * Stash-Box is a separate application from Stash itself - the intent is to allow for crowdsourcing of porn metadata. Right now, Stash-Box is under heavy development. Unless you're planning to contribute code, there isn't much reason to run this yourself for the moment. However, check the pinned messages in the #stash-box channel in Discord to try the client-side interface.
 
+# How do I run stash on OSX or Linux?
+
+Try running `chmod u+x stash-osx` or `chmod u+x stash-linux` to make the file executable.
+
+# How can I connect to my server from elsewhere within my network?
+
+Change the address of the server from 0.0.0.0 to the IP address of the computer on which you are running Stash.
+
 # I have a question not answered here.
 Join the Stash [Discord server](https://discord.gg/2TsNFKt).
