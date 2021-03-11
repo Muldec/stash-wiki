@@ -57,5 +57,8 @@ Change the address of the server from 0.0.0.0 to the IP address of the computer 
 
 > **⚠️ Note:** Don't forget to click `Save` after updating these directories!
 
+## Known Issues
+- Performer images uploaded in WebP format will not display on versions of Safari prior to version 13 or on anything earlier than MacOS Big Sur. This is a [limitation of Safari](https://caniuse.com/webp).  As a workaround, ensure you are uploading performer images in jpg or png format.
+
 ## I have a question not answered here.
 Join the Stash [Discord server](https://discord.gg/2TsNFKt).
