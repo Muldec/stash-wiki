@@ -7,8 +7,8 @@
     </a>
 </p>
 
-<img src="https://i.imgur.com/olaWUAJ.jpg" />
-<img src="https://i.imgur.com/9yI7ePB.jpg" />
+<img src="https://i.imgur.com/2bVeUn2.jpg" />
+<img src="https://i.imgur.com/U5St6Gw.jpg" />
 <img src="https://i.imgur.com/MSUp4AL.jpg" />
 <img src="https://i.imgur.com/vhg1ZVq.jpg" />
 
@@ -52,8 +52,8 @@ Enjoy!
 
 
 ```
-/*	StashApp Pulsar Theme - Fonzie 2020-21 v1.2.2	*/
-/*	------ Updated to Stash version 0.50 developmental ---- */
+/*	StashApp Pulsar Theme - Fonzie 2020-21 v1.2.3	*/
+/*	------ Updated to Stash version 0.50-36 developmental ---- */
 /* Changes regarding the UI Improvement in the 0.50 developmental version, 
 as well as the truncated scene text, and File Info when playing a scene. */
 
@@ -93,6 +93,7 @@ body {
 :root {
 	--HeaderFont: Helvetica, "Helvetica Neue", "The Sans", "Segoe UI";
 	--std-txt-shadow: 2px 2px 1px #000;
+	--light-txt-shadow: 1px 2px 1px #222;
 	--white: #ffffff;
 }
 
@@ -131,7 +132,6 @@ transparent background, rounded corners, etc. */
 }
 
 
-
 /* --- Changes the space between the button in the top right corner of the page --- */
 .order-2 button { margin-left: 4px }
 
@@ -151,7 +151,7 @@ transparent background, rounded corners, etc. */
 	border-radius: 10px;
 }
 
-/* --- Removes the glowing shimmer effect on the start page and the settings for readability purpose --- */
+/* --- Removes the glowing shimmer effect on the start page & the settings for readability purpose --- */
 .mx-auto.card, .changelog-version.card {
 	background-image: none !important; 
 	background-color: rgba(16, 20, 25, .40) !important; 
@@ -177,9 +177,7 @@ transparent background, rounded corners, etc. */
 .btn-secondary {
     color: #f2f2f2;
     background-color: rgba(0, 0, 0, .08);
-/*    border-color: #393b39;*/
-    border-color: #2c2f35;
-
+    border-color: #3c3f45;
 }
  
 a {	color: hsla(0, 10%, 95%, .75);}
@@ -209,28 +207,10 @@ a {	color: hsla(0, 10%, 95%, .75);}
 	border-color: #eee;
 }
 
-/* 
-.nav-pills .nav-link.active, .nav-pills .show>.nav-link {
-	color: #eee;
-	background-color: #1f2326;
-}
-
-div.react-select__control {
-	background: rgba(15,15,25,0.35);
-	border-color: #394b59;
-	cursor: pointer;
-}
-
-.scene-wall-item-text-container {
-	background: radial-gradient(farthest-corner at 50% 50%, rgba(50, 50, 50, .5) 50%, #323232 100%);
-	color: #ee;
-}
-*/
-
 .container-fluid,.container-lg,.container-md,.container-sm,.container-xl {
 	width: 100%;
 	margin-right: 0px;
-	 margin-left: 0px;
+	margin-left: 0px;
 }
 
 
@@ -250,7 +230,7 @@ div.react-select__control {
 .performer-card-image, .justify-content-center .card-image { min-height:240px; height: calc((112px + 19vw / 3.8) * 1.5); max-height: 345px;} 
 
 /* --- Fixes an issue of the card when watching a scene --- */
-.image-section { display: flex;}
+.image-section { display: cover;}
 
 /* --- The name of the Performer. Different font, less space to the left & to the top, Text-Shadow --- */
 .text-truncate, .card.performer-card .TruncatedText {
@@ -258,7 +238,7 @@ div.react-select__control {
 	margin-top: -1px; 
 	width: 120%; 
 	font-family: var(--HeaderFont);
-	font-size: 120%; 
+	font-size: 112%; 
 	line-height:130%; 
 	font-weight:bold; 
 	text-shadow: var(--std-txt-shadow);
@@ -293,6 +273,20 @@ div.card.performer-card .rating-banner {
 }
 
 
+div.card-section hr {display:none}
+
+div.performer-card div.card-popovers {
+	margin-bottom: -3px;
+	margin-left:22%;
+	margin-top:-4px;
+	margin-right: -9px;
+	justify-content: flex-end;
+	text-align:right;
+}
+
+
+
+
 
 
 
@@ -311,14 +305,16 @@ div.card.performer-card .rating-banner {
 .performer-image-container {padding-bottom: 11px}
 
 
-/* --- The following 10 Selectors change the way the details box is displayed --- */
+/* --- The following 15 Selectors change the way the details box is displayed --- */
 #performer-details-tabpane-details .text-input, #performer-details-tabpane-details .text-input:disabled, 
 #performer-details-tabpane-details .text-input[readonly] {background-color: rgba(16,22,26,0.0);}
+#performer-details-tabpane-details a { text-shadow: var(--light-txt-shadow)}
 
 .text-input, input.form-control-plaintext { background-color:none;}
 #performer-details .input-control, .text-input {box-shadow: none;}
 
-div.react-select__control, #performer-details-tabpane-details {background-color: rgba(15,20,30,0.26); border-radius: 10px; max-width:1000px}
+div.react-select__control, #performer-details-tabpane-details {background-color: rgba(15,20,30,0.26); max-width:1000px}
+#performer-details-tabpane-details {border-radius: 10px}
 #performer-details-tabpane-edit {max-width:1000px}
 
 div.react-select__control .css-12jo7m5 {text-shadow: none; }
@@ -332,8 +328,6 @@ div.react-select__control .css-12jo7m5 {text-shadow: none; }
 	#performer-page .performer-head {    margin-bottom: 1rem; }
 	#performer-page { margin: 0 -6px 0 -15px; }
 }
-
-
 #performer-details-tabpane-details tr:nth-child(odd) {     background-color: rgba(16,22,26,0.1); }
 table#performer-details {color:#FFF; text-shadow: 1px 1px 1px #000;}
 
@@ -351,11 +345,11 @@ table#performer-details {color:#FFF; text-shadow: 1px 1px 1px #000;}
 }
 
 
-
 /* --- Changes the display of Performer Details Tab in the 0.5 developmental version are arranged --- */
 #performer-details-tabpane-details dl.row { margin:0 0px;padding: 7px 0 4px}
 #performer-details-tabpane-details dl.row:nth-child(odd) {     background-color: rgba(16,22,26,0.1);}
-#performer-details-tabpane-details dt.col-xl-2 {	text-shadow: var(--std-txt-shadow); font-weight:normal;}
+#performer-details-tabpane-details dt.col-xl-2 {	text-shadow: var(--light-txt-shadow); font-weight:normal;}
+#performer-details-tabpane-details ul.pl-0 {margin-bottom:0;}
 
 
 /* --- Resets the fields in Performer Edit Tab in the 0.5 developmental version back to way it was in the 0.5 version --- */
@@ -366,7 +360,7 @@ table#performer-details {color:#FFF; text-shadow: 1px 1px 1px #000;}
 
 #performer-edit select.form-control, #performer-edit .input-group, #performer-edit .text-input.form-control { float:right; width:83%; }
 #performer-edit .form-group, .col-12 button.mr-2 {margin-bottom: 0.35rem}
-#performer-edit .mt-3 label.form-label { float:none; width:auto; top:-2px; }
+#performer-edit .mt-3 label.form-label { float:none; width:auto; }
 
 @media (max-width: 750px) {
 #performer-edit .col-sm-auto div, #performer-edit label.form-label { float:left; width:22%;}
@@ -396,20 +390,6 @@ table#performer-details {color:#FFF; text-shadow: 1px 1px 1px #000;}
 /* .overlay-resolution {display:none} */
 
 
-
-.scene-tabs .container.scene-file-info {
-	overflow:hidden;
-    margin-top: 10px;
-    background-color: rgba(15,20,30,0.20);
-    border-radius: 10px 10px 10px 10px;
-}
-.scene-tabs .container.scene-file-info div.row { padding:8px 5px 5px 2px}
-
-.scene-tabs .container.scene-file-info div.row:nth-child(odd) {
-    background-color: rgba(16,22,26,0.12);
-}
-
-.scene-player-container, .scene-tabs {padding-left: 10px; padding-right: 4px;}
 
 /* --- The name of the Scene. Different font, less space to the left and to the top, Text-Shadow --- */
 h5.card-section-title, .scene-tabs .scene-header {	
@@ -466,13 +446,16 @@ h5.card-section-title, .scene-tabs .scene-header {
 .zoom-1 .scene-card-preview-image,
 .zoom-1 .scene-card-preview { height: 215px; }
 
-/*
-.gallery-card-preview-image, .gallery-card-preview-video, .scene-card-preview-image 
-*/
-.zoom-1 .scene-card-preview,
-.zoom-1 .scene-card-preview-video,
-.zoom-1 .scene-card-video {width: 350px; min-height:210px; max-height: 405px; height:auto; object-fit: cover !important; margin-top:-2%; margin-left:-6px; zoom:104%;  }
-
+.zoom-1 .scene-card-preview, .zoom-1 .scene-card-preview-video, .zoom-1 .scene-card-video {
+	width: 350px;
+	min-height:210px;
+	max-height: 405px;
+	height:auto;
+	object-fit: cover !important;
+	margin-top:-2%;
+	margin-left:-6px;
+	zoom:104%;
+}
 
 .zoom-2 .video-section {height:240px; object-fit: cover !important; overflow:hidden;}
 .zoom-2 .scene-card-video {min-height:199px; height:auto; object-fit: cover !important; margin-top:-2%; zoom:103%;  }
@@ -494,7 +477,8 @@ h5.card-section-title, .scene-tabs .scene-header {
 	justify-content: flex-end;
 }
 
-/* --- Adds an invisible dot after the description text, Also leaves ~80 pixels space to enforce a line break, so it leaves some space in the bottom right corner of the card for the icons in the Selector above --- */
+/* --- Adds an invisible dot after the description text, Also leaves ~80 pixels space to enforce a line break, 
+so it leaves some space in the bottom right corner of the card for the icons in the Selector above --- */
 .card-section p:after 
 {
 	font-size: 1px;
@@ -676,7 +660,7 @@ div.scene-file-info .TruncatedText, div.scene-file-info .text-truncate {
 
 }
 
-.movie-card-header {height:335px}
+.movie-card-header {height:320px}
 
 .movie-card-header .rating-banner {
 	font-size: .002rem;
@@ -705,9 +689,9 @@ div.scene-file-info .TruncatedText, div.scene-file-info .text-truncate {
 }
 
 .movie-card-image {
-	height:333px;
-	max-height: 333px;
-     width: 240px;
+	height:330px;
+	max-height: 330px;
+     width: 233px;
 }
 
 
@@ -734,7 +718,7 @@ div.scene-file-info .TruncatedText, div.scene-file-info .text-truncate {
 .movie-details .form-group, .movie-details table td:nth-child(1) {color:#FFF; text-shadow: 1px 1px 1px #000;}
 
 .movie-details div.form-group:nth-of-type(3) { border-radius: 0px 0px 20px 10px; background-color: rgba(16,22,26,0.3); margin-bottom:15px }
-.movie-details div.form-group {display: flex; flex-wrap: wrap;	overflow: hidden; 	text-overflow: ellipsis;}
+.movie-details div.form-group {display: flex; flex-wrap: wrap; overflow: hidden; text-overflow:ellipsis;}
 .movie-details div.form-group label.form-label {width: 120px; padding:0 20px 0 5px}
 .movie-details div.form-group div {width:65%; text-align:left; 	}
 
@@ -831,13 +815,13 @@ div.gallery-card .scene-popovers, div.gallery-card .card-popovers {
 
 /* ==============  MISC ==============  */
 
-
 .svg-inline--fa.fa-w-18 {width: 1.4em;}
-
 
 /* --- Makes the Zoom Slider on the Scenes, Images, Galleries and Tags pages longer and therefore easier to use --- */
 input[type=range].zoom-slider{ max-width:140px;width:140px; }
 
+/* --- Changes the zoom slider color --- */
+input[type=range]::-webkit-slider-runnable-track {background-color: #88afcc !important;}
 
 
 .tag-details .logo {
@@ -903,22 +887,20 @@ div.react-select__control .react-select__multi-value {
 
 
 
-/* --- Performer and Scene Scaping --- */
+/* --- several Performer and Scene Scaping changes --- */
 .modal-lg, .modal-xl{
 	max-width: 1400px; 
 	width:100%;
 	box-shadow: 5px 5px 9px rgba(15,15,15,.90);
 } 
 
-.modal-body, .modal-footer, .modal-header {
-	background: rgba(50,90,105,0.92);
-}
+.modal-body, .modal-footer, .modal-header {	background: rgba(50,90,105,0.92);}
 .performer-create-modal {max-width:1000px;}
 
+.modal-body .col-form-label, .modal-body .col-6, .modal-footer, .modal-header .col-form-label {text-shadow: var(--std-txt-shadow);}
 
-.modal-body .col-form-label, .modal-footer, .modal-header .col-form-label {
-	text-shadow: var(--std-txt-shadow);
-}
+.modal-body .col-6 strong {font-weight: normal; font-size:14px}
+.modal-body .no-gutters {margin-bottom: 8px}
 
 .modal-body .dialog-container .col-lg-3 {
 	flex: 0 0 12%;
@@ -927,15 +909,13 @@ div.react-select__control .react-select__multi-value {
 }
 
 .modal-body .dialog-container .offset-lg-3{margin-left:12%;} 
-.modal-body .dialog-container .col-lg-9{
-	flex:0 0 88%;
-	max-width:88%;
-} 
+.modal-body .dialog-container .col-lg-9{flex:0 0 88%; max-width:88%;} 
 
 
 .input-control, .input-control:disabled, .input-control:focus, .modal-body div.react-select__control, .modal-body .form-control {
 	background: rgba(15,15,20,0.36);
 }
+
 
 .scraper-table tr:nth-child(2n) {    background: rgba(15,15,20,0.18);}
 
@@ -947,10 +927,10 @@ div.react-select__control .react-select__multi-value {
 .show>.btn-secondary.dropdown-toggle { 	background: rgba(15,15,20,0.50);}
 
 
-/* Background when searching for a scene in Tagger view */
+/* --- Background when searching for a scene in Tagger view --- */
 .search-result { 	background: rgba(0,0,0,0.22);}
 .selected-result { 	background: rgba(25,120,25,0.28);}
-.search-result:hover { 	background: rgba(12,62,75,0.35);}
+.search-result:hover { background: rgba(12,62,75,0.35);}
 
 
 .markdown table tr:nth-child(2n) {background: rgba(25,20,25,0.20);}
@@ -958,7 +938,22 @@ div.react-select__control .react-select__multi-value {
 
 
 /* --- Changes the size of the Custom CSS field in the settings --- */
-#configuration-tabs-tabpane-interface textarea.text-input { min-width:60ex; max-width:55vw !important; min-height: 50ex; }
+#configuration-tabs-tabpane-interface textarea.text-input { min-width:60ex; max-width:55vw !important; min-height:50ex;}
+
+
+div.dropdown-menu,div.react-select__menu{background-color:rgba(35,37,44,0.55);color:#f5f8fa}
+
+div.dropdown-menu .dropdown-item, div.dropdown-menu .react-select__option, div.react-select__menu .dropdown-item, div.react-select__menu .react-select__option
+{color:#f5f8fa;background-color:rgba(35,37,44,0.55);}
+
+div.dropdown-menu .dropdown-item:focus,div.dropdown-menu .dropdown-item:hover,div.dropdown-menu .react-select__option--is-focused,div.react-select__menu .dropdown-item:focus,div.react-select__menu .dropdown-item:hover,div.react-select__menu .react-select__option--is-focused{background-color:rgba(24,130,195,0.85)}
+
+.toast-container {left: 74%; top: 1rem;}
+
+/* --- Settings / About adjustments --- */
+#configuration-tabs-tabpane-about .table {width:100%}
+#configuration-tabs-tabpane-about .table td {padding-top:18px}
+
 
 
 
