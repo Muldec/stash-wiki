@@ -25,7 +25,10 @@
 | STASH_STASH  | /data  |
 |   |   |   |
 
-### Port Settings
+### "Port" Tab
 You will need to set a default port in the "Port" tab, otherwise Docker will assign a different port every time Stash is launched.  Leave the container port as-is.
+
+### "Network" Tab
+Make sure that "Use The Same Network As Docker Host" is checked.
 
 (thanks to backer Herelam80 for these instructions)
