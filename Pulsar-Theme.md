@@ -52,29 +52,32 @@ Enjoy!
 
 
 ```
-/*	StashApp Pulsar Theme - Fonzie 2020-21 v1.2.3	*/
-/*	------ Updated to Stash version 0.50-36 developmental ---- */
-/* Changes regarding the UI Improvement in the 0.50 developmental version, 
-as well as the truncated scene text, and File Info when playing a scene. */
+/*	StashApp Pulsar Theme - Fonzie 2020-21 v1.3.0	*/
+/* ---------------------------------------------------- */
+/* ---------- Updated to Stash version 0.60 ----------- */
+
+/* Adjustments to the 0.6 version, as well as moving the tag name 
+into the tag picture when clicking on a tag + adding multiple 
+shadows to the resolution and the time/length of the videos */
 
 
 
-/* ============== General =================== */
+/* ===================== General ===================== */
 
 body {
-	background-image:url("https://i.imgur.com/gQtSoev.jpg");	/*	Aphonus	*/
-/*	background-image:url("https://i.imgur.com/6BBd6aa.jpg");	/*	Plex	*/
-/*	background-image:url("https://i.imgur.com/xAzxryr.jpg");	/*	Almora	*/
-/*	background-image:url("https://i.imgur.com/0iN75zD.jpg");	/*	Dacirus	*/
+	background-image:url("https://i.imgur.com/gQtSoev.jpg");	/*	Aphonus		*/
+/*	background-image:url("https://i.imgur.com/6BBd6aa.jpg");	/*	Plex		*/
+/*	background-image:url("https://i.imgur.com/xAzxryr.jpg");	/*	Almora		*/
+/*	background-image:url("https://i.imgur.com/0iN75zD.jpg");	/*	Dacirus		*/
 /*	background-image:url("https://i.imgur.com/g5ECcdD.jpg");	/*	Drionope	*/
-/*	background-image:url("https://i.imgur.com/dhVsc3d.jpg");	/*	Elein	*/
+/*	background-image:url("https://i.imgur.com/dhVsc3d.jpg");	/*	Elein		*/
 /*	background-image:url("https://i.imgur.com/B5hdvQG.jpg");	/*	FreePhion	*/
-/*	background-image:url("https://i.imgur.com/LcSat6V.jpg");	/*	Lilac	*/
+/*	background-image:url("https://i.imgur.com/LcSat6V.jpg");	/*	Lilac		*/
 /*	background-image:url("https://i.imgur.com/kn9wixj.jpg");	/*	Nolrirus	*/
-/*	background-image:url("https://i.imgur.com/190rDim.jpg");	/*	Ongion	*/
-/*	background-image:url("https://i.imgur.com/IpvdJVn.jpg");	/*	PurpleRough */
+/*	background-image:url("https://i.imgur.com/190rDim.jpg");	/*	Ongion		*/
+/*	background-image:url("https://i.imgur.com/IpvdJVn.jpg");	/*	PurpleRough	*/
 /*	background-image:url("https://i.imgur.com/hAHylub.jpg");	/*	Tesioria	*/
-/*	background-image:url("https://i.imgur.com/QKiFSvE.jpg");	/*	Ichix	*/
+/*	background-image:url("https://i.imgur.com/QKiFSvE.jpg");	/*	Ichix		*/
 /*	background-image:url("https://i.imgur.com/8cIqGWj.jpg");	/*	SeaGreen	*/
 /*	background-image:url("https://i.imgur.com/WNXNwV3.jpg");	/*	BrownBlur	*/
 /*	background-image:url("./background.jpg");			/*	Local BG	*/
@@ -217,7 +220,7 @@ a {	color: hsla(0, 10%, 95%, .75);}
 
 
 
-/* ================ Performer =============== */
+/* ===================== Performer ========================= */
 
 
 /* --- Changes the width of the Performer Card from 280px to a dynamic system and therefore the size of the image --- */
@@ -254,7 +257,7 @@ a {	color: hsla(0, 10%, 95%, .75);}
 }
 
 /* --- Age and # of Scenes move from the left side to the right of the card --- */
-.text-muted {text-align:right}
+.text-muted {text-align:right;margin-top:-4px;}
 
 /* --- Text Shadow for the "Stars in x scenes" link --- */
 div.card.performer-card div.text-muted a {text-shadow: 1px 2px 2px #333}
@@ -362,6 +365,11 @@ table#performer-details {color:#FFF; text-shadow: 1px 1px 1px #000;}
 #performer-edit .form-group, .col-12 button.mr-2 {margin-bottom: 0.35rem}
 #performer-edit .mt-3 label.form-label { float:none; width:auto; }
 
+#performer-edit select.form-control, #performer-edit .input-group, #performer-edit .text-input.form-control {width: 100%;}
+#performer-edit textarea.text-input {min-height: 9ex;}
+
+#performer-edit .form-group:nth-child(14) .text-input.form-control {width:85%;}
+
 @media (max-width: 750px) {
 #performer-edit .col-sm-auto div, #performer-edit label.form-label { float:left; width:22%;}
 #performer-edit select.form-control, #performer-edit .input-group, #performer-edit .text-input.form-control { float:right; width:78%; }
@@ -372,7 +380,6 @@ table#performer-details {color:#FFF; text-shadow: 1px 1px 1px #000;}
 #performer-edit li.mb-1, 
 #performer-edit select.form-control, 
 #performer-edit .input-group, #performer-edit .text-input.form-control { float:left; width:89%; }
-
 }
 
 
@@ -421,11 +428,11 @@ h5.card-section-title, .scene-tabs .scene-header {
 
 /* --- The Resolution and the Time/Length of the video in the bottom right corner to make it easier to read --- */
 .scene-specs-overlay {
-	bottom:0px;
+	bottom:1px;
 	color: #FFF;
 	font-weight: bold;
-	letter-spacing: 0.0rem;
-	text-shadow: 1px 1px 2px #000;
+	letter-spacing: 0.045rem;
+	text-shadow: 2px 2px 1px #000, 4px 4px 5px #444, 4px 1px 5px #444, -2px 2px 5px #444, 0px -2px 5px #444, -1px -3px 6px #444, 3px -2px 6px #444;
 }
 
 
@@ -614,11 +621,6 @@ div.scene-file-info .TruncatedText, div.scene-file-info .text-truncate {
 .tag-card hr, .tag-card>hr{	border-top: 0px solid rgba(0,0,0,.1);	}
 
 .tag-details input.form-control-plaintext, .tag-card .TruncatedText, div.card.tag-card .TruncatedText  {
-	font-family: var(--HeaderFont);
-	font-size: 125%; 
-	line-height:125%; 
-	font-weight:bold; 
-	text-shadow: var(--std-txt-shadow);
 }
 
 .zoom-0 .tag-card-image {
@@ -640,7 +642,23 @@ div.scene-file-info .TruncatedText, div.scene-file-info .text-truncate {
 
 .tag-details input.form-control-plaintext {     background-color: rgba(16,22,26,.0); }
 
+/* --- Moves the Tag name into the Tag Picture --- */
+.tag-details .text-input[readonly] {background-color: rgba(0,0,0,.0);}
+.tag-details .table td:first-child {display:none}
+.tag-details .logo {margin-bottom: 12px;}
+.tag-details .form-control-plaintext {
+	margin-top:-76px;
+	margin-left:0%;
+	font-weight: bold;
+	font-family: Helvetica, "Helvetica Neue", "Segoe UI" !important;
+	letter-spacing: 0.11rem;
+	font-size:44px;
+	text-shadow: 2px 2px 1px #000, 4px 4px 4px #282828, 6px 1px 4px #282828, -3px 3px 3px #444, -2px -2px 4px #282828;
+	text-align:center; 
+}
+@media (max-width: 1300px) {.tag-details .form-control-plaintext {font-size:26px; 	margin-top:-50px;}}
 
+.tag-details .logo { min-width:300px}
 
 
 
@@ -948,7 +966,11 @@ div.dropdown-menu .dropdown-item, div.dropdown-menu .react-select__option, div.r
 
 div.dropdown-menu .dropdown-item:focus,div.dropdown-menu .dropdown-item:hover,div.dropdown-menu .react-select__option--is-focused,div.react-select__menu .dropdown-item:focus,div.react-select__menu .dropdown-item:hover,div.react-select__menu .react-select__option--is-focused{background-color:rgba(24,130,195,0.85)}
 
-.toast-container {left: 74%; top: 1rem;}
+
+.toast-container {
+    left: 74%;
+    top: 1rem;
+}
 
 /* --- Settings / About adjustments --- */
 #configuration-tabs-tabpane-about .table {width:100%}
