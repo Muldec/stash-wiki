@@ -52,13 +52,17 @@ Enjoy!
 
 
 ```
-/*	StashApp Pulsar Theme - Fonzie 2020-21 v1.3.0	*/
+/*	StashApp Pulsar Theme - Fonzie 2020-21 v1.3.2	*/
 /* ---------------------------------------------------- */
-/* ---------- Updated to Stash version 0.60 ----------- */
+/* ---------- Updated to Stash version 0.60.09 -------- */
 
 /* Adjustments to the 0.6 version, as well as moving the tag name 
 into the tag picture when clicking on a tag + adding multiple 
-shadows to the resolution and the time/length of the videos */
+shadows to the resolution and the time/length of the videos 
+
+Some minor things (the Movies page and the queries), and items on 
+the Scenes page now dynamically adjust depending on the size of 
+your browser window, just like they already do on the Performer page */
 
 
 
@@ -226,11 +230,14 @@ a {	color: hsla(0, 10%, 95%, .75);}
 /* --- Changes the width of the Performer Card from 280px to a dynamic system and therefore the size of the image --- */
 /* --- In Full screen HD 1920x1080 you now see 8 performers per row instead of 6 --- */
 /*.performer-card-image, .performer-card, .card-image {  min-width: 160px; width: calc(108px + 10.625vw / 2); max-width: 230px }  */
-.performer-card-image, .performer-card, .card-image {  min-width: 160px; width: calc(112px + 19vw / 3.8); max-width: 230px } 
+/*.performer-card-image, .performer-card, .card-image {  min-width: 160px; width: calc(108px + 19vw / 3.6);width:212px; max-width: 230px } */
+.performer-card-image, .performer-card, .card-image {  min-width: 160px; width: calc(100px + 11.2vw / 1.92);max-width: 230px } 
+
 
 /* --- Changes the height of the Performer Card to keep the 2x3 picture ratio --- */
 /*.performer-card-image, .justify-content-center .card-image { min-height:240px; height: calc((108px + 10.625vw / 2) * 1.5); max-height: 345px}  */
-.performer-card-image, .justify-content-center .card-image { min-height:240px; height: calc((112px + 19vw / 3.8) * 1.5); max-height: 345px;} 
+.performer-card-image, .justify-content-center .card-image { min-height:240px; height: calc((112px + 19vw / 3.6) * 1.5); max-height: 345px;} 
+.performer-card-image, .justify-content-center .card-image { min-height:240px; height: calc((100px + 11.2vw / 1.92) * 1.5); max-height: 345px;} 
 
 /* --- Fixes an issue of the card when watching a scene --- */
 .image-section { display: cover;}
@@ -439,38 +446,8 @@ h5.card-section-title, .scene-tabs .scene-header {
 /* --- Changes the spaces between the items on the Scenes page --- */
 .zoom-0 {margin: 4px 0.50% 10px; !important }
 
-@media (min-width: 1380px) {
-/* --- Changes the size of the items on the Scenes page --- */
-.zoom-1 {width: 350px!important}
-.zoom-2 {width: 440px!important}
-}
-
-
-/* Improves the way the scene picture is displayed when the resolution isn't 16:9 (e.g. 4:3) --- */
-.zoom-1 .video-section {object-fit: cover !important;height:210px;overflow:hidden;}
-
-
-.zoom-1 .scene-card-preview-image,
-.zoom-1 .scene-card-preview { height: 215px; }
-
-.zoom-1 .scene-card-preview, .zoom-1 .scene-card-preview-video, .zoom-1 .scene-card-video {
-	width: 350px;
-	min-height:210px;
-	max-height: 405px;
-	height:auto;
-	object-fit: cover !important;
-	margin-top:-2%;
-	margin-left:-6px;
-	zoom:104%;
-}
-
-.zoom-2 .video-section {height:240px; object-fit: cover !important; overflow:hidden;}
-.zoom-2 .scene-card-video {min-height:199px; height:auto; object-fit: cover !important; margin-top:-2%; zoom:103%;  }
-
-
 
 .scene-card-link {height:195px; overflow:hidden;}
-
 
 
 /* --- Tightens the space between the Tags-, Performer-, O-Counter-, Gallery- and Movie-Icons --- */
@@ -553,6 +530,68 @@ div.scene-file-info .TruncatedText, div.scene-file-info .text-truncate {
 	text-shadow: var(--std-txt-shadow);
 }
 
+
+
+
+
+/* Zoom 0 */
+.zoom-0 { width:290px}
+.zoom-0 .video-section {height:181px;}
+.zoom-0 .scene-card-preview-image, .zoom-0 .scene-card-preview { height:195px; }
+.zoom-0 .scene-card-preview, .zoom-0 .scene-card-preview-video, .zoom-0 .scene-card-video {
+	width: 290px;
+	min-height:181px;
+	max-height: 200px;
+}
+
+/* Zoom 1 */
+.zoom-1 { min-width: 300px; width: calc(234px + 24vw /3.84);max-width: 430px}
+/* Improves the way the scene picture is displayed when the resolution isn't 16:9 (e.g. 4:3) --- */
+.zoom-1 .video-section {height:calc((234px + 24vw / 3.84)/1.65);max-height: 270px}
+.zoom-1 .scene-card-preview-image, .zoom-1 .scene-card-preview { height:calc((234px + 24vw / 3.84)/1.65); max-height: 265px}
+
+.zoom-1 .scene-card-preview, .zoom-1 .scene-card-preview-video, .zoom-1 .scene-card-video {
+	min-width: 300px; width: calc(228px + 17vw / 1.92);max-width: 470px;
+	min-height: height:calc((234px + 24vw / 3.84)/1.65);
+	max-height: 265px;
+}
+
+/* Zoom 2 */
+.zoom-2 { min-width: 350px; width: calc(310px + 26vw / 3.84);max-width: 495px}
+.zoom-2 .video-section {height:calc((310px + 26vw / 3.84) /1.65);max-height:305px}
+.zoom-2 .scene-card-preview-image, .zoom-2 .scene-card-preview { height:calc((310px + 26vw / 3.84) /1.65); max-height:298px}
+
+.zoom-2 .scene-card-preview, .zoom-2 .scene-card-preview-video, .zoom-2 .scene-card-video {
+	min-width: 350px; width: calc(330px + 28vw / 3.84);max-width: 530px;
+	min-height: height:calc((310px + 26vw / 3.84) /1.65);
+	max-height: 298px;
+}
+
+
+/* Zoom 3 */
+.zoom-3 { min-width: 400px; width: calc(530px + 18vw / 5.76);max-width: 590px}
+.zoom-3 .video-section {height:375px;}
+.zoom-3 .scene-card-preview-image, .zoom-3 .scene-card-preview { height:395px; }
+.zoom-3 .scene-card-preview, .zoom-3 .scene-card-preview-video, .zoom-3 .scene-card-video {
+	width: 600px;
+	min-height:375px;
+	max-height: 400px;
+}
+
+
+.zoom-0 .video-section, .zoom-1 .video-section, .zoom-2 .video-section, .zoom-3 .video-section 
+{object-fit: cover !important;overflow:hidden;}
+
+.zoom-0 .scene-card-preview, .zoom-0 .scene-card-preview-video, .zoom-0 .scene-card-video,
+.zoom-1 .scene-card-preview, .zoom-1 .scene-card-preview-video, .zoom-1 .scene-card-video, 
+.zoom-2 .scene-card-preview, .zoom-2 .scene-card-preview-video, .zoom-2 .scene-card-video,
+.zoom-3 .scene-card-preview, .zoom-3 .scene-card-preview-video, .zoom-3 .scene-card-video {
+	height:auto;
+	object-fit: cover !important;
+	margin-top:-2%;
+	margin-left:-6px;
+	zoom:104%;
+}
 
 
 /* ============== Studio ================= */
@@ -707,9 +746,9 @@ div.scene-file-info .TruncatedText, div.scene-file-info .text-truncate {
 }
 
 .movie-card-image {
-	height:330px;
-	max-height: 330px;
-     width: 233px;
+	height:345px;
+	max-height: 345px;
+     width: 240px;
 }
 
 
@@ -739,6 +778,24 @@ div.scene-file-info .TruncatedText, div.scene-file-info .text-truncate {
 .movie-details div.form-group {display: flex; flex-wrap: wrap; overflow: hidden; text-overflow:ellipsis;}
 .movie-details div.form-group label.form-label {width: 120px; padding:0 20px 0 5px}
 .movie-details div.form-group div {width:65%; text-align:left; 	}
+
+
+/* --- 0.60 dev adjustments --- */
+.movie-details .movie-details {background-color: rgba(15,20,30,0.20); border-radius: 10px; margin-bottom:15px; }
+.movie-details .movie-details dt.col-3 {padding:4px 0 4px 16px; width: 120px;}
+.movie-details .movie-details dd.col-9 {padding:4px 16px 4px 3px;}
+.movie-details .movie-details dl.row:nth-child(odd) { background-color: rgba(16,22,26,0.1); margin-right:2px}
+.movie-details .movie-details h2 {	font-family: var(--HeaderFont);text-shadow: var(--std-txt-shadow);padding:7px 0 5px 12px;}
+
+.movie-details .movie-images {margin:0 5px 20px 5px;}
+.movie-details .movie-images img {border-radius: 14px; max-height:580px;}
+.movie-details .movie-image-container{
+	margin:0.3rem;
+	margin-right:0.8rem;
+	background-color: rgba(0, 0, 0, .48);
+	box-shadow: 6px 6px 11px rgba(0, 10, 10, .62);
+}
+
 
 
 
@@ -906,13 +963,13 @@ div.react-select__control .react-select__multi-value {
 
 
 /* --- several Performer and Scene Scaping changes --- */
-.modal-lg, .modal-xl{
+.modal-content, .modal-lg, .modal-xl  {
 	max-width: 1400px; 
 	width:100%;
 	box-shadow: 5px 5px 9px rgba(15,15,15,.90);
 } 
 
-.modal-body, .modal-footer, .modal-header {	background: rgba(50,90,105,0.92);}
+.modal-header, .modal-body, .modal-footer {	background: rgba(50,90,105,0.92);}
 .performer-create-modal {max-width:1000px;}
 
 .modal-body .col-form-label, .modal-body .col-6, .modal-footer, .modal-header .col-form-label {text-shadow: var(--std-txt-shadow);}
@@ -976,6 +1033,10 @@ div.dropdown-menu .dropdown-item:focus,div.dropdown-menu .dropdown-item:hover,di
 #configuration-tabs-tabpane-about .table {width:100%}
 #configuration-tabs-tabpane-about .table td {padding-top:18px}
 
+
+#queue-viewer .current {
+    background-color: rgba(15,20,30,0.30);
+}
 
 
 
