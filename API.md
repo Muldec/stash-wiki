@@ -14,10 +14,21 @@ _Example using curl_
 
 `curl -X POST -H "Content-Type: application/json" --data '{ "query": " mutation { metadataScan (input: { useFileMetadata: false} ) }" }' localhost:9998/graphql`
 
-If you have configured a username/password
+
+### Authentication
+
+If you have configured a username/password you have to use cookies to authenticate
 ```
 curl --verbose --cookie-jar cookie.txt  --data 'username=stash&password=**' localhost:9998/login
 curl --cookie cookie.txt -H "Content-Type: application/json"  --data '{  "query": "mutation { metadataScan ( input: { useFileMetadata: false } ) } "}' localhost:9998/graphql
+```
+Latest dev version has support for API Keys.
+
+Using the `API Key` is recommended instead of the above cookie method.
+
+You just need to add the key you generated in stash ( for more info about the API Key check stash's help section ) in a header for every request you make
+```
+curl -X POST -H "ApiKey: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiJiaWxsIiwiaWF0IjoxNjE3MDkzMDYwLCJzdWIiOiJBUElLZXkifQ.WhUyvmnVeW8wGV5fkVyje3xLfz5A97HFwyZy-4i8Q-I" -H "Content-Type: application/json" --data '{ "query": "mutation { metadataScan (input:{useFileMetadata: false})}" }' localhost:9998/graphql
 ```
 
 ### Generate content
