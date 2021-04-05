@@ -52,7 +52,7 @@ Enjoy!
 
 
 ```
-/*	StashApp Pulsar Theme - Fonzie 2020-21 v1.3.2	*/
+/*	StashApp Pulsar Theme - Fonzie 2020-21 v1.3.3	*/
 /* ---------------------------------------------------- */
 /* ---------- Updated to Stash version 0.60.09 -------- */
 
@@ -552,7 +552,7 @@ div.scene-file-info .TruncatedText, div.scene-file-info .text-truncate {
 
 .zoom-1 .scene-card-preview, .zoom-1 .scene-card-preview-video, .zoom-1 .scene-card-video {
 	min-width: 300px; width: calc(228px + 17vw / 1.92);max-width: 470px;
-	min-height: height:calc((234px + 24vw / 3.84)/1.65);
+	height:calc((234px + 24vw / 3.84)/1.65);
 	max-height: 265px;
 }
 
@@ -563,7 +563,7 @@ div.scene-file-info .TruncatedText, div.scene-file-info .text-truncate {
 
 .zoom-2 .scene-card-preview, .zoom-2 .scene-card-preview-video, .zoom-2 .scene-card-video {
 	min-width: 350px; width: calc(330px + 28vw / 3.84);max-width: 530px;
-	min-height: height:calc((310px + 26vw / 3.84) /1.65);
+	height:calc((310px + 26vw / 3.84) /1.65);
 	max-height: 298px;
 }
 
@@ -590,7 +590,7 @@ div.scene-file-info .TruncatedText, div.scene-file-info .text-truncate {
 	object-fit: cover !important;
 	margin-top:-2%;
 	margin-left:-6px;
-	zoom:104%;
+	transform: scale(1.04);
 }
 
 
