@@ -43,7 +43,7 @@ Payload (set desired content to generate **sprites**,**previews**,**imagePreview
 ```
 _Example using curl_
 
-`curl -X POST -H "Content-Type: application/json" --data '{ "query": "mutation { metadataGenerate ( input : { sprites: false previews: true markers: false transcodes: false imagePreviews: false } ) }" }' localhost:9998/graphql`
+`curl -X POST -H "Content-Type: application/json" --data '{ "query": "mutation { metadataGenerate ( input : { sprites: false previews: true imagePreviews: false markers: false transcodes: false } ) }" }' localhost:9998/graphql`
 
 ### Get Studios
 
