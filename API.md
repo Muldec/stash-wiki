@@ -35,15 +35,15 @@ curl -X POST -H "ApiKey: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiJiaWxsIi
 
 Request: `HTTP-POST`
 
-Payload (set desired content to generate **sprites**,**previews**,**markers**,**transcodes** to ```true``` or ```false```):
+Payload (set desired content to generate **sprites**,**previews**,**imagePreviews**,**markers**,**transcodes** to ```true``` or ```false```):
 ```json
 {
-  "query": "{ metadataGenerate ( input : { sprites: true previews: false markers:false transcodes:false } ) }" 
+  "query": "mutation { metadataGenerate ( input : { sprites: true previews: false imagePreviews: false markers: false transcodes: false } ) }" 
 }
 ```
 _Example using curl_
 
-`curl -X POST -H "Content-Type: application/json" --data '{ "query": "{ metadataGenerate ( input : { sprites: false previews: true markers:false transcodes:false } ) }" }' localhost:9998/graphql`
+`curl -X POST -H "Content-Type: application/json" --data '{ "query": "mutation { metadataGenerate ( input : { sprites: false previews: true markers: false transcodes: false imagePreviews: false } ) }" }' localhost:9998/graphql`
 
 ### Get Studios
 
