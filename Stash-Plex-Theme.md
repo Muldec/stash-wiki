@@ -246,6 +246,7 @@ option {
 .folder-list .btn-link {
     color: #2c2e30;
 }
+
 #performer-scraper-popover {
   z-index: 10;
 }
