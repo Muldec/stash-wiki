@@ -1,6 +1,6 @@
 if you want to add a collection of performers, tags, studios, etc, and you have a text/spreadsheet list of them, here's the walkthrough of how to do it via a simple CLI method.
 
-**Step 1: Install this:** 
+# **Step 1: Install this:** 
 
 [https://github.com/efstajas/gql-iterate](https://github.com/efstajas/gql-iterate)
 
@@ -10,12 +10,12 @@ or
 
 `yarn add @efstajas/gql-iterate -g`
 
-**Step 2: Prepare your gql.file if needed. ** 
+# **Step 2: Prepare your gql.file if needed.** 
 
 See below for performers.gql and tags.gql samples that should work for you.
 Others can be copied (with minor changes) from stash/graphql/documents/mutations
 
-**tags.gql:**
+## **tags.gql:**
 
     mutation TagCreate( 
       $name: String!,
@@ -28,7 +28,7 @@ Others can be copied (with minor changes) from stash/graphql/documents/mutations
       }
     }
 
-**performers.gql:**
+## **performers.gql:**
 
     mutation PerformerCreate( 
       $name: String!, 
@@ -72,7 +72,7 @@ Others can be copied (with minor changes) from stash/graphql/documents/mutations
        { id } 
      }
 
-**Step 3: Prepare your textfile or spreadsheet into a CSV**
+# **Step 3: Prepare your textfile or spreadsheet into a CSV**
 
 let's say you have a textfile with these performers (just names and eyecolors for a simple example)
 If you have a spreadsheet, add a first line with the column headers, you HAVE to provide all fields listed above in the first line, but you don't have to actually have data in them. 
@@ -90,7 +90,8 @@ the above lines all go into a file, like performerdata.csv
 
 For tags, you only need the tag title, and if desired, a url to a image
 
-Now run this CLI command (assumes your files are in current directory and location for gql-interate is in your path)
+# Step 4:
+ Run this CLI command (assumes your files are in current directory and location for gql-interate is in your path)
 
 `gql-iterate --host http://_yourserverIP:portgoeshere_/graphql --input ./performerdata.csv --query ./performers.gql`
 
