@@ -28,18 +28,13 @@ Plex Theme will only change the look&feel of the Stash interface. It **will not*
 
 **3.** Copy&Paste [CSS Code](#css-code) to the Custom CSS text area. 
 
+4,5 are optional. By default it uses the gh image links 
+
 **4.** Download **[background.png](https://user-images.githubusercontent.com/63812189/79506691-4af78900-7feb-11ea-883e-87b8e05ceb1c.png)**  and **[noise.png](https://user-images.githubusercontent.com/63812189/79506696-4c28b600-7feb-11ea-8176-12a46454d87a.png)** 
 
 **5.** Place `background.png` and `noise.png` in `~/.stash` on macOS / Linux or `C:\Users\YourUsername\.stash` on Windows.
 
-
 &nbsp;
-
-In case that background does not work, try changing the `background-url` path in the body div and root div.
-
-```
-background-image: url("YOUR BACKGROUND or NOISE path");
-```
 
 
 
@@ -55,7 +50,7 @@ Enjoy!
 
 ```css
 /*
-StashApp Plex Theme - Fidelio 2020 v1.0.2
+StashApp Plex Theme - Fidelio 2020 v1.0.3
  
 !CHANGE PATH FOR BACKGROUND in Body and Root in case it does not load!
 You can put image files into .stash folder or upload it on imgur, or upload it to your gallery and then link it.
@@ -66,7 +61,7 @@ fix blue borders
 */
 
 body {
-	background-image: url("./background.png");
+	background-image: url("https://user-images.githubusercontent.com/63812189/79506691-4af78900-7feb-11ea-883e-87b8e05ceb1c.png");
 	width: 100%;
 	height: 100%;
 	background-size: cover;
@@ -77,7 +72,7 @@ body {
 }
 
 #root {
-	background: rgba(0, 0, 0, 0) url("./noise.png") repeat scroll 0% 0%;
+	background: rgba(0, 0, 0, 0) url("https://user-images.githubusercontent.com/63812189/79506696-4c28b600-7feb-11ea-8176-12a46454d87a.png") repeat scroll 0% 0%;
 	position: absolute;
 	width: 100%;
 	height: 100%;
@@ -251,12 +246,7 @@ option {
 .folder-list .btn-link {
     color: #2c2e30;
 }
-```
-
-For users that have a recent dev build ( after 2021-01-14) an extra part is needed
-```css
 #performer-scraper-popover {
   z-index: 10;
 }
 ```
-You may adjust the z-index if needed although values > 2 should be safe
