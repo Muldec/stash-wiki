@@ -52,9 +52,9 @@ Enjoy!
 
 
 ```
-/*	StashApp Pulsar Theme - Fonzie 2020-21 v1.3.3	*/
+/*	StashApp Pulsar Theme - Fonzie 2020-21 v1.3.4	*/
 /* ---------------------------------------------------- */
-/* ---------- Updated to Stash version 0.60.09 -------- */
+/* ---------- Updated to Stash version 0.60.15 -------- */
 
 /* Adjustments to the 0.6 version, as well as moving the tag name 
 into the tag picture when clicking on a tag + adding multiple 
@@ -62,7 +62,9 @@ shadows to the resolution and the time/length of the videos
 
 Some minor things (the Movies page and the queries), and items on 
 the Scenes page now dynamically adjust depending on the size of 
-your browser window, just like they already do on the Performer page */
+your browser window, just like they already do on the Performer page 
+
+Issues when editing a movie got fixed    */
 
 
 
@@ -435,13 +437,14 @@ h5.card-section-title, .scene-tabs .scene-header {
 
 /* --- The Resolution and the Time/Length of the video in the bottom right corner to make it easier to read --- */
 .scene-specs-overlay {
+	font-family: Arial, Verdana,"Segoe UI" !important;
 	bottom:1px;
 	color: #FFF;
 	font-weight: bold;
-	letter-spacing: 0.045rem;
-	text-shadow: 2px 2px 1px #000, 4px 4px 5px #444, 4px 1px 5px #444, -2px 2px 5px #444, 0px -2px 5px #444, -1px -3px 6px #444, 3px -2px 6px #444;
+	letter-spacing: 0.035rem;
+	text-shadow: 2px 2px 1px #000, 4px 4px 5px #444, 7px 0px 5px #444, -3px 2px 5px #444, -5px 0px 5px #444, -1px -4px 5px #444, 3px -2px 6px #444;
 }
-
+.overlay-resolution {color:#eee;}
 
 /* --- Changes the spaces between the items on the Scenes page --- */
 .zoom-0 {margin: 4px 0.50% 10px; !important }
@@ -531,7 +534,9 @@ div.scene-file-info .TruncatedText, div.scene-file-info .text-truncate {
 }
 
 
-
+#scene-edit-details .pl-0 {
+    padding-left: 10px!important;
+}
 
 
 /* Zoom 0 */
@@ -774,11 +779,12 @@ div.scene-file-info .TruncatedText, div.scene-file-info .text-truncate {
 .movie-details table tr:nth-child(odd) {     background-color: rgba(16,22,26,0.1); }
 .movie-details .form-group, .movie-details table td:nth-child(1) {color:#FFF; text-shadow: 1px 1px 1px #000;}
 
+/*
 .movie-details div.form-group:nth-of-type(3) { border-radius: 0px 0px 20px 10px; background-color: rgba(16,22,26,0.3); margin-bottom:15px }
 .movie-details div.form-group {display: flex; flex-wrap: wrap; overflow: hidden; text-overflow:ellipsis;}
 .movie-details div.form-group label.form-label {width: 120px; padding:0 20px 0 5px}
 .movie-details div.form-group div {width:65%; text-align:left; 	}
-
+*/
 
 /* --- 0.60 dev adjustments --- */
 .movie-details .movie-details {background-color: rgba(15,20,30,0.20); border-radius: 10px; margin-bottom:15px; }
@@ -796,6 +802,7 @@ div.scene-file-info .TruncatedText, div.scene-file-info .text-truncate {
 	box-shadow: 6px 6px 11px rgba(0, 10, 10, .62);
 }
 
+form#movie-edit { margin-bottom:15px}
 
 
 
@@ -1037,7 +1044,6 @@ div.dropdown-menu .dropdown-item:focus,div.dropdown-menu .dropdown-item:hover,di
 #queue-viewer .current {
     background-color: rgba(15,20,30,0.30);
 }
-
 
 
 
