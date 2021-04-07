@@ -52,7 +52,7 @@ Enjoy!
 
 
 ```
-/*	StashApp Pulsar Theme - Fonzie 2020-21 v1.3.4	*/
+/*	StashApp Pulsar Theme - Fonzie 2020-21 v1.3.5	*/
 /* ---------------------------------------------------- */
 /* ---------- Updated to Stash version 0.60.15 -------- */
 
@@ -64,7 +64,8 @@ Some minor things (the Movies page and the queries), and items on
 the Scenes page now dynamically adjust depending on the size of 
 your browser window, just like they already do on the Performer page 
 
-Issues when editing a movie got fixed    */
+Issues when editing a movie got fixed    
+Folder color when doing selective scan				*/
 
 
 
@@ -1044,6 +1045,9 @@ div.dropdown-menu .dropdown-item:focus,div.dropdown-menu .dropdown-item:hover,di
 #queue-viewer .current {
     background-color: rgba(15,20,30,0.30);
 }
+
+/* Folder color when doing selective scan or configuration */
+.input-group .form-control {color: #c9e0e7; }
 
 
 
