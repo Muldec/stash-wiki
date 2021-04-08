@@ -52,7 +52,7 @@ Enjoy!
 
 
 ```
-/*	StashApp Pulsar Theme - Fonzie 2020-21 v1.3.5	*/
+/*	StashApp Pulsar Theme - Fonzie 2020-21 v1.3.6	*/
 /* ---------------------------------------------------- */
 /* ---------- Updated to Stash version 0.60.15 -------- */
 
@@ -65,7 +65,8 @@ the Scenes page now dynamically adjust depending on the size of
 your browser window, just like they already do on the Performer page 
 
 Issues when editing a movie got fixed    
-Folder color when doing selective scan				*/
+Folder color when doing selective scan
+Preview Videos were too small				*/
 
 
 
@@ -554,22 +555,22 @@ div.scene-file-info .TruncatedText, div.scene-file-info .text-truncate {
 .zoom-1 { min-width: 300px; width: calc(234px + 24vw /3.84);max-width: 430px}
 /* Improves the way the scene picture is displayed when the resolution isn't 16:9 (e.g. 4:3) --- */
 .zoom-1 .video-section {height:calc((234px + 24vw / 3.84)/1.65);max-height: 270px}
-.zoom-1 .scene-card-preview-image, .zoom-1 .scene-card-preview { height:calc((234px + 24vw / 3.84)/1.65); max-height: 265px}
+.zoom-1 .scene-card-preview-image, .zoom-1 .scene-card-preview { height:calc((237px + 24vw / 3.84)/1.65); max-height: 265px}
 
 .zoom-1 .scene-card-preview, .zoom-1 .scene-card-preview-video, .zoom-1 .scene-card-video {
 	min-width: 300px; width: calc(228px + 17vw / 1.92);max-width: 470px;
-	height:calc((234px + 24vw / 3.84)/1.65);
+	height:calc((234px + 26vw / 3.84)/1.65);
 	max-height: 265px;
 }
 
 /* Zoom 2 */
 .zoom-2 { min-width: 350px; width: calc(310px + 26vw / 3.84);max-width: 495px}
 .zoom-2 .video-section {height:calc((310px + 26vw / 3.84) /1.65);max-height:305px}
-.zoom-2 .scene-card-preview-image, .zoom-2 .scene-card-preview { height:calc((310px + 26vw / 3.84) /1.65); max-height:298px}
+.zoom-2 .scene-card-preview-image, .zoom-2 .scene-card-preview { height:calc((313px + 26vw / 3.84) /1.65); max-height:298px}
 
 .zoom-2 .scene-card-preview, .zoom-2 .scene-card-preview-video, .zoom-2 .scene-card-video {
 	min-width: 350px; width: calc(330px + 28vw / 3.84);max-width: 530px;
-	height:calc((310px + 26vw / 3.84) /1.65);
+	height:calc((310px + 28vw / 3.84) /1.65);
 	max-height: 298px;
 }
 
@@ -580,7 +581,7 @@ div.scene-file-info .TruncatedText, div.scene-file-info .text-truncate {
 .zoom-3 .scene-card-preview-image, .zoom-3 .scene-card-preview { height:395px; }
 .zoom-3 .scene-card-preview, .zoom-3 .scene-card-preview-video, .zoom-3 .scene-card-video {
 	width: 600px;
-	min-height:375px;
+	min-height:385px;
 	max-height: 400px;
 }
 
@@ -592,7 +593,7 @@ div.scene-file-info .TruncatedText, div.scene-file-info .text-truncate {
 .zoom-1 .scene-card-preview, .zoom-1 .scene-card-preview-video, .zoom-1 .scene-card-video, 
 .zoom-2 .scene-card-preview, .zoom-2 .scene-card-preview-video, .zoom-2 .scene-card-video,
 .zoom-3 .scene-card-preview, .zoom-3 .scene-card-preview-video, .zoom-3 .scene-card-video {
-	height:auto;
+/*	height:auto;*/
 	object-fit: cover !important;
 	margin-top:-2%;
 	margin-left:-6px;
@@ -1046,7 +1047,7 @@ div.dropdown-menu .dropdown-item:focus,div.dropdown-menu .dropdown-item:hover,di
     background-color: rgba(15,20,30,0.30);
 }
 
-/* Folder color when doing selective scan or configuration */
+/* Folder when doing selective scan or configuration */
 .input-group .form-control {color: #c9e0e7; }
 
 
