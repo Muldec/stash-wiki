@@ -7,10 +7,10 @@
 
 |  File/Folder | Mount Path | Description  |
 |---|---|---|
-| docker/Stash/Generated  | /generated  | Thumbnails, clips, etc  |
-| docker/Stash/metadata  | /metadata  | Database  |
-| docker/Stash/config  | /root/.stash  | Configuration Files  |
-| docker/Stash/cache  | /cache  | Cache Files  |
+| docker/stash/generated  | /generated  | Thumbnails, clips, etc  |
+| docker/stash/metadata  | /metadata  | Database  |
+| docker/stash/config  | /root/.stash  | Configuration Files  |
+| docker/stash/cache  | /cache  | Cache Files  |
 | (where your porn lives)  | /data  | Location of your porn  |
 
 ### "Environment" Tab
