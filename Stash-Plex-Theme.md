@@ -37,7 +37,7 @@ Plex Theme will only change the look&feel of the Stash interface. It **will not*
 Then edit the `background-image: url("")` like below:
 &nbsp;
 
-The `Body` one 	`background-image: url("./background.jpg");`
+The `Body` one 	`background-image: url("./background.png");`
 
 &nbsp;
 The `root` one `background: rgba(0, 0, 0, 0) url("./noise.png") repeat scroll 0% 0%;`
