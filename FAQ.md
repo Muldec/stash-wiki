@@ -36,7 +36,7 @@ The installation instructions are available from the [README.md](https://github.
 -   _Note for Mac/Linux users_: If you have trouble, try running `chmod u+x stash-osx` or `chmod u+x stash-linux` to make the file executable.
 
 
-** Then navigate to either https://localhost:9999 or http://localhost:9998 to get started.** 
+** Then navigate to either https://localhost:9999 or http://localhost:9998 to get started. ** 
 
 # Logging In
 ## How do I recover a forgotten username or password?
