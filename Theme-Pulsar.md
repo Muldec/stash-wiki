@@ -7,10 +7,10 @@
     </a>
 </p>
 
-<img src="https://i.imgur.com/2bVeUn2.jpg" />
+<img src="https://i.imgur.com/pC5ufp9.jpg" />
 <img src="https://i.imgur.com/U5St6Gw.jpg" />
 <img src="https://i.imgur.com/MSUp4AL.jpg" />
-<img src="https://i.imgur.com/vhg1ZVq.jpg" />
+<img src="https://i.imgur.com/NkvyjRm.jpg" />
 
 &nbsp;
 
@@ -52,21 +52,13 @@ Enjoy!
 
 
 ```
-/*	StashApp Pulsar Theme - Fonzie 2020-21 v1.3.6	*/
+/*	StashApp Pulsar Theme - Fonzie 2020-21 v1.4.0 beta	*/
 /* ---------------------------------------------------- */
-/* ---------- Updated to Stash version 0.60.15 -------- */
+/* --------- Updated to Stash version 0.6.0-49 -------- */
 
-/* Adjustments to the 0.6 version, as well as moving the tag name 
-into the tag picture when clicking on a tag + adding multiple 
-shadows to the resolution and the time/length of the videos 
-
-Some minor things (the Movies page and the queries), and items on 
-the Scenes page now dynamically adjust depending on the size of 
-your browser window, just like they already do on the Performer page 
-
-Issues when editing a movie got fixed    
-Folder color when doing selective scan
-Preview Videos were too small				*/
+/* Adjustments to latest developmental version which includes 
+   performer & studio ratings, as well as several new performer 
+   fields + images & galleries in the performer card.		*/
 
 
 
@@ -106,6 +98,7 @@ body {
 	--std-txt-shadow: 2px 2px 1px #000;
 	--light-txt-shadow: 1px 2px 1px #222;
 	--white: #ffffff;
+	--stars: url("https://i.imgur.com/YM1nCqo.png");
 }
 
 
@@ -243,13 +236,19 @@ a {	color: hsla(0, 10%, 95%, .75);}
 .performer-card-image, .justify-content-center .card-image { min-height:240px; height: calc((112px + 19vw / 3.6) * 1.5); max-height: 345px;} 
 .performer-card-image, .justify-content-center .card-image { min-height:240px; height: calc((100px + 11.2vw / 1.92) * 1.5); max-height: 345px;} 
 
+@media (max-width: 575px), (min-width: 1200px) {
+.scene-performers .performer-card-image { height: auto; }
+.scene-performers .performer-card { width: auto; }
+}
+
+
 /* --- Fixes an issue of the card when watching a scene --- */
 .image-section { display: cover;}
 
 /* --- The name of the Performer. Different font, less space to the left & to the top, Text-Shadow --- */
 .text-truncate, .card.performer-card .TruncatedText {
 	margin-left:-1.5%; 
-	margin-top: -1px; 
+	margin-top: -2px; 
 	width: 120%; 
 	font-family: var(--HeaderFont);
 	font-size: 112%; 
@@ -257,6 +256,10 @@ a {	color: hsla(0, 10%, 95%, .75);}
 	font-weight:bold; 
 	text-shadow: var(--std-txt-shadow);
 }
+
+/* --- Makes the Performer Name smaller when the screen is too small --- */
+@media (max-width: 1200px) { .card.performer-card .TruncatedText { font-size: 104%; } }
+
 
 
 /* --- Moves the Flag icon from the right side of the card to the left and makes the Flag image a little bit bigger --- */
@@ -268,7 +271,23 @@ a {	color: hsla(0, 10%, 95%, .75);}
 }
 
 /* --- Age and # of Scenes move from the left side to the right of the card --- */
-.text-muted {text-align:right;margin-top:-4px;}
+.text-muted {text-align:right;margin-top:-2px;margin-bottom:1px}
+
+/* --- "removes" the term 'old.' from "xx years old." when the resolution gets to small --- */ 
+@media (max-width: 1520px) {
+div.card.performer-card .text-muted {text-align:right;margin-top:-2px;margin-bottom:1px;margin-right:-33px}
+}
+
+/* --- To prevent overlapping in the performer card when watching a scene --- */
+@media (max-width: 2000px) {
+.tab-content div.card.performer-card .text-muted {margin-top:22px;margin-right:-3px}
+.tab-content .performer-card.card .rating-1, 
+.tab-content .performer-card.card .rating-2, 
+.tab-content .performer-card.card .rating-3, 
+.tab-content .performer-card.card .rating-4, 
+.tab-content .performer-card.card .rating-5 {bottom: 53px !important;}
+}
+
 
 /* --- Text Shadow for the "Stars in x scenes" link --- */
 div.card.performer-card div.text-muted a {text-shadow: 1px 2px 2px #333}
@@ -276,31 +295,72 @@ div.card.performer-card div.text-muted a {text-shadow: 1px 2px 2px #333}
 /* --- Makes the card section (Name, Age, Flag, # of scenes) more compact --- */
 .card-section { margin-bottom: -8px !important; padding: .5rem 0.7rem 0 !important;}
 .card-section span {margin-bottom:3px}
-
-/* --- Moves the "Favorite" banner a little more to the top left corner --- */
-div.card.performer-card .rating-banner {
-	top: 8px 
-	padding: 8px 42px 6px;
-	line-height: 1.1rem;
-	transform: rotate(-41deg);
-	box-shadow: 2px 2px 5px rgba(0, 0, 0, .95);
-}
-
+@media (max-width: 1500px) {	.card-section span {font-size:11px}	}
 
 div.card-section hr {display:none}
 
-div.performer-card div.card-popovers {
-	margin-bottom: -3px;
-	margin-left:22%;
-	margin-top:-4px;
-	margin-right: -9px;
-	justify-content: flex-end;
-	text-align:right;
+
+
+
+/* --- Changes regarding the Favorite <3 --- */
+.performer-card .favorite {
+    color: #f33;
+    -webkit-filter: drop-shadow(2px 2px 3px rgba(0, 0, 0, .95));
+	filter: drop-shadow(2px 2px 3px rgba(0, 0, 0, .95));
+	right: 3px;
+	top: 5px;
 }
 
 
 
+/* --- Turns the Rating Banner in the top left corner into a Star Rating under the performer name --- */
+.performer-card.card .rating-1, .performer-card.card .rating-2, .performer-card.card .rating-3, 
+.performer-card.card .rating-4, .performer-card.card .rating-5
+{
+	background:none;
+	background-size: 97px 18px;
+	background-image:var(--stars);
+	-webkit-transform:rotate(0deg);
+	transform:rotate(0deg);
+	padding:0;
+	padding-bottom:1px;
+	box-shadow: 0px 0px 0px rgba(0, 0, 0, .00);
+	left:6px;
+	width:97px;
+	height:18px;
+	text-align:left;
+	position:absolute;
+	top:auto;
+	bottom: 34px;
+	font-size:0.001rem;
+}
 
+/* --- Display only X amount of stars  -- */
+div.performer-card.card .rating-banner.rating-1 {width:20px}
+div.performer-card.card .rating-banner.rating-2 {width:39px}
+div.performer-card.card .rating-banner.rating-3 {width:59px} 
+div.performer-card.card .rating-banner.rating-4 {width:78px}  
+div.performer-card.card .rating-banner.rating-5 {width:97px}  
+
+
+
+.performer-card .btn {padding: .375rem .013rem}
+.performer-card .fa-icon {margin: 0 2px}
+.performer-card .card-popovers .fa-icon {margin-right: 3px}
+.performer-card .svg-inline--fa.fa-w-18, .performer-card .svg-inline--fa.fa-w-16 {height: 0.88em}
+.performer-card .favorite .svg-inline--fa.fa-w-16 {height:1.5rem}
+
+div.performer-card div.card-popovers {
+	margin-bottom: -3px;
+	margin-left:1%;
+	margin-top:-4px;
+	margin-right: -3px;
+	justify-content: flex-end;
+	text-align:right;
+}
+.performer-card .card-popovers .btn-primary {
+    margin: 0 0px 0 6px;
+}
 
 
 
@@ -379,7 +439,7 @@ table#performer-details {color:#FFF; text-shadow: 1px 1px 1px #000;}
 #performer-edit select.form-control, #performer-edit .input-group, #performer-edit .text-input.form-control {width: 100%;}
 #performer-edit textarea.text-input {min-height: 9ex;}
 
-#performer-edit .form-group:nth-child(14) .text-input.form-control {width:85%;}
+#performer-edit .form-group:nth-child(17) .text-input.form-control {width:85%;}
 
 @media (max-width: 750px) {
 #performer-edit .col-sm-auto div, #performer-edit label.form-label { float:left; width:22%;}
@@ -481,14 +541,14 @@ so it leaves some space in the bottom right corner of the card for the icons in 
 
 
 /* -- The whole section replaces the ratings banner with a star rating in the bottom left corner --- */ 
-.rating-1 {width:22px}
-.rating-2 {width:43px}
-.rating-3 {width:65px} 
-.rating-4 {width:86px}  
+.scene-card.card .rating-1 {width:22px}
+.scene-card.card .rating-2 {width:43px}
+.scene-card.card .rating-3 {width:65px} 
+.scene-card.card .rating-4 {width:86px}  
 .scene-card.card .rating-5 {background:none; width:108px}
 .rating-1, .rating-2, .rating-3, .rating-4, .scene-card.card .rating-5 {
 	background:none;
-	background-image:url("https://i.imgur.com/YM1nCqo.png");
+	background-image:var(--stars);
 	height:20px;
 	background-size: 108px 20px;
 } 
@@ -503,9 +563,10 @@ so it leaves some space in the bottom right corner of the card for the icons in 
 	transform: rotate(0deg);
 }
 
-.zoom-0.card .rating-banner {top: 81%}
-.zoom-2.card .rating-banner {top: 91%}
-.zoom-3.card .rating-banner {top: 92%}
+
+.zoom-0.card .scene-card.card .rating-banner {top: 81%}
+.zoom-2.card .scene-card.card .rating-banner {top: 91%}
+.zoom-3.card .scene-card.card .rating-banner {top: 92%}
 
 
 
@@ -554,9 +615,12 @@ div.scene-file-info .TruncatedText, div.scene-file-info .text-truncate {
 /* Zoom 1 */
 .zoom-1 { min-width: 300px; width: calc(234px + 24vw /3.84);max-width: 430px}
 /* Improves the way the scene picture is displayed when the resolution isn't 16:9 (e.g. 4:3) --- */
-.zoom-1 .video-section {height:calc((234px + 24vw / 3.84)/1.65);max-height: 270px}
-.zoom-1 .scene-card-preview-image, .zoom-1 .scene-card-preview { height:calc((237px + 24vw / 3.84)/1.65); max-height: 265px}
+.zoom-1 .video-section {height:calc((233px + 24vw / 3.84)/1.65);max-height: 258px}
+.zoom-1 .scene-card-preview-image, .zoom-1 .scene-card-preview { height:100%; max-height: 260px}
 
+/*
+.zoom-1 .scene-card-preview-image, .zoom-1 .scene-card-preview { height:calc((237px + 24vw / 3.84)/1.65); max-height: 260px}
+*/
 .zoom-1 .scene-card-preview, .zoom-1 .scene-card-preview-video, .zoom-1 .scene-card-video {
 	min-width: 300px; width: calc(228px + 17vw / 1.92);max-width: 470px;
 	height:calc((234px + 26vw / 3.84)/1.65);
@@ -565,8 +629,8 @@ div.scene-file-info .TruncatedText, div.scene-file-info .text-truncate {
 
 /* Zoom 2 */
 .zoom-2 { min-width: 350px; width: calc(310px + 26vw / 3.84);max-width: 495px}
-.zoom-2 .video-section {height:calc((310px + 26vw / 3.84) /1.65);max-height:305px}
-.zoom-2 .scene-card-preview-image, .zoom-2 .scene-card-preview { height:calc((313px + 26vw / 3.84) /1.65); max-height:298px}
+.zoom-2 .video-section {height:calc((310px + 26vw / 3.84) /1.65);max-height:295px}
+.zoom-2 .scene-card-preview-image, .zoom-2 .scene-card-preview { height:calc((313px + 26vw / 3.84) /1.65); max-height:292px}
 
 .zoom-2 .scene-card-preview, .zoom-2 .scene-card-preview-video, .zoom-2 .scene-card-video {
 	min-width: 350px; width: calc(330px + 28vw / 3.84);max-width: 530px;
@@ -593,12 +657,17 @@ div.scene-file-info .TruncatedText, div.scene-file-info .text-truncate {
 .zoom-1 .scene-card-preview, .zoom-1 .scene-card-preview-video, .zoom-1 .scene-card-video, 
 .zoom-2 .scene-card-preview, .zoom-2 .scene-card-preview-video, .zoom-2 .scene-card-video,
 .zoom-3 .scene-card-preview, .zoom-3 .scene-card-preview-video, .zoom-3 .scene-card-video {
-/*	height:auto;*/
 	object-fit: cover !important;
 	margin-top:-2%;
 	margin-left:-6px;
 	transform: scale(1.04);
 }
+
+/* --- Shrink the Player Height just a little bit to avoid the scroll bar --- */
+#jwplayer-container {    height: calc(99.5vh - 4rem);}
+
+
+
 
 
 /* ============== Studio ================= */
@@ -647,7 +716,33 @@ div.scene-file-info .TruncatedText, div.scene-file-info .text-truncate {
 .studio-details .form-group, .studio-details table td:nth-child(1) {color:#FFF; text-shadow: 1px 1px 1px #000;}
 
 
+.studio-card.card .rating-1, .studio-card.card .rating-2, .studio-card.card .rating-3, 
+.studio-card.card .rating-4, .studio-card.card .rating-5
+{
+	background:none;
+	height: 25px;
+	background-size: 135px 25px;
+	background-image:var(--stars);
+	-webkit-transform:rotate(0deg);
+	transform:rotate(0deg);
+	padding:0;
+	padding-bottom:1px;
+	box-shadow: 0px 0px 0px rgba(0, 0, 0, .00);
+	left:10px;
+	text-align:left;
+	position:absolute;
+	top:auto;
+	bottom: 20% !important;
+	font-size:0.001rem;
+}
 
+.studio-card.card .rating-5{width:135px;} 
+.studio-card.card .rating-4{width:109px;} 
+.studio-card.card .rating-3{width:81px;} 
+.studio-card.card .rating-2{width:55px;} 
+.studio-card.card .rating-1{width:28px;} 
+
+div.studio-card.card .card-popovers {	margin-top: -34px;}
 
 
 
@@ -702,9 +797,10 @@ div.scene-file-info .TruncatedText, div.scene-file-info .text-truncate {
 	text-shadow: 2px 2px 1px #000, 4px 4px 4px #282828, 6px 1px 4px #282828, -3px 3px 3px #444, -2px -2px 4px #282828;
 	text-align:center; 
 }
-@media (max-width: 1300px) {.tag-details .form-control-plaintext {font-size:26px; 	margin-top:-50px;}}
+@media (max-width: 1300px) {.tag-details .form-control-plaintext {font-size:26px; margin-top:-50px;} }
 
 .tag-details .logo { min-width:300px}
+
 
 
 
@@ -733,7 +829,7 @@ div.scene-file-info .TruncatedText, div.scene-file-info .text-truncate {
 	transform: rotate(0deg);
 	padding: 0;
 	left: 3px;
-	top: 76% !important;
+	top: 77% !important;
 	height: 25px;
 	background-size: 135px 25px;
 	background-position: left;
@@ -747,7 +843,7 @@ div.scene-file-info .TruncatedText, div.scene-file-info .text-truncate {
 
 .movie-card-header .rating-5 {
 	background:none;
-	background-image:url("https://i.imgur.com/YM1nCqo.png");
+	background-image:var(--stars);
 	height: 25px;
 	background-size: 135px 25px;
 }
@@ -833,7 +929,7 @@ div.image-card .rating-5 {width:138px}
 
 div.image-card .rating-5 {
 	background:none;
-	background-image:url("https://i.imgur.com/YM1nCqo.png");
+	background-image:var(--stars);
 	height: 25px;
 	background-size: 135px 25px;
 }
@@ -879,7 +975,7 @@ div.gallery-card .rating-5 {width:138px}
 
 div.gallery-card .rating-5 {
 	background:none;
-	background-image:url("https://i.imgur.com/YM1nCqo.png");
+	background-image:var(--stars);
 	height: 25px;
 	background-size: 135px 25px;
 }
@@ -1049,6 +1145,7 @@ div.dropdown-menu .dropdown-item:focus,div.dropdown-menu .dropdown-item:hover,di
 
 /* Folder when doing selective scan or configuration */
 .input-group .form-control {color: #c9e0e7; }
+
 
 
 
