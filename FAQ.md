@@ -29,7 +29,7 @@
 The installation instructions are available from the [README.md](https://github.com/stashapp/stash).
 ## How do I get into Stash once installed?
 #### Windows
-- Run the executable (typically "stash-win.exe). The app will start up in a terminal window.
+- Run the executable (typically "stash-win.exe"). The app will start up in a terminal window, read in your configuration and then give you a URL to connect with in your browser.
 - _Note for Windows users_: Running the app might present a security prompt since the binary isn't signed yet. Just click more info and then the "run anyway" button.
 #### Mac OS / Linux
 -  Run `./stash-osx` / `./stash-linux` from the terminal on macOS / Linux)
