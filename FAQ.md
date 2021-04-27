@@ -1,7 +1,7 @@
 # Stash F.A.Q.s - Frequently Asked Questions (and Answers)
 [Installing and Configuring](#launching) • 
-[Logging In](#logging-in) 
-[Working With Content](#working-with-content) 
+[Logging In](#logging-in)  • 
+[Working With Content](#working-with-content)  • 
 [Troubleshooting](#troubleshooting) •
 [Other](#other)
 
