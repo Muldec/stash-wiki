@@ -1,3 +1,5 @@
+![Stash Night Theme](https://user-images.githubusercontent.com/56232119/116778268-27c23f00-aa71-11eb-8c99-b30b6775f691.png)
+
 # CSS Code
 
 ```
