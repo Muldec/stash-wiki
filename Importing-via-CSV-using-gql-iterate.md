@@ -12,8 +12,10 @@ or
 
 # **Step 2: Prepare your gql.file if needed.** 
 
-See below for performers.gql and tags.gql samples that should work for you.
-Others can be copied (with minor changes) from stash/graphql/documents/mutations
+See below for example versions of performers.gql and tags.gql samples that should work for you.
+Others can be figured out (with minor changes needee) from stash/graphql/documents/mutations
+
+These are NOT identical to the original files found above.  Compare you'll see how they differ.  This is very specific to be used for gql-iterate.
 
 ## **tags.gql:**
 
@@ -72,6 +74,10 @@ Others can be copied (with minor changes) from stash/graphql/documents/mutations
        { id } 
      }
 
+
+If you have a suggested change, please add it below.
+
+
 # **Step 3: Prepare your textfile or spreadsheet into a CSV**
 
 let's say you have a textfile with these performers (just names and eyecolors for a simple example)
@@ -87,6 +93,10 @@ then add your data if text, or export as CSV if it's a spreadsheet
     Carter,,,,,,brown
 
 the above lines all go into a file, like performerdata.csv
+
+
+Gender is complicated due to Stash using GenderEnum.
+
 
 For tags, you only need the tag title, and if desired, a url to a image
 
