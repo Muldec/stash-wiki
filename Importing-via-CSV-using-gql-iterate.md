@@ -10,6 +10,10 @@ or
 
 `yarn add @efstajas/gql-iterate -g`
 
+For latest versions of NodeJS (14>) you need to **C:/Users/MyUserName/AppData/Roaming/npm/node_modules/@efstajas/gql-iterate/bin** and add the following to the first line of the cli.js file.
+
+`import { createRequire } from 'module'; const require = createRequire(import.meta.url);`
+
 # **Step 2: Prepare your gql.file if needed.** 
 
 See below for example versions of performers.gql and tags.gql samples that should work for you.
@@ -99,6 +103,8 @@ Gender is complicated due to Stash using GenderEnum.
 
 
 For tags, you only need the tag title, and if desired, a url to a image
+
+If you're unable to get this to work, then **omit** the **favorite** and **image** property from your CSV header, and from the **performers.gql** file.
 
 # Step 4:
  Run this CLI command (assumes your files are in current directory and location for gql-interate is in your path)
