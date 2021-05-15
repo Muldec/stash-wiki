@@ -10,7 +10,7 @@ or
 
 `yarn add @efstajas/gql-iterate -g`
 
-For latest versions of NodeJS (14>) you need to **C:/Users/MyUserName/AppData/Roaming/npm/node_modules/@efstajas/gql-iterate/bin** and add the following to the first line of the cli.js file.
+For latest versions of NodeJS (14>) you need to C:/Users/YourUserName/AppData/Roaming/npm/node_modules/@efstajas/gql-iterate/bin and add the following to the first line of the cli.js file.
 
 `import { createRequire } from 'module'; const require = createRequire(import.meta.url);`
 
