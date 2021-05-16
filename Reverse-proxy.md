@@ -63,7 +63,7 @@ Another example for `traefik2`:
 
 In this case we are using `stash.home` as our domain and `192.168.0.1` is stash's ip so edit acccordingly.
 
-The `external_host` configuration option should also be set, in this case `external_host: http://stash.home`. Refer to <https://github.com/stashapp/stash/pull/369> for more details
+The `external_host` configuration option should also be set, in this case `external_host: http://stash.home`. Refer to [external_host](https://github.com/stashapp/stash/pull/369) for more details
 
 ```bash
 server {
