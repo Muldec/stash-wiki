@@ -59,7 +59,7 @@ server {
 }
 ```
 
-Another example for `traefik2`:
+Another example for `nginx`:
 
 In this case we are using `stash.home` as our domain and `192.168.0.1` is stash's ip so edit acccordingly.
 
