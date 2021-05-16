@@ -1,6 +1,6 @@
 The use of nginx as a reverse proxy for stash is possible. 
 A sample configuration of headers that need to be set mentioned [here](https://github.com/stashapp/stash/pull/134) is 
-```
+```bash
 location / {
     proxy_pass http://127.0.0.1:9999;
     proxy_set_header Host $host;
@@ -14,14 +14,14 @@ As of commit **7767271**, if needed you can adjust the **external_host** setting
 
 In order for the websocket to work, you may need to also add these lines to your server block (`proxy.conf` file in the Letencrypt Unraid docker container for instance) as mentioned [here](https://github.com/stashapp/stash/issues/532)
 
-```
+```bash
 proxy_http_version 1.1;
 proxy_set_header Upgrade $http_upgrade;
 proxy_set_header Connection "upgrade";
 ```
 
 If you are using the linuxserver letencrypt docker you can use create a `stash.subdomain.conf` file in your `proxy-confs` folder and use this as the config:
-```
+```bash
 # make sure that your dns has a cname set for stash
 
 server {
@@ -58,3 +58,30 @@ server {
 
 }
 ```
+
+Another example for `traefik2`:
+
+In this case we are using `stash.home` as our domain and `192.168.0.1` is stash's ip so edit acccordingly.
+
+The `external_host` configuration option should also be set, in this case `external_host: http://stash.home`. Refer to <https://github.com/stashapp/stash/pull/369> for more details
+
+```bash
+server {
+    listen 80;
+    listen [::]:80;
+
+    server_name stash.home;
+        client_max_body_size 0;
+        location / {
+           proxy_pass http://192.168.0.1:9999/;
+           proxy_http_version 1.1;
+           proxy_set_header Upgrade $http_upgrade;
+           proxy_set_header Connection "Upgrade";
+           proxy_set_header Host $host;
+           proxy_set_header X-Real-IP $remote_addr;
+           proxy_set_header X-Forwarded-For $remote_addr;
+           proxy_set_header X-Forwarded-Port $server_port;
+           proxy_set_header X-Forwarded-Proto $scheme;
+    }
+
+}
