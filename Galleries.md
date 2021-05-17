@@ -1,4 +1,4 @@
-### Consider the following as outdated. For updated info check the Image Galleries section in stash's app help/manual.
+# Consider the following as deprecated. For updated info check the Image Galleries section in stash's app help/manual.
 
 ***
 
