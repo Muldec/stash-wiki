@@ -5,8 +5,8 @@ Stash is a web front-end app for serving and organizing your porn. Stash current
 # Quick Links
 ## Installing
 [Synology NAS](https://github.com/stashapp/stash/wiki/Installing-on-Synology-NAS) • [UNRAID](https://github.com/stashapp/stash/wiki/Unraid-Support) • [Using A Reverse Proxy](https://github.com/stashapp/stash/wiki/Reverse-proxy)
-## Advanced Configuration
-[Command-Line Flags](https://github.com/stashapp/stash/wiki/Advanced-Configuration-Options) • 
+## Advanced Configuration And Troubleshooting
+[Command-Line Flags](https://github.com/stashapp/stash/wiki/Advanced-Configuration-Options) • [Troubleshooting Video Playback Issues](https://github.com/stashapp/stash/wiki/Troubleshooting-video-playback-issues)
 ## Customizing and Expanding Functionality
 [Theme Directory](https://github.com/stashapp/stash/wiki/Themes) • [Custom CSS Snippets](https://github.com/stashapp/stash/wiki/Custom-CSS-snippets) • [Plugin Directory](https://github.com/stashapp/stash/wiki/Plugins)
 ## Working With The Database
