@@ -40,7 +40,7 @@ The installation instructions are available from the [README.md](https://github.
 
 # Logging In
 ## How do I recover a forgotten username or password?
-User authentication was added as of Stash build 707bd09. Stash saves login credentials in the config.yml file. You must reset both login and password if you have forgotten your password by doing the following:
+Stash saves login credentials in the config.yml file. You must reset both login and password if you have forgotten your password by doing the following:
 * Close your Stash process
 * Open the `config.yml` file found in your Stash directory with a text editor
 * Delete the `login` and `password` lines from the file and save
@@ -56,7 +56,7 @@ Change the address of the server from 0.0.0.0 to the IP address of the computer 
 ## What's the best way to add metadata to Stash?
 
 * Stash includes a single scraper, but you can add more via the [CommunityScrapers repo](https://github.com/stashapp/CommunityScrapers). See the README for installation and usage instructions.
-* Pierre Delecto wrote [a Python script](https://github.com/pierre-delecto/stash_theporndb_scraper) for scraping from ThePornDB. This is arguably the fastest way to mass create studios / performers and populate scene data.
+* Pierre Delecto wrote [a Python script](https://github.com/ThePornDatabase/stash_theporndb_scraper) for scraping from ThePornDB. This is arguably the fastest way to mass create studios / performers and populate scene data.
 * Stash-Box is a separate application from Stash itself - the intent is to allow for crowdsourcing of porn metadata. Right now, Stash-Box is under heavy development. Unless you're planning to contribute code, there isn't much reason to run this yourself for the moment. However, check the pinned messages in the #stash-box channel in Discord to try the client-side interface.
 
 ## How do I rename or relocate a library folder?
