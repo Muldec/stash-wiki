@@ -60,7 +60,7 @@ Change the address of the server from 0.0.0.0 to the IP address of the computer 
 * Stash-Box is a separate application from Stash itself - the intent is to allow for crowdsourcing of porn metadata. Right now, Stash-Box is under heavy development. Unless you're planning to contribute code, there isn't much reason to run this yourself for the moment. However, check the pinned messages in the #stash-box channel in Discord to try the client-side interface.
 
 ## How do I rename or relocate a library folder?
-**If you need to move or rename a folder**, you can remove the existing directory from your library and readd the new location. Stash will recognize the files and re-link to the new location. **Do not run a Clean in between these steps, or you will lose the information from your relocated folders** (your files will not be affected).
+**If you need to move or rename a folder**, you can remove the existing directory from your library and readd the new location. Stash will recognize the files on the next scan and re-link to the new location. **Do not run a Clean in between these steps, or you will lose the information from your relocated folders** (your files will not be affected).
 
 > **⚠️ Note:** Don't forget to click `Save` after updating these directories!
 
