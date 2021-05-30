@@ -10,15 +10,17 @@ location / {
     proxy_set_header X-Forwarded-Proto $scheme;
 }
 ```
-As of commit **7767271**, if needed you can adjust the **external_host** setting to your external address as mentioned [here](https://github.com/stashapp/stash/pull/369)
+If needed you can adjust the **external_host** setting to your external address as mentioned [here](https://github.com/stashapp/stash/pull/369)
 
-In order for the websocket to work, you may need to also add these lines to your server block (`proxy.conf` file in the Letencrypt Unraid docker container for instance) as mentioned [here](https://github.com/stashapp/stash/issues/532)
+In order for the websocket to work, you may need to also add these lines to your server block (`proxy.conf` file in the Letencrypt Unraid docker container for instance) as mentioned [here](https://github.com/stashapp/stash/issues/532) should fix the issue.
 
 ```bash
 proxy_http_version 1.1;
 proxy_set_header Upgrade $http_upgrade;
 proxy_set_header Connection "upgrade";
 ```
+
+In some cases with big database files you might encounter `504` errors during stash db migration due to timeout. Adjusting the `proxy_read_timeout` value ( `proxy.conf` file in Letencrypt/Swag docker container)
 
 If you are using the linuxserver letencrypt docker you can use create a `stash.subdomain.conf` file in your `proxy-confs` folder and use this as the config:
 ```bash
