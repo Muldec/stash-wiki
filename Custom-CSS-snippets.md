@@ -140,17 +140,6 @@ div.nav-link[data-rb-event-key="/scenes"] {
 }
 ```
 
-## Hide specific navigation bar buttons
-
-Hide links to specific sections from the header.
-
-```css
-/* Example: Hide markers */
-div.nav-link[data-rb-event-key="/scenes/markers"] {
-  display: none;
-}
-```
-
 ## Hide the Donate button
 
 ```css
