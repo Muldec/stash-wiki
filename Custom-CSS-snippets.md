@@ -75,6 +75,16 @@ Reduce left and right padding on Scene and Performer grid pages allowing for mor
 }
 ```
 
+## Disable zoom on hover in wall mode
+```css
+.wall-item:hover .wall-item-container {
+    transform: none;
+}
+.wall-item:before {
+    opacity: 0 !important;
+}
+```
+
 ## Hide the scene scrubber
 
 This will hide the large scene scrubber under the video player, and max out the player's height.
