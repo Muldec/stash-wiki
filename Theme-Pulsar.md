@@ -52,13 +52,13 @@ Enjoy!
 
 
 ```
-/*	StashApp Pulsar Theme - Fonzie 2020-21 v1.4.0 beta	*/
+/*	StashApp Pulsar Theme - Fonzie 2020-21 v1.5.0 beta	*/
 /* ---------------------------------------------------- */
-/* --------- Updated to Stash version 0.6.0-49 -------- */
+/* --------- Updated to Stash version 0.7.0-60 -------- */
 
 /* Adjustments to latest developmental version which includes 
-   performer & studio ratings, as well as several new performer 
-   fields + images & galleries in the performer card.		*/
+   the Performer Tagger, Saved Filters, and the Edit Performers 
+   function on the Performers page	*/
 
 
 
@@ -343,7 +343,6 @@ div.performer-card.card .rating-banner.rating-4 {width:78px}
 div.performer-card.card .rating-banner.rating-5 {width:97px}  
 
 
-
 .performer-card .btn {padding: .375rem .013rem}
 .performer-card .fa-icon {margin: 0 2px}
 .performer-card .card-popovers .fa-icon {margin-right: 3px}
@@ -361,6 +360,55 @@ div.performer-card div.card-popovers {
 .performer-card .card-popovers .btn-primary {
     margin: 0 0px 0 6px;
 }
+
+
+
+/* --- PerformerTagger Changes --- */
+
+.PerformerTagger-performer {
+	background-image: linear-gradient(130deg, rgba(50, 60, 75,0.25), rgba(150, 155, 160,0.32), rgba(35, 40, 45,0.26), rgba(160, 160, 165,0.27), rgba(50, 60, 65,0.37)); 
+	background-color: rgba(16, 20, 25, .23); 
+	box-shadow: 2px 2px 6px rgba(0, 0, 0, .70);
+	border-radius: 8px;
+	margin: 1.1%;
+  }
+  
+.tagger-container .input-group-text  {background:none;border:0;margin-right:5px;padding-left:0}
+.PerformerTagger-details {	margin-left: 1.25rem; width:23.5rem;}
+
+.tagger-container .btn-link{text-shadow: 1px 2px 3px #000;}
+.tagger-container, .PerformerTagger {	max-width: 1850px;}
+
+.PerformerTagger-header h2 {	
+	font-family: Helvetica, "Helvetica Neue", "Segoe UI" !important; 
+	font-size: 2rem; 
+	line-height:130%; 
+	font-weight:bold; 
+	text-shadow: 2px 2px 1px #000 !important
+}
+
+.PerformerTagger-thumb {height: 50px;}
+
+.modal-backdrop 	 {	background-color: rgba(16, 20, 25, .25);}
+.modal-backdrop.show {	opacity: 0.1;	}
+
+.performer-create-modal {	max-width: 1300px; font-family: Helvetica, "Helvetica Neue", "Segoe UI" !important; }
+.performer-create-modal .image-selection .performer-image { height: 95%; }
+.performer-create-modal .image-selection {height: 485px;}
+
+.performer-create-modal .no-gutters .TruncatedText {
+	font-family: var(--HeaderFont);
+	font-size: 115%;
+	padding-top:2px;
+	line-height:120%; 
+	font-weight:bold; 
+	text-shadow: var(--std-txt-shadow);
+}
+.performer-create-modal-field strong {margin-left: 6px}
+.modal-footer {border-top: 0}
+
+
+
 
 
 
@@ -667,6 +715,16 @@ div.scene-file-info .TruncatedText, div.scene-file-info .text-truncate {
 #jwplayer-container {    height: calc(99.5vh - 4rem);}
 
 
+div.tagger-container .btn-link { 	
+	font-family: var(--HeaderFont);
+	font-size: 110%; 
+	color: #ddf; 
+	text-shadow: var(--std-txt-shadow); 
+}
+
+
+
+
 
 
 
@@ -753,6 +811,9 @@ div.studio-card.card .card-popovers {	margin-top: -34px;}
 .tag-card.zoom-0 { width: 335px; height:230px; min-width:335px}
 #tags .card {padding:0 0 10px 0; }
 
+
+
+
 .zoom-0 .gallery-card-image, .zoom-0 .tag-card-image {
     max-height: 195px;height:190px;
 }
@@ -787,7 +848,7 @@ div.studio-card.card .card-popovers {	margin-top: -34px;}
 .tag-details .text-input[readonly] {background-color: rgba(0,0,0,.0);}
 .tag-details .table td:first-child {display:none}
 .tag-details .logo {margin-bottom: 12px;}
-.tag-details .form-control-plaintext {
+.tag-details .form-control-plaintext, .tag-details h2 {
 	margin-top:-76px;
 	margin-left:0%;
 	font-weight: bold;
@@ -1071,11 +1132,10 @@ div.react-select__control .react-select__multi-value {
 .modal-content, .modal-lg, .modal-xl  {
 	max-width: 1400px; 
 	width:100%;
-	box-shadow: 5px 5px 9px rgba(15,15,15,.90);
 } 
 
-.modal-header, .modal-body, .modal-footer {	background: rgba(50,90,105,0.92);}
-.performer-create-modal {max-width:1000px;}
+.modal-header, .modal-body, .modal-footer {	background: rgba(50,90,105,0.94);}
+.performer-create-modal {max-width:1300px;}
 
 .modal-body .col-form-label, .modal-body .col-6, .modal-footer, .modal-header .col-form-label {text-shadow: var(--std-txt-shadow);}
 
@@ -1145,6 +1205,34 @@ div.dropdown-menu .dropdown-item:focus,div.dropdown-menu .dropdown-item:hover,di
 
 /* Folder when doing selective scan or configuration */
 .input-group .form-control {color: #c9e0e7; }
+
+
+div.modal-body b, .form-label h6 {text-shadow: var(--std-txt-shadow);}
+
+
+.modal-body .btn-primary:not(:disabled):not(.disabled).active, .modal-body .btn-primary:not(:disabled):not(.disabled):active {
+color: #fff; 
+     background-color: #008558; 
+     border-color: #0d5683;
+}
+
+.modal-body .btn-primary {
+    color: #fff;
+    background-color: #666;
+    border-color: #666;
+}
+
+.input-group-prepend div.dropdown-menu
+{
+	background: rgba(50,90,105,0.94);
+	padding:15px;
+	box-shadow: 2px 2px 6px rgba(0, 0, 0, .70);
+}
+
+.saved-filter-list .dropdown-item-container .dropdown-item {
+    margin-top:3px;
+}
+.set-as-default-button {margin-top: 8px;}
 
 
 
