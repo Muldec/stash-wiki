@@ -52,9 +52,9 @@ Enjoy!
 
 
 ```
-/*	StashApp Pulsar Theme - Fonzie 2020-21 v1.5.0 beta	*/
+/*	StashApp Pulsar Theme - Fonzie 2020-21 v1.6.2  	 */
 /* ---------------------------------------------------- */
-/* --------- Updated to Stash version 0.7.0-60 -------- */
+/* --------- Updated to Stash version 0.9.0-30 -------- */
 
 /* Adjustments to latest developmental version which includes 
    the Performer Tagger, Saved Filters, and the Edit Performers 
@@ -467,11 +467,15 @@ table#performer-details {color:#FFF; text-shadow: 1px 1px 1px #000;}
 }
 
 
-/* --- Changes the display of Performer Details Tab in the 0.5 developmental version are arranged --- */
-#performer-details-tabpane-details dl.row { margin:0 0px;padding: 7px 0 4px}
-#performer-details-tabpane-details dl.row:nth-child(odd) {     background-color: rgba(16,22,26,0.1);}
-#performer-details-tabpane-details dt.col-xl-2 {	text-shadow: var(--light-txt-shadow); font-weight:normal;}
-#performer-details-tabpane-details ul.pl-0 {margin-bottom:0;}
+/* --- Changes the display of Performer Details Tab in the 0.9 version are arranged --- */
+#performer-details-tabpane-details dl.row, dl.details-list dt, dl.details-list dd{ margin:0 0px;padding: 8px 10px 9px 14px}
+#performer-details-tabpane-details dl.row:nth-child(odd),
+#performer-details-tabpane-details dl.details-list dt:nth-of-type(odd),
+#performer-details-tabpane-details dl.details-list dd:nth-of-type(odd) {	background-color: rgba(16,22,26,0.1);}
+#performer-details-tabpane-details dt.col-xl-2,
+#performer-details-tabpane-details dl.details-list dt {	text-shadow: var(--std-txt-shadow); font-weight: normal;}
+#performer-details-tabpane-details ul.pl-0 {margin-bottom: 0rem;}
+#performer-details-tabpane-details dl.details-list { grid-column-gap: 0}
 
 
 /* --- Resets the fields in Performer Edit Tab in the 0.5 developmental version back to way it was in the 0.5 version --- */
@@ -525,8 +529,8 @@ h5.card-section-title, .scene-tabs .scene-header {
 	line-height:132%;
 	text-shadow: var(--std-txt-shadow);
 }
-.scene-tabs .scene-header { font-size: 24px; margin-bottom:25px }
-
+.scene-tabs .scene-header { font-size: 24px; margin-bottom:16px }
+.scene-tabs .studio-logo {	margin-top: 0}
 
 #TruncatedText .tooltip-inner {width:365px; max-width:365px}
 .tooltip-inner {	font-family: var(--HeaderFont);
@@ -740,8 +744,15 @@ div.tagger-container .btn-link {
 .studio-details table td:nth-child(1) {color:#FFF; text-shadow: 1px 1px 1px #000;}
 
 .studio-card-image {	max-height: 175px; height:175px;}
-.studio-card-image { min-width: 260px; width: calc(238px + 19vw / 3.8); max-width: 360px; margin: 0 6px;}
+.studio-card-image { min-width: 260px; width: calc(244px + 19vw / 3.8); max-width: 360px; margin: 0 1px;}
 .studio-card .card-section {	margin-top: 22px;}
+
+
+@media (min-width: 1200px) {
+.pl-xl-5, .px-xl-5 {
+    padding-left: 1rem!important; 
+    padding-right: 1rem!important;
+} }
 
 .no-gutters .TruncatedText, .tag-card .TruncatedText, div.card.studio-card .TruncatedText, .tagger-container .TruncatedText  {
 	font-family: var(--HeaderFont);
@@ -790,7 +801,7 @@ div.tagger-container .btn-link {
 	text-align:left;
 	position:absolute;
 	top:auto;
-	bottom: 20% !important;
+	bottom: 24% !important;
 	font-size:0.001rem;
 }
 
@@ -805,49 +816,71 @@ div.studio-card.card .card-popovers {	margin-top: -34px;}
 
 
 
+
 /* ============== TAGS =============== */
 
+.tag-card.card hr, .tag-card.card>hr{ border-top: 0px solid rgba(0,0,0,.1); }
+
 .tag-card { margin: 4px 0.5% 10px; padding:0px;}
-.tag-card.zoom-0 { width: 335px; height:230px; min-width:335px}
-#tags .card {padding:0 0 10px 0; }
 
-
-
-
-.zoom-0 .gallery-card-image, .zoom-0 .tag-card-image {
-    max-height: 195px;height:190px;
+.tag-card.zoom-0 {
+	min-width: 230px; width: calc(200px + 18vw / 1.1); max-width: 350px;
+	min-height:168px; height:calc(130px + 14vw / 1.1); max-height:250px;
 }
+.tag-card.zoom-0 .tag-card-image {	min-height: 100px; max-height: 210px; height: calc(95px + 15vw / 1.1);}
+
+@media (min-width: 1200px){
+.row.pl-xl-5, .row.px-xl-5 {
+	padding-left: 0.2rem!important; 
+	padding-right: 0.2rem!important;
+}
+}
+
+.tag-card.zoom-1 {
+	min-width: 260px; width: calc(238px + 25vw / 2.3); max-width: 460px;
+	min-height:193px; height:calc(140px + 19vw / 2.3); max-height:285px;
+}
+.tag-card.zoom-1 .tag-card-image {	min-height: 120px; max-height: 240px; height: calc(100px + 19vw / 2.3);}
+
+.tag-card.zoom-2 {
+	min-width: 290px; width: calc(280px + 38vw / 2.45); max-width: 650px;
+	min-height:170px; height:calc(180px + 28vw / 2.45); max-height:485px;
+}
+.tag-card.zoom-2 .tag-card-image {	min-height: 175px; max-height: 440px; height: calc(120px + 30vw / 2.45);}
+
+
+
+#tags .card {padding:0 0 10px 0; }
 
 .tag-card-header {height:190px;overflow:hidden;}
 
-.tag-card hr, .tag-card>hr{	border-top: 0px solid rgba(0,0,0,.1);	}
-
-.tag-details input.form-control-plaintext, .tag-card .TruncatedText, div.card.tag-card .TruncatedText  {
-}
-
-.zoom-0 .tag-card-image {
-	zoom: 101%;
-	object-fit: cover;
-	overflow:hidden;
-	width: 338px;
-	margin-top: -2px;
-	margin-left: -1%;
+.zoom-0 .tag-card-image, .zoom-1 .tag-card-image, .zoom-2 .tag-card-image {
+zoom: 101%;
+object-fit: cover;
+overflow:hidden;
+width: 101%;
+margin-top: -2px;
+margin-left: -1%;
 }
 
 .tag-card .scene-popovers, .tag-card .card-popovers { 
+	width:50%;
+	margin-left:50%;
+	justify-content: flex-end;
+	float:right;
 	margin-bottom: 4px;
-	margin-top:-34px;
+	margin-top:-36px;
 	padding-left:17px;
 }
 
 .zoom-0 .tab-pane .card-image { height:210px }
 
-.tag-details input.form-control-plaintext {     background-color: rgba(16,22,26,.0); }
 
 /* --- Moves the Tag name into the Tag Picture --- */
 .tag-details .text-input[readonly] {background-color: rgba(0,0,0,.0);}
 .tag-details .table td:first-child {display:none}
 .tag-details .logo {margin-bottom: 12px;}
+
 .tag-details .form-control-plaintext, .tag-details h2 {
 	margin-top:-76px;
 	margin-left:0%;
@@ -855,12 +888,13 @@ div.studio-card.card .card-popovers {	margin-top: -34px;}
 	font-family: Helvetica, "Helvetica Neue", "Segoe UI" !important;
 	letter-spacing: 0.11rem;
 	font-size:44px;
-	text-shadow: 2px 2px 1px #000, 4px 4px 4px #282828, 6px 1px 4px #282828, -3px 3px 3px #444, -2px -2px 4px #282828;
+	text-shadow: 2px 2px 3px #111, 4px 4px 4px #282828, 6px 1px 4px #282828, -3px 3px 3px #444, -2px -2px 4px #282828;
 	text-align:center; 
 }
-@media (max-width: 1300px) {.tag-details .form-control-plaintext {font-size:26px; margin-top:-50px;} }
+@media (max-width: 1300px) {.tag-details .form-control-plaintext {font-size:26px; 	margin-top:-50px;}}
 
 .tag-details .logo { min-width:300px}
+
 
 
 
@@ -946,11 +980,16 @@ div.studio-card.card .card-popovers {	margin-top: -34px;}
 */
 
 /* --- 0.60 dev adjustments --- */
-.movie-details .movie-details {background-color: rgba(15,20,30,0.20); border-radius: 10px; margin-bottom:15px; }
+.studio-details .studio-details, .movie-details .movie-details {background-color: rgba(15,20,30,0.20); border-radius: 10px; margin-bottom:15px; }
 .movie-details .movie-details dt.col-3 {padding:4px 0 4px 16px; width: 120px;}
 .movie-details .movie-details dd.col-9 {padding:4px 16px 4px 3px;}
-.movie-details .movie-details dl.row:nth-child(odd) { background-color: rgba(16,22,26,0.1); margin-right:2px}
-.movie-details .movie-details h2 {	font-family: var(--HeaderFont);text-shadow: var(--std-txt-shadow);padding:7px 0 5px 12px;}
+.studio-details dl.details-list dt:nth-of-type(odd),
+.studio-details dl.details-list dd:nth-of-type(odd),
+.movie-details dl.details-list dt:nth-of-type(odd),
+.movie-details dl.details-list dd:nth-of-type(odd),
+.movie-details dl.row:nth-child(odd) { background-color: rgba(16,22,26,0.1); margin-right:0px}
+.movie-details dl.details-list { grid-column-gap: 0}
+.studio-details h2, .movie-details .movie-details h2 {	font-family: var(--HeaderFont);font-weight:bold;text-shadow: var(--std-txt-shadow);padding:7px 0 5px 12px;}
 
 .movie-details .movie-images {margin:0 5px 20px 5px;}
 .movie-details .movie-images img {border-radius: 14px; max-height:580px;}
@@ -1134,7 +1173,8 @@ div.react-select__control .react-select__multi-value {
 	width:100%;
 } 
 
-.modal-header, .modal-body, .modal-footer {	background: rgba(50,90,105,0.94);}
+.modal-header, .modal-body, .modal-footer {	background: rgba(50,90,105,0.96);}
+.modal-body {padding-bottom:2rem;}
 .performer-create-modal {max-width:1300px;}
 
 .modal-body .col-form-label, .modal-body .col-6, .modal-footer, .modal-header .col-form-label {text-shadow: var(--std-txt-shadow);}
@@ -1234,7 +1274,7 @@ color: #fff;
 }
 .set-as-default-button {margin-top: 8px;}
 
-
+.grid-card .card-check { top:.9rem;width: 1.5rem;}
 
 
 ```
