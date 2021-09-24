@@ -10,3 +10,6 @@ You may use several methods to safely access Stash from outside of your home net
 
 ### Using an external authentication provider
 If you are an advanced user, and have secured your Stash instance behind an authwall provided by a reverse proxy or hosting solution, you may continue to use that. You simply have to edit `.stash/config/config.yml` and set `dangerous_allow_public_without_auth` to `true`. If you have already tripped the security feature, you will also have to set `security_tripwire_accessed_from_public_internet` to `false` in order to allow Stash to start.
+
+## Using a reverse proxy that sends X-Forwarded-For
+If you are using a reverse proxy outside of your private network, it should be added to `trustedProxies` in your configuration file. By default or if you set an empty string, all private IPs are trusted proxies.
