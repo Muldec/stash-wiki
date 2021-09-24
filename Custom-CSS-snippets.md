@@ -139,6 +139,23 @@ This will hide the large scene scrubber under the video player, and max out the 
   min-width: initial;
 }
 ```
+# Movies
+## Better Movie layout
+Making the front and back image bigger. Left panel uses 70% while the right uses 30%.
+```
+.movie-details.mb-3.col.col-xl-4.col-lg-6 {
+  flex-basis: 70%
+}
+.col-xl-8.col-lg-6{
+  flex-basis: 30% 
+}
+.movie-images{
+  flex-wrap: wrap
+}
+.movie-image-container {
+  flex: 0 0 500px
+}
+```
 
 # Global
 
