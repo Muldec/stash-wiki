@@ -140,7 +140,7 @@ This will hide the large scene scrubber under the video player, and max out the 
 }
 ```
 # Movies
-## Better Movie layout
+## Better Movie layout for desktops.
 Making the front and back image bigger. Left panel uses 70% while the right uses 30%.
 ```
 .movie-details.mb-3.col.col-xl-4.col-lg-6 {
