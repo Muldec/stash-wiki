@@ -52,14 +52,16 @@ Enjoy!
 
 
 ```
-/*	StashApp Pulsar Theme - Fonzie 2020-21 v1.7.0  	 */
+/*	StashApp Pulsar Theme - Fonzie 2020-21 v1.7.1  	 */
 /* ---------------------------------------------------- */
 /* --------- Updated to Stash version 0.10.0 ---------- */
 
 /* Adjustments to version 0.10.0 which includes moving the movie-, image- 
    and gallery-counter to the bottom of the performer image when you hover 
    over the card, and increasing the size of the star rating in the highest 
-   zoom level.   	*/
+   zoom level.   	
+   Bug fixes: Borders for pagination, and Movie scene counter fixes
+   */
 
 
 
@@ -81,7 +83,7 @@ body {
 /*	background-image:url("https://i.imgur.com/QKiFSvE.jpg");	/*	Ichix		*/
 /*	background-image:url("https://i.imgur.com/8cIqGWj.jpg");	/*	SeaGreen	*/
 /*	background-image:url("https://i.imgur.com/WNXNwV3.jpg");	/*	BrownBlur	*/
-/*	background-image:url("./custom/background.jpg");		/*	Local Background	*/
+/*	background-image:url("./custom/background.jpg");			/*	Local Background	*/
     
 	width: 100%;
 	height: 100%;
@@ -993,16 +995,24 @@ margin-left: -1%;
 
 
 div.movie-card.grid-card.card .card-section p {margin-bottom:-8px}
-
-
 div.movie-card.grid-card.card .card-section {margin-bottom: -0px !important}
-div.movie-card.grid-card.card .card-popovers { padding-top:8px;}
+div.movie-card.grid-card.card .card-popovers {
+	padding-top:35px;
+	margin-bottom:-11px;
+	width:60%;
+	margin-left:40%;
+	justify-content:flex-end;
+	float:right;
+}
+
+div.movie-card .card-section span {position:absolute;margin-top:-3px;margin-bottom:6px}
+
 
 
 .movie-card-header {height:320px}
 
 .movie-card-header .rating-banner {
-	font-size: .002rem;
+	font-size: .001rem;
 	padding: 8px 41px 6px;
 	line-height: 1.1rem;
 	transform: rotate(0deg);
@@ -1055,12 +1065,7 @@ div.movie-card.grid-card.card .card-popovers { padding-top:8px;}
 .movie-details table tr:nth-child(odd) {     background-color: rgba(16,22,26,0.1); }
 .movie-details .form-group, .movie-details table td:nth-child(1) {color:#FFF; text-shadow: 1px 1px 1px #000;}
 
-/*
-.movie-details div.form-group:nth-of-type(3) { border-radius: 0px 0px 20px 10px; background-color: rgba(16,22,26,0.3); margin-bottom:15px }
-.movie-details div.form-group {display: flex; flex-wrap: wrap; overflow: hidden; text-overflow:ellipsis;}
-.movie-details div.form-group label.form-label {width: 120px; padding:0 20px 0 5px}
-.movie-details div.form-group div {width:65%; text-align:left; 	}
-*/
+
 
 /* --- 0.60 dev adjustments --- */
 .studio-details .studio-details, .movie-details .movie-details {background-color: rgba(15,20,30,0.20); border-radius: 10px; margin-bottom:15px; }
@@ -1356,6 +1361,10 @@ color: #fff;
 .set-as-default-button {margin-top: 8px;}
 
 .grid-card .card-check { top:.9rem;width: 1.5rem;}
+
+.btn-group>.btn-group:not(:last-child)>.btn, .btn-group>.btn:not(:last-child):not(.dropdown-toggle),
+.btn-group>.btn:first-child:not(.dropdown-toggle) {border-left: 1px solid #394b59;}    
+.btn-group>.btn-group:not(:first-child), .btn-group>.btn:not(:first-child) {border-right: 1px solid #394b59;}
 
 
 div.gallery-card.grid-card.card p div.TruncatedText,
