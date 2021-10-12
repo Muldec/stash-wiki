@@ -113,6 +113,21 @@ This will hide the large scene scrubber under the video player, and max out the 
 }
 ```
 
+## Move the buttons in the Performer's edit panel to the top instead of bottom
+```css
+form#performer-edit {
+    display: flex;
+    flex-direction: column;
+}
+#performer-edit > .row {
+    order: 1;
+}
+#performer-edit > .row:last-child {
+    order: 0;
+    margin-bottom: 1rem;
+}
+```
+
 # Galleries
 
 ## Grid view for galleries
@@ -142,7 +157,7 @@ This will hide the large scene scrubber under the video player, and max out the 
 # Movies
 ## Better Movie layout for desktops.
 Making the front and back image bigger. Left panel uses 70% while the right uses 30%.
-```
+```css
 .movie-details.mb-3.col.col-xl-4.col-lg-6 {
   flex-basis: 70%
 }
