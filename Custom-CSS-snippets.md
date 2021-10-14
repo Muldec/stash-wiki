@@ -157,6 +157,22 @@ form#performer-edit {
 # Movies
 ## Better Movie layout for desktops.
 Making the front and back image much bigger. Left panel uses 70% while the right uses 30%.
+### Layout 1, regular size poster.
+```css
+.movie-details.mb-3.col.col-xl-4.col-lg-6 {
+  flex-basis: 70%
+}
+.col-xl-8.col-lg-6{
+  flex-basis: 30% 
+}
+.movie-images{
+  flex-wrap: wrap
+}
+.movie-image-container {
+  flex: 0 0 500px
+}
+```
+### Layout 2, larger size poster.
 ```css
 .movie-details.mb-3.col.col-xl-4.col-lg-6 {
   flex-basis: 70%
@@ -169,7 +185,7 @@ Making the front and back image much bigger. Left panel uses 70% while the right
   flex-wrap: wrap
 }
 .movie-image-container {
-  flex: 0 1 700px
+  flex: 1 1 700px
 }
 ```
 
