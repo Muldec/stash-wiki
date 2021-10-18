@@ -32,7 +32,7 @@ The Theme will only change the look&feel of the Stash interface. It **will not**
 
 **3.** Copy&Paste [CSS Code](#css-code) to the Custom CSS text area. 
 
-**4.** Select one of the background images that you find at the top of the CSS code by removing the commentary ( _/*_ ) at the beginning of the line (_Flower_ is the standard background), or download the image as _"background.jpg"_, and place the image in `~/.stash` on macOS / Linux or `C:\Users\YourUsername\.stash` on Windows.
+**4.** Select one of the background images that you find at the top of the CSS code by removing the commentary ( _/*_ ) at the beginning of the line (_Flower_ is the standard background), or use your own wallpaper as _"background.jpg"_, and place the image in **`~/.stash/custom`** on macOS / Linux or **`C:\Users\YourUsername\.stash\custom`** on Windows.
 
 
 
@@ -54,23 +54,28 @@ Enjoy!
 
 
 ```
-/*		Light Pulsar Theme - Fonzie 2021 v0.2		 */
+/*	Light Pulsar Theme - Fonzie 2021 v0.3		*/
 /* ---------------------------------------------------- */
-/* --------- Updated to Stash version 0.9.0-30 -------- */
+/* --------- Updated to Stash version 0.10.0 ---------- */
 
+/* Adjustments to version 0.10.0 which includes moving the movie-, image- 
+   and gallery-counter to the bottom of the performer image when you hover 
+   over the card, and increasing the size of the star rating in the highest 
+   zoom level.   	
+   Bug fixes: Borders for pagination, and Movie scene counter fixes
+   */
 
 
 /* ===================== General ===================== */
 
 body {
-	background-image:url("https://i.imgur.com/UwICmXP.jpg");	/* Flower		*/
+	background-image:url("https://i.imgur.com/UwICmXP.jpg");	/* Flower			*/
 /*	background-image:url("https://i.imgur.com/zqt3MFY.jpg");	/* Green Leaves 	*/
-/*	background-image:url("https://i.imgur.com/vCotzwB.jpg");	/* White Desert		*/
-/*	background-image:url("https://i.imgur.com/Lverfqy.jpg");	/* Tropic Beach		*/
+/*	background-image:url("https://i.imgur.com/vCotzwB.jpg");	/* White Desert	*/
+/*	background-image:url("https://i.imgur.com/Lverfqy.jpg");	/* Tropic Beach	*/
 /*	background-image:url("https://i.imgur.com/4jrpuyR.jpg");	/* White Blue Waves	*/
 /*	background-image:url("https://i.imgur.com/KUtfQzs.jpg");	/* Bright Lights	*/
-/*	background-image:url("./background.jpg");			/* Local BG		*/
-
+/*	background-image:url("./custom/background.jpg");			/*	Local Background	*/
 
 	width: 100%;
 	height: 100%;
@@ -222,6 +227,66 @@ a {	color: hsla(0, 10%, 10%, .85);}
 /* ===================== Performer ========================= */
 
 
+/* --- 0.90 - Section moves Movie-, Image- & Gallery-Count to the bottom of the performer image when hovered over --- */
+.performer-card .card-popovers .movie-count,
+.performer-card .card-popovers .image-count,
+.performer-card .card-popovers .gallery-count
+{
+	z-index:300;
+    position:absolute;
+    top:-270%;
+	opacity:0.0;
+}
+
+/* --- Highlight the bottom of the performer card when hovered over --- */
+.performer-card.grid-card:hover {
+	background-image: linear-gradient(130deg, rgba(50, 60, 75,0.25), rgba(150, 155, 160,0.32), rgba(35, 40, 45,0.26), rgba(160, 160, 165,0.27), rgba(50, 60, 65,0.37));
+	background-color: rgba(102, 112, 120, .25);
+}
+
+/* --- When hovered over blend them in ---*/
+.performer-card.grid-card:hover .card-popovers .movie-count,
+.performer-card.grid-card:hover .card-popovers .image-count,
+.performer-card.grid-card:hover .card-popovers .gallery-count {opacity: 1.0;transition: opacity .7s;}
+
+/* --- 3 items gets a shadow ---*/
+.performer-card .card-section .movie-count span,
+.performer-card .card-section .movie-count button.minimal,
+.performer-card .card-section .image-count span,
+.performer-card .card-section .image-count button.minimal,
+.performer-card .card-section .gallery-count span,
+.performer-card .card-section .gallery-count button.minimal
+{text-shadow: 2px 2px 1px #000, 1px 1px 1px #000, 4px 4px 5px #333, 9px 0px 5px #333, -3px 2px 4px #333, -7px 0px 5px #333, -1px -6px 5px #333, 3px -2px 6px #444;}
+
+/* --- Positioning of the 3 items ---*/
+.performer-card .card-popovers .movie-count {left:0.2%;}
+.performer-card .card-popovers .image-count {left:32.8%}
+.performer-card .card-popovers .gallery-count {right:1.3%}
+
+.performer-card .movie-count a.minimal:hover:not(:disabled), .performer-card .movie-count button.minimal:hover:not(:disabled),
+.performer-card .image-count a.minimal:hover:not(:disabled), .performer-card .image-count button.minimal:hover:not(:disabled),
+.performer-card .gallery-count a.minimal:hover:not(:disabled), .performer-card .gallery-count button.minimal:hover:not(:disabled)
+{
+	background-color:rgba(20,80,110,0.92);
+    color:#fff;
+}
+
+/* --- Affects the Scenes- and Tags-Counter --- */
+a.minimal:hover:not(:disabled), button.minimal:hover:not(:disabled) {background: rgba(138,155,168,.45);color:#fff;}
+div.performer-card div.card-popovers
+{
+	margin-bottom:-3px;
+	margin-left:3%;
+	margin-top:-4px;
+	margin-right: -1px;
+	justify-content: flex-end;
+	text-align:right;
+}
+
+div.card-section hr {display:none}
+
+
+
 /* --- Changes the width of the Performer Card from 280px to a dynamic system and therefore the size of the image --- */
 /* --- In Full screen HD 1920x1080 you now see 8 performers per row instead of 6 --- */
 /*.performer-card-image, .performer-card, .card-image {  min-width: 160px; width: calc(108px + 10.625vw / 2); max-width: 230px }  */
@@ -269,11 +334,14 @@ a {	color: hsla(0, 10%, 10%, .85);}
 }
 
 /* --- Age and # of Scenes move from the left side to the right of the card --- */
-.text-muted {text-align:right;margin-top:-2px;margin-bottom:1px}
+/* --- Also makes sure that when playing a scenes "XX years old in this scene" doesn't overlap with the star rating --- */
+.performer-card .text-muted {text-align:right;margin-top:-2px;margin-bottom:1px;width:46%;margin-left:54%}
+
+
 
 /* --- "removes" the term 'old.' from "xx years old." when the resolution gets to small --- */ 
 @media (max-width: 1520px) {
-div.card.performer-card .text-muted {text-align:right;margin-top:-2px;margin-bottom:1px;margin-right:-33px}
+div.card.performer-card .text-muted {text-align:right;margin-top:-2px;margin-bottom:1px;margin-right:-33px;max-height:20px;overflow:hidden;}
 }
 
 /* --- To prevent overlapping in the performer card when watching a scene --- */
@@ -289,6 +357,9 @@ div.card.performer-card .text-muted {text-align:right;margin-top:-2px;margin-bot
 
 /* --- Text Shadow for the "Stars in x scenes" link --- */
 div.card.performer-card div.text-muted a {text-shadow: 1px 2px 2px #333}
+
+/* --- Minimum height for the section in case Age is missing and elements would overlap --- */
+.performer-card .card-section {min-height:82px}
 
 /* --- Makes the card section (Name, Age, Flag, # of scenes) more compact --- */
 .card-section { margin-bottom: -8px !important; padding: .5rem 0.7rem 0 !important;}
@@ -341,22 +412,15 @@ div.performer-card.card .rating-banner.rating-4 {width:78px}
 div.performer-card.card .rating-banner.rating-5 {width:97px}  
 
 
-.performer-card .btn {padding: .375rem .013rem}
+.performer-card .btn {padding: .34rem .013rem}
 .performer-card .fa-icon {margin: 0 2px}
 .performer-card .card-popovers .fa-icon {margin-right: 3px}
 .performer-card .svg-inline--fa.fa-w-18, .performer-card .svg-inline--fa.fa-w-16 {height: 0.88em}
 .performer-card .favorite .svg-inline--fa.fa-w-16 {height:1.5rem}
 
-div.performer-card div.card-popovers {
-	margin-bottom: -3px;
-	margin-left:1%;
-	margin-top:-4px;
-	margin-right: -3px;
-	justify-content: flex-end;
-	text-align:right;
-}
+
 .performer-card .card-popovers .btn-primary {
-    margin: 0 0px 0 6px;
+    margin: 0 2px 0 11px;
 }
 
 
@@ -748,9 +812,17 @@ div.tagger-container .btn-link {
 .studio-details .form-group, .studio-details td { padding: 8px; }
 .studio-details table td:nth-child(1) {color:#FFF; text-shadow: 1px 1px 1px #000;}
 
-.studio-card-image {	max-height: 175px; height:175px;}
-.studio-card-image { min-width: 260px; width: calc(238px + 19vw / 3.8); max-width: 360px; margin: 0 6px;}
+.studio-card-image {max-height: 175px; height:175px}
+.studio-card-image {min-width: 260px; width: calc(238px + 19vw / 3.8); max-width: 360px; margin: 0 6px;}
 .studio-card .card-section {	margin-top: 22px;}
+.studio-card .card-section div {color:#FFF}
+.studio-card .card-popovers {width:63%;margin-left:37%}
+
+@media (min-width: 1200px) {
+.pl-xl-5, .px-xl-5 {
+    padding-left: 1rem!important; 
+    padding-right: 1rem!important;
+} }
 
 .no-gutters .TruncatedText, .tag-card .TruncatedText, div.card.studio-card .TruncatedText, .tagger-container .TruncatedText  {
 	font-family: var(--HeaderFont);
@@ -800,7 +872,7 @@ div.tagger-container .btn-link {
 	text-align:left;
 	position:absolute;
 	top:auto;
-	bottom: 20% !important;
+	bottom: 24% !important;
 	font-size:0.001rem;
 }
 
@@ -817,17 +889,16 @@ div.studio-card.card .card-popovers {	margin-top: -34px;}
 
 
 
+
+
+
+
 /* ============== TAGS =============== */
 
 .tag-card.card hr, .tag-card.card>hr{ border-top: 0px solid rgba(0,0,0,.1); }
 
 .tag-card { margin: 4px 0.5% 10px; padding:0px;}
 
-.tag-card.zoom-0 {
-	min-width: 230px; width: calc(200px + 18vw / 1.1); max-width: 350px;
-	min-height:168px; height:calc(130px + 14vw / 1.1); max-height:250px;
-}
-.tag-card.zoom-0 .tag-card-image {	min-height: 100px; max-height: 210px; height: calc(95px + 15vw / 1.1);}
 
 @media (min-width: 1200px){
 .row.pl-xl-5, .row.px-xl-5 {
@@ -836,22 +907,26 @@ div.studio-card.card .card-popovers {	margin-top: -34px;}
 }
 }
 
+.tag-card.zoom-0 {
+	min-width: 230px; width: calc(200px + 18vw / 1.1); max-width: 350px;
+	min-height:168px; height:auto;
+}
+.tag-card.zoom-0 .tag-card-image {	min-height: 100px; max-height: 210px; height: calc(95px + 15vw / 1.1);}
+
 .tag-card.zoom-1 {
 	min-width: 260px; width: calc(238px + 25vw / 2.3); max-width: 460px;
-	min-height:193px; height:calc(140px + 19vw / 2.3); max-height:285px;
+	min-height:193px; height:auto;
 }
 .tag-card.zoom-1 .tag-card-image {	min-height: 120px; max-height: 240px; height: calc(100px + 19vw / 2.3);}
 
 .tag-card.zoom-2 {
 	min-width: 290px; width: calc(280px + 38vw / 2.45); max-width: 650px;
-	min-height:170px; height:calc(180px + 28vw / 2.45); max-height:485px;
+	min-height:170px; height:auto; max-height:485px;
 }
 .tag-card.zoom-2 .tag-card-image {	min-height: 175px; max-height: 440px; height: calc(120px + 30vw / 2.45);}
 
 
-
 #tags .card {padding:0 0 10px 0; }
-
 .tag-card-header {height:190px;overflow:hidden;}
 
 .zoom-0 .tag-card-image, .zoom-1 .tag-card-image, .zoom-2 .tag-card-image {
@@ -864,14 +939,17 @@ margin-left: -1%;
 }
 
 .tag-card .scene-popovers, .tag-card .card-popovers { 
-	width:50%;
-	margin-left:50%;
+	width:60%;
+	margin-left:40%;
 	justify-content: flex-end;
 	float:right;
-	margin-bottom: 4px;
-	margin-top:-36px;
+	margin-bottom: 15px;
+	margin-top:-34px;
 	padding-left:17px;
 }
+
+.tag-sub-tags, .tag-parent-tags {margin-bottom:9px; color:#FFF}
+.tag-sub-tags a, .tag-parent-tags a {color:#FFF; text-shadow: var(--std-txt-shadow)}
 
 .zoom-0 .tab-pane .card-image { height:210px }
 
@@ -912,8 +990,22 @@ margin-left: -1%;
 	white-space: nowrap;
 	overflow: hidden; 
 	text-overflow: ellipsis;
-
 }
+
+div.movie-card.grid-card.card .card-section p {margin-bottom:-8px}
+div.movie-card.grid-card.card .card-section {margin-bottom: -0px !important}
+div.movie-card.grid-card.card .card-popovers {
+	padding-top:35px;
+	margin-bottom:-11px;
+	width:60%;
+	margin-left:40%;
+	justify-content:flex-end;
+	float:right;
+}
+
+div.movie-card .card-section span {position:absolute;margin-top:-3px;margin-bottom:6px;color:#FFF}
+
+
 
 .movie-card-header {height:320px}
 
@@ -922,7 +1014,6 @@ margin-left: -1%;
 	padding: 8px 41px 6px;
 	line-height: 1.1rem;
 	transform: rotate(0deg);
-	padding: 0;
 	left: 3px;
 	top: 77% !important;
 	height: 25px;
@@ -972,12 +1063,7 @@ margin-left: -1%;
 .movie-details table tr:nth-child(odd) {     background-color: rgba(16,22,26,0.1); }
 .movie-details .form-group, .movie-details table td:nth-child(1) {color:#FFF; text-shadow: 1px 1px 1px #000;}
 
-/*
-.movie-details div.form-group:nth-of-type(3) { border-radius: 0px 0px 20px 10px; background-color: rgba(16,22,26,0.3); margin-bottom:15px }
-.movie-details div.form-group {display: flex; flex-wrap: wrap; overflow: hidden; text-overflow:ellipsis;}
-.movie-details div.form-group label.form-label {width: 120px; padding:0 20px 0 5px}
-.movie-details div.form-group div {width:65%; text-align:left; 	}
-*/
+
 
 /* --- 0.60 dev adjustments --- */
 .studio-details .studio-details, .movie-details .movie-details {background-color: rgba(15,20,30,0.20); border-radius: 10px; margin-bottom:15px; }
@@ -987,7 +1073,7 @@ margin-left: -1%;
 .studio-details dl.details-list dd:nth-of-type(odd),
 .movie-details dl.details-list dt:nth-of-type(odd),
 .movie-details dl.details-list dd:nth-of-type(odd),
-.movie-details dl.row:nth-child(odd) { background-color: rgba(16,22,26,0.1); margin-right:0px; padding-left:7px;margin-bottom:5px}
+.movie-details dl.row:nth-child(odd) { background-color: rgba(16,22,26,0.1); margin-right:0px; padding-left:14px;margin-bottom:5px}
 .movie-details dl.details-list dt, .movie-details dl.details-list dd {padding-left: 7px;}
 .movie-details dl.details-list { grid-column-gap: 0}
 .studio-details h2, .movie-details .movie-details h2 {	font-family: var(--HeaderFont);font-weight:bold;text-shadow: var(--std-txt-shadow);padding:7px 0 5px 12px;}
@@ -1210,9 +1296,10 @@ div.react-select__control .react-select__multi-value {
 
 
 /* --- Background when searching for a scene in Tagger view --- */
-.search-result { 	background: rgba(0,0,0,0.22);}
-.selected-result { 	background: rgba(25,120,25,0.28);}
-.search-result:hover { background: rgba(12,62,75,0.35);}
+.search-result { 	background: rgba(0,0,0,0.21);}
+.selected-result { 	background: rgba(25,95,25,0.24); color:#fff}
+/*.search-result:hover { background: rgba(12,62,75,0.25);}*/
+.search-result:hover  { 	background: rgba(25,122,25,0.33);}
 
 
 .markdown table tr:nth-child(2n) {background: rgba(25,20,25,0.20);}
@@ -1318,6 +1405,16 @@ a.minimal, button.minimal {
 
 .grid-card .card-check { top:.9rem;width: 1.5rem;}
 .LoadingIndicator .spinner-border, .LoadingIndicator-message { color:#37e}
+
+
+.btn-group>.btn-group:not(:last-child)>.btn, .btn-group>.btn:not(:last-child):not(.dropdown-toggle),
+.pagination .btn-group>.btn:first-child:not(.dropdown-toggle) {border-left: 1px solid #394b59;}    
+.btn-group>.btn-group:not(:first-child), .btn-group>.btn:not(:first-child) {border-right: 1px solid #394b59;}
+
+
+div.gallery-card.grid-card.card p div.TruncatedText,
+div.movie-card.grid-card.card hr, div.movie-card.grid-card.card p {display:none}
+
 
 
 ```
