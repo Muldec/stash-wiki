@@ -52,15 +52,20 @@ Enjoy!
 
 
 ```
-/*	StashApp Pulsar Theme - Fonzie 2020-21 v1.7.1  	 */
+/*	StashApp Pulsar Theme - Fonzie 2020-21 v1.7.2  	 */
 /* ---------------------------------------------------- */
-/* --------- Updated to Stash version 0.10.0 ---------- */
+/* --------- Updated to Stash version 0.10.62 ---------- */
 
 /* Adjustments to version 0.10.0 which includes moving the movie-, image- 
    and gallery-counter to the bottom of the performer image when you hover 
    over the card, and increasing the size of the star rating in the highest 
    zoom level.   	
+   
+   Spacing out the paginationIndex, coloring of the scenes-stats
+   
    Bug fixes: Borders for pagination, and Movie scene counter fixes
+   Overlapping of the star rating and performer name when Age and Nationality is missing
+   
    */
 
 
@@ -334,7 +339,11 @@ div.card-section hr {display:none}
 }
 
 /* --- Age and # of Scenes move from the left side to the right of the card --- */
-.text-muted {text-align:right;margin-top:-2px;margin-bottom:1px}
+.performer-card .text-muted {text-align:right;margin-top:-2px;margin-bottom:1px;width:46%;margin-left:54%}
+
+
+/* --- Minimum height for the section in case Age and Nationality is missing and elements would overlap --- */
+.performer-card .card-section {min-height:82px}
 
 /* --- "removes" the term 'old.' from "xx years old." when the resolution gets to small --- */ 
 @media (max-width: 1520px) {
@@ -413,14 +422,7 @@ div.performer-card.card .rating-banner.rating-5 {width:97px}
 .performer-card .svg-inline--fa.fa-w-18, .performer-card .svg-inline--fa.fa-w-16 {height: 0.88em}
 .performer-card .favorite .svg-inline--fa.fa-w-16 {height:1.5rem}
 
-div.performer-card div.card-popovers {
-	margin-bottom: -3px;
-	margin-left:1%;
-	margin-top:-4px;
-	margin-right: -3px;
-	justify-content: flex-end;
-	text-align:right;
-}
+
 .performer-card .card-popovers .btn-primary {
     margin: 0 0px 0 6px;
 }
@@ -619,6 +621,7 @@ h5.card-section-title, .scene-tabs .scene-header {
 	bottom:1px;
 	color: #FFF;
 	font-weight: bold;
+	bottom:1.4%;
 	letter-spacing: 0.035rem;
 	text-shadow: 2px 2px 1px #000, 4px 4px 5px #444, 7px 0px 5px #444, -3px 2px 5px #444, -5px 0px 5px #444, -1px -4px 5px #444, 3px -2px 6px #444;
 }
@@ -744,12 +747,9 @@ div.scene-file-info .TruncatedText, div.scene-file-info .text-truncate {
 /* Zoom 1 */
 .zoom-1 { min-width: 300px; width: calc(234px + 24vw /3.84);max-width: 430px}
 /* Improves the way the scene picture is displayed when the resolution isn't 16:9 (e.g. 4:3) --- */
-.zoom-1 .video-section {height:calc((233px + 24vw / 3.84)/1.63);max-height: 258px}
-.zoom-1 .scene-card-preview-image, .zoom-1 .scene-card-preview { height:100%; max-height: 260px}
+.zoom-1 .video-section {height:calc((234px + 24vw / 3.84)/1.63);max-height: 258px}
+.zoom-1 .scene-card-preview-image, .zoom-1 .scene-card-preview { height:98%; max-height: 260px}
 
-/*
-.zoom-1 .scene-card-preview-image, .zoom-1 .scene-card-preview { height:calc((237px + 24vw / 3.84)/1.65); max-height: 260px}
-*/
 .zoom-1 .scene-card-preview, .zoom-1 .scene-card-preview-video, .zoom-1 .scene-card-video {
 	min-width: 300px; width: calc(228px + 17vw / 1.92);max-width: 470px;
 	height:calc((234px + 26vw / 3.84)/1.63);
@@ -758,12 +758,12 @@ div.scene-file-info .TruncatedText, div.scene-file-info .text-truncate {
 
 /* Zoom 2 */
 .zoom-2 { min-width: 350px; width: calc(315px + 26vw / 3.84);max-width: 495px}
-.zoom-2 .video-section {height:calc((315px + 26vw / 3.84) /1.63);max-height:295px}
-.zoom-2 .scene-card-preview-image, .zoom-2 .scene-card-preview { height:calc((314px + 26vw / 3.84) /1.63); max-height:292px}
+.zoom-2 .video-section {height:calc((334px + 26vw / 3.84) /1.63);max-height:295px}
+.zoom-2 .scene-card-preview-image, .zoom-2 .scene-card-preview { height:calc((334px + 26vw / 3.84) /1.63); max-height:292px}
 
 .zoom-2 .scene-card-preview, .zoom-2 .scene-card-preview-video, .zoom-2 .scene-card-video {
 	min-width: 350px; width: calc(332px + 28vw / 3.84);max-width: 530px;
-	height:calc((315px + 28vw / 3.84) /1.65);
+	height:calc((335px + 28vw / 3.84) /1.63);
 	max-height: 298px;
 }
 
@@ -820,10 +820,9 @@ div.tagger-container .btn-link {
 .studio-details .form-group, .studio-details td { padding: 8px; }
 .studio-details table td:nth-child(1) {color:#FFF; text-shadow: 1px 1px 1px #000;}
 
-.studio-card-image {	max-height: 175px; height:175px;}
-.studio-card-image { min-width: 260px; width: calc(244px + 19vw / 3.8); max-width: 360px; margin: 0 1px;}
+.studio-card-image {max-height: 175px; height:175px}
+.studio-card-image {min-width: 260px; width: calc(244px + 19vw / 3.8); max-width: 360px; margin: 0 1px;}
 .studio-card .card-section {	margin-top: 22px;}
-
 
 @media (min-width: 1200px) {
 .pl-xl-5, .px-xl-5 {
@@ -980,6 +979,7 @@ margin-left: -1%;
 
 
 /* ==============  MOVIES ==============  */
+
 /* --- Changes the width of the items so only the front cover is displayed. Also replaces the ratings banner with a star rating --- */
 
 .movie-card .text-truncate, div.card.movie-card .TruncatedText {
@@ -992,7 +992,6 @@ margin-left: -1%;
 	overflow: hidden;
 	text-overflow: ellipsis;
 }
-
 
 div.movie-card.grid-card.card .card-section p {margin-bottom:-8px}
 div.movie-card.grid-card.card .card-section {margin-bottom: -0px !important}
@@ -1362,14 +1361,31 @@ color: #fff;
 
 .grid-card .card-check { top:.9rem;width: 1.5rem;}
 
-.btn-group>.btn-group:not(:last-child)>.btn, .btn-group>.btn:not(:last-child):not(.dropdown-toggle),
-.btn-group>.btn:first-child:not(.dropdown-toggle) {border-left: 1px solid #394b59;}    
+.btn-group>.btn-group:not(:last-child)>.btn, .btn-group>.btn:not(:last-child):not(.dropdown-toggle)
+  {border-left: 1px solid #394b59;}    
 .btn-group>.btn-group:not(:first-child), .btn-group>.btn:not(:first-child) {border-right: 1px solid #394b59;}
 
+
+/*
+.pagination .btn-group>.btn:first-child:not(.dropdown-toggle) */
 
 div.gallery-card.grid-card.card p div.TruncatedText,
 div.movie-card.grid-card.card hr, div.movie-card.grid-card.card p {display:none}
 
+
+
+/* --- Spacing out the paginationIndex --- */
+.paginationIndex:first-of-type {display:none}
+.paginationIndex {color:#f3f3f3}
+.paginationIndex .scenes-stats, .images-stats {margin-top:-3px; color:#9999a9}
+.paginationIndex .scenes-stats:before, .images-stats:before
+{
+	font-size: 16px;
+	margin-left:18px;
+	margin-right:12px;
+	color:#ccc;
+	content: "-";
+}
 
 
 ```
