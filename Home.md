@@ -8,7 +8,7 @@ Stash is a web front-end app for serving and organizing your porn. Stash current
 ## Advanced Configuration And Troubleshooting
 [Command-Line Flags](https://github.com/stashapp/stash/wiki/Advanced-Configuration-Options) • [Troubleshooting Video Playback Issues](https://github.com/stashapp/stash/wiki/Troubleshooting-video-playback-issues)
 ## Customizing and Expanding Functionality
-[Theme Directory](https://github.com/stashapp/stash/wiki/Themes) • [Custom CSS Snippets](https://github.com/stashapp/stash/wiki/Custom-CSS-snippets) • [Plugins/Scripts](https://github.com/stashapp/stash/wiki/Plugins-&--Scripts)
+[Theme Directory](https://github.com/stashapp/stash/wiki/Themes) • [Custom CSS Snippets](https://github.com/stashapp/stash/wiki/Custom-CSS-snippets) • [Plugins/Scripts](https://github.com/stashapp/stash/wiki/Plugins-&--Scripts) • [Scrapers](https://github.com/stashapp/stash/wiki/Scrapers)
 ## Working With The Database
 [Backup & Restore](https://github.com/stashapp/stash/wiki/Backup-&-Restore-Database) • [Importing from a CSV file](https://github.com/stashapp/stash/wiki/Importing-via-CSV-using-gql-iterate) •  [Manually Editing The Database](https://github.com/stashapp/stash/wiki/Manually-Editing-the-Stash-Sqlite3-database)
 ## Working With Collections
