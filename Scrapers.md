@@ -5,6 +5,7 @@ Scrapers are the way to retrieve information from websites for your movies/scene
 To install a scraper:
   1) Make sure you have the "scrapers" folder in the same location of your Stash app. If you don't have it, create that folder/directory. You can also specify the name of this folder in the config.yml.
   2) Go to the [community scrapers repo](https://github.com/stashapp/CommunityScrapers) and download the scraper you want. Read the [scrapers list](https://github.com/stashapp/CommunityScrapers/blob/master/SCRAPERS-LIST.md) and make sure which one to download. All scrapers are in .yml format. Some of them requires Python, if you use those, you need to install Python in your machine, and don't forget to get the corresponding .py file as well.
+Note: For Python scrapers, it's also helpful to read the .py file. Some of them require extra python components installed to work.
   3) Once the new scrapers are in position, you need to go to "Settings->Scraping" and click on "Reload Scrapers" button. You should see your scrapers listed in the list below that button.
   4) Navigate to the scene/gallery/movie/performer you want to scrape.
 * If that's a URL scraper, you need to paste the URL in its "URL" blanket, and the scrape icon next to it should light up.
