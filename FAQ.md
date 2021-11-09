@@ -12,6 +12,8 @@
 ## Logging In
 - [How do I recover a forgotten username or password?](#how-do-i-recover-a-forgotten-username-or-password)
 - [How can I connect to my server from elsewhere within my network, or via the internet?](#how-can-i-connect-to-my-server-from-elsewhere-within-my-network)
+- [How do I serve Stash over SSL/TLS (HTTPS)?](#how-do-i-serve-stash-over-ssltls-https)
+- [How do I serve Stash with in a subpath?](#how-do-i-serve-stash-in-a-subpath)
 ## Working With Content
 - [What's the best way to add metadata to Stash?](#whats-the-best-way-to-add-metadata-to-stash)
 - [How do I add galleries?](#how-do-i-add-galleries)
@@ -51,6 +53,21 @@ Stash authentication should now be reset with no authentication credentials.
 Find the local IP address of your Stash Server (guides for [Windows](https://support.microsoft.com/en-us/windows/find-your-ip-address-in-windows-f21a9bbc-c582-55cd-35e0-73431160a1b9), [MacOS](https://support.apple.com/guide/mac-help/find-your-computers-name-and-network-address-mchlp1177/11.0/mac/11.0), [Linux](https://wiki.archlinux.org/title/Network_configuration#IP_addresses)). Then, on another device on your local network, open a browser to http://SERVER.IP.ADDRESS.HERE:9999/
 
 See [this article](https://github.com/stashapp/stash/wiki/Authentication-Required-When-Accessing-Stash-From-the-Internet#alternative-and-safe-methods-to-access-your-stash) for ideas on accessing your stash from outside your network.
+
+## How do I serve Stash over SSL/TLS (HTTPS)?
+This is typically accomplished by putting Stash behind a reverse proxy, such as Nginx or Caddy. Stash can also serve SSL directly.
+To use the built-in SSL:
+First you must generate a SSL certificate and key combo.  Here is an example using openssl:
+
+`openssl req -x509 -newkey rsa:4096 -sha256 -days 7300 -nodes -keyout stash.key -out stash.crt -extensions san -config <(echo "[req]"; echo distinguished_name=req; echo "[san]"; echo subjectAltName=DNS:stash.server,IP:127.0.0.1) -subj /CN=stash.server`
+
+This command would need customizing for your environment.  [This link](https://stackoverflow.com/questions/10175812/how-to-create-a-self-signed-certificate-with-openssl) might be useful.
+
+Once you have a certificate and key file name them `stash.crt` and `stash.key` and place them in the same directory as the `config.yml` file, or the `~/.stash` directory.  Stash detects these and starts up using HTTPS rather than HTTP.
+
+## How do I serve Stash in a Subpath?
+
+The basepath defaults to `/`. When running stash via a reverse proxy in a subpath, the basepath can be changed by having the reverse proxy pass `X-Forwarded-Prefix` (and optionally `X-Forwarded-Port`) headers. When detects these headers, it alters the basepath URL of the UI.
 
 # Working With Content
 
