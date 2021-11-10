@@ -16,4 +16,4 @@ Stash is a web front-end app for serving and organizing your porn. Stash current
 ## API
 [API Reference](https://github.com/stashapp/stash/wiki/API) • [JSON Specification](https://github.com/stashapp/stash/wiki/JSON-Specification) 
 ## GUI Front Ends
-[Stash Helper (Windows only)](https://github.com/philpw99/Stash_Helper/releases)
+[(Unofficial) Stash Helper - Windows only](https://github.com/philpw99/Stash_Helper/releases)
