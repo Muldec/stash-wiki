@@ -13,7 +13,7 @@ To install a scraper:
 5) You will preview the scrape result before you commit the change. Check on the left will keep the original value, check on the right will make the change.
 
 ## More Details
-You can view the [detail information about scrapers here](https://github.com/stashapp/stash/blob/develop/ui/v2.5/src/docs/en/Scraping.md) or [here](https://github.com/stashapp/CommunityScrapers).
+You can view the [detail information about scrapers here](https://github.com/stashapp/stash/blob/develop/ui/v2.5/src/docs/en/Scraping.md) or [Community Scrapers Readme here](https://github.com/stashapp/CommunityScrapers).
 
 ## Create your own.
 To create your own scraper, there is [detail information about that as well](https://github.com/stashapp/stash/blob/develop/ui/v2.5/src/docs/en/ScraperDevelopment.md). Best way to start is to read the simple ones and understand how xpath works. The [XPath Cheetsheet](https://devhints.io/xpath) is quite useful in creating a yml file. In Firefox you can use xpath search in "Web Developer Tools (F12)". The "search HTML" bar actually accepts xpath searches. You can use it to verify your xpath queries.
