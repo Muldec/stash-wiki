@@ -52,11 +52,14 @@ Enjoy!
 
 
 ```
-/*	StashApp Pulsar Theme - Fonzie 2020-21 v1.7.2  	 */
+/*	StashApp Pulsar Theme - Fonzie 2020-21 v1.7.3  	 */
 /* ---------------------------------------------------- */
-/* --------- Updated to Stash version 0.10.62 ---------- */
+/* -------- Updated to Stash version 0.10.92 and possibly 0.11 -------- */
 
-/* Adjustments to version 0.10.0 which includes moving the movie-, image- 
+/* 
+   Bug Fix: Background-color in the navigation bar
+   
+   Adjustments to version 0.10.0 which includes moving the movie-, image- 
    and gallery-counter to the bottom of the performer image when you hover 
    over the card, and increasing the size of the star rating in the highest 
    zoom level.   	
@@ -88,7 +91,7 @@ body {
 /*	background-image:url("https://i.imgur.com/QKiFSvE.jpg");	/*	Ichix		*/
 /*	background-image:url("https://i.imgur.com/8cIqGWj.jpg");	/*	SeaGreen	*/
 /*	background-image:url("https://i.imgur.com/WNXNwV3.jpg");	/*	BrownBlur	*/
-/*	background-image:url("./custom/background.jpg");			/*	Local Background	*/
+/*	background-image:url("./custom/background.jpg");		/*	Local Background	*/
     
 	width: 100%;
 	height: 100%;
@@ -111,7 +114,8 @@ body {
 
 
 /* --- The Home button in the top left corner of each page. Remove the last 3 lines if you don't like the logo --- */
-button.minimal.brand-link.d-none.d-md-inline-block.btn.btn-primary {
+button.minimal.brand-link.d-none.d-md-inline-block.btn.btn-primary, 
+button.minimal.brand-link.d-inline-block.btn.btn-primary {
 	text-transform: uppercase;
 	font-weight: bold;
 	margin-left:1px;
@@ -121,7 +125,8 @@ button.minimal.brand-link.d-none.d-md-inline-block.btn.btn-primary {
 }
 
 /* --- Makes the background of the Navigation Bar at the Top half-transparent --- */
-.bg-dark {background: rgba(10, 20, 25, 0.50)!important;}
+nav.bg-dark {background: rgba(10, 20, 25, 0.50)!important;}
+.bg-dark {background:none !important;background-color:none !Important}
 .form-group .bg-dark {background: rgba(10, 20, 25, 0.20)!important;}
 
 /* --- The space between the Navigation Bar and the rest of the page --- */
@@ -804,6 +809,12 @@ div.tagger-container .btn-link {
 }
 
 
+/* --- Changes the color of the scrape button when editing a scene --- */
+.scrape-url-button{background-color: rgba(20,120,20,.50);}
+.scrape-url-button:hover{background-color: rgba(20,150,20,.65);}
+.scrape-url-button:disabled {  background-color: rgba(30,00,00,.40);	}
+
+
 
 
 
@@ -1180,6 +1191,10 @@ div.gallery-card .scene-popovers, div.gallery-card .card-popovers {
 
 /* ==============  MISC ==============  */
 
+/* --- When comments are removed the first paginationIndex ("1-x of XXX - time - size") will disappear --- */
+/* .paginationIndex:first-of-type {display:none} */
+
+
 .svg-inline--fa.fa-w-18 {width: 1.4em;}
 
 /* --- Makes the Zoom Slider on the Scenes, Images, Galleries and Tags pages longer and therefore easier to use --- */
@@ -1375,8 +1390,7 @@ div.movie-card.grid-card.card hr, div.movie-card.grid-card.card p {display:none}
 
 
 /* --- Spacing out the paginationIndex --- */
-.paginationIndex:first-of-type {display:none}
-.paginationIndex {color:#f3f3f3}
+.paginationIndex {color:#f3f3f3;margin-bottom:8px}
 .paginationIndex .scenes-stats, .images-stats {margin-top:-3px; color:#9999a9}
 .paginationIndex .scenes-stats:before, .images-stats:before
 {
