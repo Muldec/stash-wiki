@@ -52,12 +52,13 @@ Enjoy!
 
 
 ```
-/*	StashApp Pulsar Theme - Fonzie 2020-21 v1.7.3  	 */
+/*	StashApp Pulsar Theme - Fonzie 2020-21 v1.7.4  	 */
 /* ---------------------------------------------------- */
-/* -------- Updated to Stash version 0.10.92 and possibly 0.11 -------- */
+/* -------- Updated to Stash version 0.11 -------- */
 
 /* 
    Bug Fix: Background-color in the navigation bar
+            Issue with the Gallery Star Rating
    
    Adjustments to version 0.10.0 which includes moving the movie-, image- 
    and gallery-counter to the bottom of the performer image when you hover 
@@ -1153,7 +1154,7 @@ div.gallery-card hr, .scene-card.card>hr{
 
 div.gallery-card .rating-banner {
 	font-size: .002rem;
-	padding: 8px 41px 6px;
+	padding: 8px 4px 6px;
 	line-height: 1.1rem;
 	transform: rotate(0deg);
 	left: 3px;
@@ -1167,7 +1168,7 @@ div.gallery-card .rating-1 {width:28px}
 div.gallery-card .rating-2 {width:55px}
 div.gallery-card .rating-3 {width:83px} 
 div.gallery-card .rating-4 {width:110px}  
-div.gallery-card .rating-5 {width:138px}
+div.gallery-card .rating-5 {width:137px}
 
 div.gallery-card .rating-5 {
 	background:none;
