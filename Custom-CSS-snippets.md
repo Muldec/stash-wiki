@@ -146,6 +146,14 @@ form#performer-edit {
 }
 ```
 
+# Images
+## Disable lightbox animation
+```css
+.Lightbox-carousel {
+  transition: none;
+}
+```
+
 ## Don't crop preview thumbnails
 ```css
 .flexbin > * > img {
