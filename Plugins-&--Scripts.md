@@ -17,7 +17,7 @@ Metadata | [Performer Creator](https://github.com/com1234475/stash-plugin-perfor
 Metadata | [Set PH Urls](https://github.com/niemands/StashPlugins) | niemands | Add urls to pornhub scenes downloaded by Youtube-dl |
 Scraping | [Bulk URL Scraper](https://github.com/niemands/StashPlugins) | niemands | Bulk scene url scraping                             |
 Scraping | [Scrape with](https://github.com/Tweeticoats/stash-plugin-scrape_with)|Tweeticoats | Batch scrape scenes and performers. For example tag a scene with scrape_with_xbvr and run the task to run that scraper. Run artist scrapers on all performers missing a url. Run the performer image scraper on all performers.
-Other  | [stash-deovr](https://github.com/Tweeticoats/stash-deovr) | Create an index json file /deovr used by the vr player allowing you to use deovr to play 2d and 3d video's from stash.
+Other  | [stash-deovr](https://github.com/Tweeticoats/stash-deovr) | Tweeticoats | Create an index json file /deovr used by the vr player allowing you to use deovr to play 2d and 3d video's from stash.
 
 # Scripts
 Scripts are standalone programs that can interact with stash either through graphql queries or by directly editing stash's database/files.
