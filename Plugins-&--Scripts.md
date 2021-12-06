@@ -5,6 +5,8 @@ To install a plugin, save them to `%USERPROFILE%\.stash\plugins` on Windows or `
 
 A community-curated repository of scripts and plugins is available here: https://github.com/stashapp/CommunityScripts
 
+**Note: these plugins are created by third parties and not officially affiliated or supported by Stash.  If you have issues, please reach out to the original creators.**
+
 ### List of Plugins
 
 Category | Plugin | Author | Description
@@ -17,7 +19,8 @@ Metadata | [Performer Creator](https://github.com/com1234475/stash-plugin-perfor
 Metadata | [Set PH Urls](https://github.com/niemands/StashPlugins) | niemands | Add urls to pornhub scenes downloaded by Youtube-dl |
 Scraping | [Bulk URL Scraper](https://github.com/niemands/StashPlugins) | niemands | Bulk scene url scraping                             |
 Scraping | [Scrape with](https://github.com/Tweeticoats/stash-plugin-scrape_with)|Tweeticoats | Batch scrape scenes and performers. For example tag a scene with scrape_with_xbvr and run the task to run that scraper. Run artist scrapers on all performers missing a url. Run the performer image scraper on all performers.
-Other  | [stash-deovr](https://github.com/Tweeticoats/stash-deovr) | Tweeticoats | Create an index json file /deovr used by the vr player allowing you to use deovr to play 2d and 3d video's from stash.
+Other  | [stash-deovr](https://github.com/Tweeticoats/stash-deovr) | Tweeticoats | Create an index json file /deovr used by the vr player allowing you to use DeoVR to play 2d and 3d videos from stash.
+Other | [Stash_helper](https://github.com/philpw99/Stash_Helper) | philpw99 | Adds some windows-specific tools to Stash (navigate from icon, installation help, etc)
 
 # Scripts
 Scripts are standalone programs that can interact with stash either through graphql queries or by directly editing stash's database/files.
@@ -29,3 +32,10 @@ To install a script follow the script's install instructions.
 Category | Script | Author | Description
 -|-|-|-
 Maintenance | [SQLITE Renamer for Stash](https://github.com/Belleyy/Stash-Renamer-Python) | Belley  | Renames your files using stash's metadata
+
+# Third-Party Integrations
+Integrations are repositories developed to integrate Stash into other programs.
+
+Category | Script | Author | Description
+-|-|-|-
+Kodi | [plugin.video.stash](https://github.com/gitgiggety/plugin.video.stashn) | gitgiggety | plugin.video.stash is an add-on for the Kodi home theater center software to incorporate Stash, an organizer for your porn
