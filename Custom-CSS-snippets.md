@@ -10,12 +10,16 @@ Note: Future releases of Stash may break these CSS tweaks. CSS tweaks may not ap
 Reduce left and right padding on Scene and Performer grid pages allowing for more thumbnails on each row.
 
 ```css
+/* [Scenes tab] Fit more thumbnails on each row */
+
 .grid { padding: 0px !important; }
 ```
 
 ## Allow for longer string when displaying "Studio as Text" on scene thumbnails
 
 ```css
+/* [Scenes tab] Allow for longer string when displaying "Studio as Text" on scene thumbnails */
+
 .scene-studio-overlay {
 	font-weight: 600 !important;
 	opacity: 1 !important;
@@ -27,6 +31,8 @@ Reduce left and right padding on Scene and Performer grid pages allowing for mor
 ## Hide scene specs (resolution, duration) from scene card
 
 ```css
+/* [Scenes tab] Hide scene specs (resolution, duration) from scene card */
+
 .scene-specs-overlay {
   display: none;
 }
@@ -35,12 +41,16 @@ Reduce left and right padding on Scene and Performer grid pages allowing for mor
 ## Hide studio logo/text from scene card
 
 ```css
+/* [Scenes tab] Hide studio logo/text from scene card */
+
 .scene-studio-overlay {
   display: none;
 }
 ```
 ## Make the list of tags take up less width
 ```css
+/* [Scenes tab] Make the list of tags take up less width */
+
 .bs-popover-bottom {
   max-width: 500px
 }
@@ -48,6 +58,8 @@ Reduce left and right padding on Scene and Performer grid pages allowing for mor
 
 ## Swap studio and resolution/duration positions
 ```css
+/* [Scenes tab] Swap studio and resolution/duration positions */
+
 .scene-studio-overlay {
   bottom: 1rem;
   right: 0.7rem;
@@ -64,6 +76,8 @@ Reduce left and right padding on Scene and Performer grid pages allowing for mor
 
 ## Adjust the mouse over behaviour in wall mode
 ```css
+/* [Scenes tab] Adjust the mouse over behaviour in wall mode */
+
 @media (min-width: 576px) {
  .wall-item:hover::before {
    opacity: 0;  
@@ -77,6 +91,8 @@ Reduce left and right padding on Scene and Performer grid pages allowing for mor
 
 ## Disable zoom on hover in wall mode
 ```css
+/* [Scenes tab] Disable zoom on hover in wall mode */
+
 .wall-item:hover .wall-item-container {
     transform: none;
 }
@@ -92,11 +108,14 @@ This will hide the large scene scrubber under the video player, and max out the 
 ![image](https://user-images.githubusercontent.com/66393006/121396473-1451a000-c95c-11eb-9467-61a2cc23378e.png)
 
 ```css
-/* Hide the scene scrubber */
+/* [Scenes tab] Hide the scene scrubber */
+
 .scrubber-wrapper {
   display: none;
 }
-/* Max out the scene player's height */
+
+/* [Scenes tab] Max out the scene player's height */
+
 #jwplayer-container > div:first-child {
   height: 100%;
 }
@@ -108,6 +127,8 @@ This will hide the large scene scrubber under the video player, and max out the 
 ## Show entire performer image in performer card
 
 ```css
+/* [Performers tab] Show entire performer image in performer card */
+
 .performer.image {
   background-size: contain !important;
 }
@@ -115,6 +136,8 @@ This will hide the large scene scrubber under the video player, and max out the 
 
 ## Move the buttons in the Performer's edit panel to the top instead of bottom
 ```css
+/* [Performers tab] Move the buttons in the Performer's edit panel to the top instead of bottom */
+
 form#performer-edit {
     display: flex;
     flex-direction: column;
@@ -133,6 +156,8 @@ form#performer-edit {
 ## Grid view for galleries
 
 ```css
+/* [Galleries tab] Grid view for galleries */
+
 .col.col-sm-6.mx-auto.table .d-none.d-sm-block {
     display: none !important;
 }
@@ -149,6 +174,8 @@ form#performer-edit {
 # Images
 ## Disable lightbox animation
 ```css
+/* [Images tab] Disable lightbox animation */
+
 .Lightbox-carousel {
   transition: none;
 }
@@ -156,6 +183,8 @@ form#performer-edit {
 
 ## Don't crop preview thumbnails
 ```css
+/* [Images tab] Don't crop preview thumbnails */
+
 .flexbin > * > img {
   object-fit: inherit;
   max-width: none;
@@ -167,6 +196,8 @@ form#performer-edit {
 Making the front and back image much bigger. Left panel uses 70% while the right uses 30%.
 ### Layout 1, regular size poster.
 ```css
+/* [Movies tab] Better Movie layout for desktops: Regular size poster */
+
 .movie-details.mb-3.col.col-xl-4.col-lg-6 {
   flex-basis: 70%
 }
@@ -182,6 +213,8 @@ Making the front and back image much bigger. Left panel uses 70% while the right
 ```
 ### Layout 2, larger size poster.
 ```css
+/* [Movies tab] Better Movie layout for desktops: Larger size poster */
+
 .movie-details.mb-3.col.col-xl-4.col-lg-6 {
   flex-basis: 70%
 }
@@ -210,6 +243,8 @@ and values above 1 to move them to the right of the non-ordered buttons.
 ![image](https://user-images.githubusercontent.com/66393006/100487468-6b56fc80-3111-11eb-817b-5f14f1d7b2f8.png)  
 
 ```css
+/* [Global changes] Change the order of navigation bar buttons */
+
 nav .navbar-nav:first-child {
   display: flex;
   flex-direction: row;
@@ -228,6 +263,8 @@ div.nav-link[data-rb-event-key="/scenes"] {
 ## Hide the Donate button
 
 ```css
+/* [Global changes] Hide the Donate button */
+
 .btn-primary.btn.donate.minimal {
   display: none;
 }
@@ -238,6 +275,8 @@ div.nav-link[data-rb-event-key="/scenes"] {
 Use for when working on stash but don't want to expose NSFW images and text. May not be exhaustive:
 
 ```css
+/* [Global changes] Blur NSFW images */
+
 .scene-card-preview-video,
 .scene-card-preview-image,
 .image-card-preview-image,
