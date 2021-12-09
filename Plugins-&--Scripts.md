@@ -32,6 +32,7 @@ To install a script follow the script's install instructions.
 Category | Script | Author | Description
 -|-|-|-
 Maintenance | [SQLITE Renamer for Stash](https://github.com/Belleyy/Stash-Renamer-Python) | Belley  | Renames your files using stash's metadata
+Companion | [stash-vr-companion](https://github.com/Tweeticoats/stash-vr-companion) | Tweeticoats  | Similar to stash-deovr as above but designed as a web app that sits in a docker container next to stash to make it easier to use and add more functionality.
 
 # Third-Party Integrations
 Integrations are repositories developed to integrate Stash into other programs.
