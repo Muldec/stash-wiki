@@ -12,7 +12,7 @@
 Just a simple all black theme.<br>
 Everything in this css is commented, so if you don't like something just remove it!<br>
 Don't like the color of the border, or the border at all, change it or remove it!<br>
-If you're not sure DM me on Discord.
+If you're not sure how DM me on Discord.
 
 # Important changes
 1. By default scrubber is hidden.<br>
@@ -24,17 +24,21 @@ By default it's set to "contain" so if the image is extremely small, well you ge
 
 &nbsp;
 
-Have fun and in doubt you should find me on Discord!
+Have fun and if in doubt you should find me on Discord!
 
 &nbsp;
 
+# Changelog
+V2.0<br>Code simplified<br>Changed borders color from red to "Stash grey"<br>Edits to paint it all black again!
+
+&nbsp;
 
 # CSS Code
 
 
 
 ```css
-/* Black Hole Theme by BViking78 v1.0 */
+/* Black Hole Theme by BViking78 v2.0 */
 /* STASH GENERAL */
 /* Set Background to Black & Optional Custom Image */
 body {
@@ -81,6 +85,12 @@ body {
 	text-align: center;
 }
 
+/* Setting Background on Cards to Black and Borders to "Stash Grey" */
+.card {
+	background-color: black;
+	border: 1px solid #30404d;
+}
+
 /* STASH MAIN PAGE*/
 /* Change Card Header Color */
 .card-header {
@@ -93,69 +103,30 @@ body {
   border: 1px solid white;
 }
 
-/* STASH SCENES*/
-/* Cards Section */
-.card-section {
-  background: black;
-}
-
-/* Cards Bottom */
-.card-popovers {
-  background: transparent;
-}
-.scene-card {
-  background: black;
-  border: 1px solid red;
-}
-
 /* SCENE PAGE */
 /* Hide the scene scrubber */
 .scrubber-wrapper {
   display: none;
 }
 
-/* IMAGES*/
-/* Set Cards Background to Black */
-.image-card {
-	background: black;
-	border: 1px solid red;
+/* Setting Row "Scrape With" Background to Black */
+#scene-edit-details .edit-buttons-container {
+    background-color: black;
 }
 
-/* GALLERIES */
-/* Set Cards Background to Black */
-.gallery-card {
-	background: black;
-	border: 1px solid red;
-}
-
-/* PERFORMERS */
-/* Set Cards to Black */
-.performer-card {
-	background: black;
-	border: 1px solid red;
-}
-
-/* STUDIOS */
-/* Set Cards to Black */
-.studio-card {
-	background: black;
-	border: 1px solid red;
-}
-
-/* TAGS */
-/* Set Cards to Black */
-.tag-card {
-	background: black;
-	border: 1px solid red;
+/* Setting Other Rows Background to Black */
+div.react-select__control {
+    background-color: black;
 }
 
 /* SETTING */
-/* Left Menu to Black */
-.col {
-	background: black;
-}
 /* Setting Text Input Border to White */
 .input-control, .text-input {
 	border: 1px solid white;
+}
+
+/* Setting Background on Task Queue to Black */
+#tasks-panel .tasks-panel-queue {
+    background-color: black;
 }
 ```
