@@ -4,10 +4,6 @@ Any of [the issues](https://github.com/stashapp/stash/issues) can be picked up b
 
 ## Near Term
 
-### Multiple content folders
-
-Error handling might need to be improved if one of the folders is unavailiable (unplugged drive?)
-
 ### Logical Filters
 
 Right now most filters are AND'ed, meaning that the result of multiple filters must meet all of the criteria to be shown.  We should support AND and OR for more flexibility.  The Database queries still need to be modified.
@@ -26,14 +22,6 @@ Add a watch later boolean to scenes for scenes which you're interested in, but d
 
 It would be nice to group scenes.  I've been thinking of a concept of a "Collection".  A collection would be a group of scenes / galleries.  There are times when web scenes have behind the scenes additions, collections would be a way to group those.
 
-### Tag Improvements
-
-Tags should be able to have sub-tags and images... this still needs to be fleshed out more.
-
-### Parent Studios
-
-Some studios actually contain other studios.  For example Team Skeet would be the parent studio to Teens Like It Big, etc.  Add support for this and mock up how this would change the studio list.
-
 ### JSON Schema
 
 The exported JSON needs to be defined using the [JSON Schema Spec](https://json-schema.org/).  The spec should be generic enough that other apps could use it.  The schema should be used to validate any imported JSON.
@@ -45,13 +33,3 @@ Right now the schema uses the performer / studio image as the thing which is has
 Adding multiple images for a performer seems like a good change.  Make them taggable so the user can configure what type of images they see when they see a performer card.  TBD how this would change the JSON schema.
 
 ## Long Term
-
-### Access Control
-
-[Account System](https://github.com/stashapp/stash/issues/12)
-[Passwords](https://github.com/stashapp/stash/issues/3)
-[Sharing](https://github.com/stashapp/stash/issues/4)
-
-As a first step add admin user credentials to the `config.json` file.  The UI should be read only unless the user authenticates as the admin.
-
-Expanding on that would mean adding a `users` database table with access rights for each user. 
