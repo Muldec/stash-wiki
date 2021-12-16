@@ -19,4 +19,4 @@ If you would like to develop your own theme, we have a [reference guide of CSS s
 | Light Pulsar | ![Screenshot of Light Pulsar Theme](https://i.imgur.com/GcIi0pW.png) | https://github.com/stashapp/stash/wiki/Theme-Light-Pulsar |
 | Night | ![Screenshot of Night Theme](https://user-images.githubusercontent.com/3514095/110681521-ea93ac00-81a7-11eb-98ae-27adacb2aa6d.png) | https://github.com/stashapp/stash/wiki/Theme-Night |
 | Plex | ![Screenshot of Plex Theme](https://user-images.githubusercontent.com/3514095/110681550-f1baba00-81a7-11eb-8f1f-90a65727934b.png) | https://github.com/stashapp/stash/wiki/Theme-Plex |
-| Black Hole | ![Screenshot of Black Hole Theme](https://i.imgur.com/rEq5tHl.jpeg) | https://github.com/stashapp/stash/wiki/Theme-Black-Hole |
+| Black Hole | ![Screenshot of Black Hole Theme](https://i.imgur.com/Eo0ZUzu.png) | https://github.com/stashapp/stash/wiki/Theme-Black-Hole |
