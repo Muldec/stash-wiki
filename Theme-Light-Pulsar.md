@@ -54,16 +54,20 @@ Enjoy!
 
 
 ```
-/*	Light Pulsar Theme - Fonzie 2021 v0.3		*/
+/*		Light Pulsar Theme - Fonzie 2021 v0.3		 */
 /* ---------------------------------------------------- */
-/* --------- Updated to Stash version 0.10.0 ---------- */
+/* --------- Updated to Stash version 0.12.0 ---------- */
 
-/* Adjustments to version 0.10.0 which includes moving the movie-, image- 
-   and gallery-counter to the bottom of the performer image when you hover 
-   over the card, and increasing the size of the star rating in the highest 
-   zoom level.   	
-   Bug fixes: Borders for pagination, and Movie scene counter fixes
-   */
+/* 
+	Complete overhaul of the Settings page
+
+	Bug Fix: Background-color in the navigation bar
+   
+	Adjustments to version 0.10.0 which includes moving the movie-, image- 
+	and gallery-counter to the bottom of the performer image when you hover 
+	over the card, and increasing the size of the star rating in the highest 
+	zoom level.   	
+*/
 
 
 /* ===================== General ===================== */
@@ -75,7 +79,6 @@ body {
 /*	background-image:url("https://i.imgur.com/Lverfqy.jpg");	/* Tropic Beach	*/
 /*	background-image:url("https://i.imgur.com/4jrpuyR.jpg");	/* White Blue Waves	*/
 /*	background-image:url("https://i.imgur.com/KUtfQzs.jpg");	/* Bright Lights	*/
-/*	background-image:url("./custom/background.jpg");			/*	Local Background	*/
 
 	width: 100%;
 	height: 100%;
@@ -102,7 +105,8 @@ h1, h2, h3{ 	color:#fff;}
 
 
 /* --- The Home button in the top left corner of each page. Remove the last 3 lines if you don't like the logo --- */
-button.minimal.brand-link.d-none.d-md-inline-block.btn.btn-primary {
+button.minimal.brand-link.d-none.d-md-inline-block.btn.btn-primary,
+button.minimal.brand-link.d-inline-block.btn.btn-primary {
 	text-transform: uppercase;
 	font-weight: bold;
 	margin-left:1px;
@@ -112,8 +116,9 @@ button.minimal.brand-link.d-none.d-md-inline-block.btn.btn-primary {
 }
 
 /* --- Makes the background of the Navigation Bar at the Top half-transparent --- */
-.bg-dark {background: rgba(100, 200, 250, var(--fourTwo))!important;color:#000}
-.form-group .bg-dark {background: rgba(130, 180, 205, 0.13)!important;}
+nav.bg-dark {background: rgba(100, 200, 250, var(--fourTwo))!important;color:#000}
+.bg-dark {background:none !important;background-color:none !Important}
+.form-group .bg-dark {background: rgba(10, 20, 25, 0.20)!important;}
 
 
 /* --- The space between the Navigation Bar and the rest of the page --- */
@@ -574,6 +579,8 @@ table#performer-details {color:#FFF; text-shadow: 1px 1px 1px #000;}
 #performer-edit .input-group, #performer-edit .text-input.form-control { float:left; width:89%; }
 }
 
+#performer-edit .form-group .mr-2 {margin-right:0!important}
+
 
 
 
@@ -800,7 +807,6 @@ div.tagger-container .btn-link {
 
 
 
-
 /* ============== Studio ================= */
 
 
@@ -883,9 +889,12 @@ div.tagger-container .btn-link {
 .studio-card.card .rating-1{width:28px;} 
 
 div.studio-card.card .card-popovers {	margin-top: -34px;}
+.studio-card.card .card-section div:nth-child(2) {margin-bottom:6px;margin-top:-3px;}
 
 .studio-details dl.details-list{ grid-column-gap: 0}
 .studio-details dt, .studio-details dd {padding: 6px 0 8px 8px}
+
+
 
 
 
@@ -1414,6 +1423,460 @@ a.minimal, button.minimal {
 
 div.gallery-card.grid-card.card p div.TruncatedText,
 div.movie-card.grid-card.card hr, div.movie-card.grid-card.card p {display:none}
+
+
+/* --- Spacing out the paginationIndex --- */
+.paginationIndex {color:#f3f3f3;margin-bottom:8px}
+.paginationIndex .scenes-stats, .images-stats {margin-top:-3px; color:#aaaab9}
+.paginationIndex .scenes-stats:before, .images-stats:before
+{
+	font-size: 16px;
+	margin-left:18px;
+	margin-right:12px;
+	color:#ccc;
+	content: "-";
+}
+
+
+
+/* --- Overhaul of the Popoup Edit Boxes --- */
+@media (min-width: 576px) {
+	#setting-dialog .modal-content .modal-body textarea {min-height:350px; height:75vh !important}
+	.modal-dialog {max-width: 880px}
+	.modal-dialog .modal-content .form-group .multi-set {width:82%;margin-top:12px; flex: 0 0 82%; max-width:82%;}
+	.modal-dialog .modal-content .form-group .col-9 {flex: 0 0 82%;max-width: 82%;}
+	.modal-dialog .modal-content .col-3 {    flex: 0 0 18%; max-width: 18%;}
+	.modal-dialog .modal-content .form-group > .form-label {margin-top:0px;flex: 0 0 18%;    max-width: 18%;text-shadow: var(--std-txt-shadow);}
+	.modal-dialog .modal-content .form-group {display: flex; flex-wrap: wrap;}
+	.modal-dialog .modal-content .btn-group>.btn:not(:first-child), .btn-group>.btn-group:not(:first-child) {margin-left: 2px}
+	.modal-dialog .modal-content .form-label[for~="movies"],
+	.modal-dialog .modal-content .form-label[for~="tags"],
+	.modal-dialog .modal-content .form-label[for~="performers"] {margin-top:48px;}
+	.modal-dialog .modal-content .button-group-above {margin-left:9px}
+}
+
+#scene-edit-details .edit-buttons-container {
+	background-color: rgba(0,0,0,0.0);
+	position: relative;
+	margin-bottom:15px;
+}
+
+#scene-edit-details .form-group {margin-bottom:0.65rem;}
+
+
+
+
+
+
+
+
+
+/* ==============  SETTINGS ==============  */
+
+
+
+#settings-container {
+	padding-left:230px;
+	background-image: none !important;
+	background-color: rgba(16, 20, 25, .40) !important;
+	box-shadow: 2px 2px 7px rgb(0 0 0 / 75%);
+	border-radius: 10px;
+	padding-top:25px;
+	min-height:450px;
+}
+
+#settings-container .card {
+	margin-bottom:25px;
+	background-image: none !important;
+	background-color: rgba(16, 20, 25, .00);
+	box-shadow: 0px 0px 0px rgb(0 0 0 / 75%);
+	border-radius: 0px;
+}
+
+#settings-container .bg-dark {background-color: rgba(16, 20, 25, .12) !important;}
+
+.form-group>.form-group {margin-top:0.5em; margin-bottom: 0.5rem}
+
+
+#configuration-tabs-tabpane-tasks>.form-group {margin-bottom:2rem; margin-top:1em}
+
+#configuration-tabs-tabpane-tasks h6 {     margin-top:3.5em; font-weight:bold; margin-bottom:1em;  }
+#configuration-tabs-tabpane-tasks h5 {     margin-top:2.0em; font-weight:bold; 	letter-spacing: 0.09rem; }
+
+.form-group h4 {margin-top:2em}
+
+
+#parser-container.mx-auto {max-width:1400px;margin-right:auto !important}
+.scene-parser-row .parser-field-title {width: 62ch}
+
+
+
+.mx-auto {margin-right: 1% !important}
+.mx-auto.card .row .col-md-2 .flex-column { position:fixed;min-height:400px}
+.mx-auto.card>.row {min-height:360px}
+
+.loading-indicator {opacity:80%; zoom:2}
+
+
+
+
+/* --- Settings - Tasks ------------------------------------------------------------------------------------- */
+
+
+#configuration-tabs-tabpane-tasks>.form-group .card {
+    padding: 20px;
+    margin: 4px 0.40% 14px;
+    background-image: none;
+    background-color: rgba(16, 20, 25, .00);
+    box-shadow: none;
+    border-radius: 10px;
+}
+
+#tasks-panel h1 {margin-top: 3em}
+.setting-section h1, #tasks-panel h1 {font-size: 1.55rem; max-width:180px}
+
+
+@media (min-width: 576px) and (min-height: 600px) {
+#tasks-panel .tasks-panel-queue {
+    background: none !important;
+    margin-top: -2.6rem;
+    padding-bottom: .25rem;
+    padding-top: 0rem;
+    position: relative;
+    top: 0rem;
+    z-index: 2;
+}
+}
+
+#tasks-panel hr {border-top: 0px solid rgba(140,142,160,.38);}
+#tasks-panel h1 {margin-top:1.8em;}
+#tasks-panel h1 {margin-top:0.8em;}
+
+#configuration-tabs-tabpane-tasks {margin-top:40px}
+
+#configuration-tabs-tabpane-tasks .form-group:last-child .setting-section .setting div:last-child {
+    margin-right: 0% !important;
+    margin-left: 0px;
+    margin-top: 2px;
+}
+
+#configuration-tabs-tabpane-tasks .setting-section .sub-heading {margin-bottom:1em}
+#configuration-tabs-tabpane-tasks .setting-section .collapsible-section  {margin-bottom:3em}
+#configuration-tabs-tabpane-tasks #video-preview-settings  button { width:250px;margin-top:22px;margin-left:-57px}
+#configuration-tabs-tabpane-tasks .tasks-panel-tasks .setting-section:nth-child(3) {margin-top:5em}
+
+.tasks-panel-tasks .setting a { color: #ccccd3;}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+@media (min-width: 1000px) {
+	#settings-container .card {margin-top:-43px; margin-left:255px}
+}
+
+
+
+#settings-container .col-form-label {
+    padding-top: calc(.55rem);
+    padding-bottom: calc(.55rem);
+}
+
+.setting-section .setting-group>.setting:not(:first-child), .setting-section .setting-group .collapsible-section .setting {
+    margin-left: 4rem; 
+}
+
+
+
+.setting-section .setting h3 {
+    font-size: 1.4rem;
+    margin:0.6em 0 0.4em;
+    
+}
+
+.setting-section:not(:first-child) {margin-top: 1em}
+.setting-section .setting-group>.setting:not(:first-child).sub-setting, .setting-section .setting-group .collapsible-section .setting.sub-setting {    padding-left: 3rem;}
+
+
+
+@media (min-width: 1200px) {
+	.offset-xl-2 {
+		max-width:1250px;
+		margin-left:15%;
+		margin-right:auto;
+	}
+
+	#settings-container .tab-content, .mx-auto {	max-width: none;}
+}
+
+
+.setting-section .setting:not(:last-child) {
+    border-bottom: 0px solid #000;
+}
+
+
+
+
+.job-table.card {
+	margin-top:-32px !important;
+	background-color: rgba(16, 20, 25, .20) !important;
+	border-radius: 10px !important;
+}
+
+
+
+
+
+
+.custom-switch {padding-left:2.25rem}
+.custom-control {
+    min-height: 1.5rem;
+    padding-left: 0.5rem;
+    margin-right:1em;
+}
+
+.custom-control-input:checked~.custom-control-label:before {
+    color: rgb(0 0 0 / 0%);
+    border-color: rgb(0 0 0 / 0%);
+    background-color: rgb(0 0 0 / 0%);
+}
+
+.custom-switch .custom-control-label:before {
+    pointer-events: auto;
+    border-radius: 0;
+}
+
+.custom-switch .custom-control-input:checked~.custom-control-label:after {
+    background-color: blue;
+    transform: auto;
+}
+
+.custom-switch .custom-control-label:after {
+    top: auto;
+    left: auto;
+    width: auto;
+    height: auto;
+    background-color: blue;
+    border-radius: 0;
+    transform: none;
+    transition: none;
+}
+
+.custom-control-label:before {display:none} 
+
+.custom-control-input {
+	position: absolute;
+	top:2px;
+	left: 0;
+	z-index: -1;
+	width: 1.2rem;
+	height: 1.35rem;
+     opacity: 1;
+     background-color:#10659a;
+     color:#10659a;
+}
+
+
+
+
+.setting-section .setting-group>.setting:not(:first-child), .setting-section .setting-group .collapsible-section .setting {
+	padding-bottom: 3px;
+	padding-top: 4px;
+	margin-right: 0rem;
+}
+
+.setting-section {margin-bottom:0.8em}
+
+
+
+
+.setting-section .sub-heading {
+	font-size:.9rem;
+	margin-top:0.5rem;
+	margin-bottom:3rem;
+}
+
+@media (min-width: 768px) {
+.offset-md-3 {margin-left: 1%;}
+#settings-menu-container {margin-left:1%; z-index:9; width:200px; padding-top:25px;}
+
+	#configuration-tabs-tabpane-interface .setting-section:first-child .card  .setting div:nth-child(2) { width:64%;min-width:300px;padding-top:6px}
+	#configuration-tabs-tabpane-interface .setting-section:first-child .card .setting div .sub-heading {margin-top:-28px; margin-left:255px;width:700px}
+	#language .input-control { width:250px}
+	
+	#configuration-tabs-tabpane-interface .setting-section .setting-group>.setting:not(:first-child) {margin-left:275px}
+	#configuration-tabs-tabpane-interface .setting-section .setting-group>.setting:nth-child(2) {margin-top: -40px}
+}
+
+@media (min-width: 1200px) {
+	.offset-md-3 {margin-left: 14%;margin-right:2%}
+	.setting-section h1, #tasks-panel h1 { max-width:220px;}
+	#settings-menu-container {
+		padding-top:25px;
+		margin-left:14% !important;
+		z-index:9;
+		width:205px;
+	}
+}
+
+@media (max-width: 768px) {
+	.offset-md-3 {margin-left: 1%;}
+	#settings-menu-container {margin-left:1%; z-index:9;width:180px;	padding-top:25px;}
+	#settings-container {    padding-left: 180px;}
+	.setting-section h1, #tasks-panel h1 { max-width:300px;}
+}
+
+@media (max-width: 576px) {
+	.offset-sm-3 {margin-left: 1%;}
+	#settings-menu-container {margin-left:1%;z-index:9;width:160px;	padding-top:25px;}
+	#settings-container {padding-left: 10px;}
+}
+
+@media (max-width: 1004px) {
+	.setting-section h1, #tasks-panel h1 { max-width:400px;}
+	.job-table.card {margin-top:2px !important;}
+}
+
+
+
+
+.markdown table tr:nth-child(2n),
+.modal-body .nav-link:hover,
+#settings-menu-container .nav-link:hover {background-color: rgba(10, 20, 20, .15)}
+
+
+
+@media (min-width: 1000px) {
+	#settings-container #configuration-tabs-tabpane-interface .setting-section > .setting { padding: 15px 0px;}
+	#settings-container #configuration-tabs-tabpane-interface .setting-section .setting-group .setting>div:first-item{margin-left: 4% !important;}	
+	
+	#settings-container #stash-table {margin-top:25px}
+	#configuration-tabs-tabpane-interface .setting-section:first-child .card {	margin-top: -5px;	margin-left: -1%}		
+
+	#language .input-control { width:250px}
+	#configuration-tabs-tabpane-interface .setting-section:first-child h3 {    font-size: 1.55rem;}
+
+	#configuration-tabs-tabpane-interface .setting-section:first-child .card > .setting div:nth-child(1) { width:255px}
+
+
+	#configuration-tabs-tabpane-interface .setting-section:first-child .card  .setting div:nth-child(2) { width:68%;padding-top:6px}
+	#configuration-tabs-tabpane-interface .setting-section:first-child .card .setting div .sub-heading {margin-top:-28px; margin-left:255px;width:700px}
+
+	#configuration-tabs-tabpane-interface #language {margin-bottom:15px}
+	#configuration-tabs-tabpane-library #stashes .sub-heading {margin-top:-26px; margin-left:235px;width:700px}
+	
+}
+
+
+
+#configuration-tabs-tabpane-metadata-providers .setting,
+#configuration-tabs-tabpane-security .setting,
+#configuration-tabs-tabpane-tasks .setting,
+#configuration-tabs-tabpane-system .setting-section .setting,
+#settings-dlna .setting-section .setting,
+#configuration-tabs-tabpane-interface .setting-section .setting {padding-top:0; padding-bottom:0}
+
+
+#configuration-tabs-tabpane-interface .setting-section:nth-child(1) h1 {display:none}
+
+#configuration-tabs-tabpane-interface .setting-section .setting-group>.setting:not(:first-child) h3 {
+    font-size: 1rem;
+    margin-left:2em;
+}
+
+#configuration-tabs-tabpane-interface .setting-section .setting-group .setting>div:last-child {
+    margin-right: 95% !important;
+    margin-left:0px;
+    margin-top:-32px;
+}
+
+.setting-section .setting>div:first-child {max-width:415px}
+
+#configuration-tabs-tabpane-interface .setting-section .setting>div:last-child {
+    min-width: 20px;
+    text-align: left;
+    width:38%;
+    
+}
+
+#configuration-tabs-tabpane-interface h3 {font-size:1.25em}
+
+#wall-preview .input-control {width:160px}
+
+.setting-section .setting-group>.setting:not(:first-child), .setting-section .setting-group .collapsible-section .setting {
+    padding-top: 0px;
+    padding-bottom: 0px;
+    margin-right: 0rem;
+    line-height:100%;
+    margin-top:-3px;
+    margin-bottom:-4px;
+}
+
+#configuration-tabs-tabpane-interface .setting-section:nth-child(7) .setting {margin-left:15px !important}
+#configuration-tabs-tabpane-interface .setting-section:nth-child(7) .setting:nth-child(1) {margin-left: 0px !important;}
+
+
+#settings-dlna h5 {margin-bottom:70px}
+#settings-dlna .form-group h5{margin-left:255px;margin-top:-30px}
+
+#configuration-tabs-tabpane-metadata-providers #stash-boxes .sub-heading {margin-top:-28px; margin-left:235px;width:700px;font-size:14px}
+
+.scraper-table tr:nth-child(2n) {background-color: rgba(16, 20, 25, .12)}
+
+
+
+/* Library */
+
+.stash-row .col-md-2 {padding-left:4%}
+#configuration-tabs-tabpane-library .setting-section .setting {padding:0}
+
+
+
+#configuration-tabs-tabpane-security .setting-section,
+#configuration-tabs-tabpane-tasks .setting-section,
+#configuration-tabs-tabpane-tasks .setting-group{max-width:915px}
+
+#configuration-tabs-tabpane-logs .setting-section,
+#configuration-tabs-tabpane-metadata-providers .setting-section,
+#configuration-tabs-tabpane-services .setting-section,
+#configuration-tabs-tabpane-system  .setting-section,
+#configuration-tabs-tabpane-library .setting-section:not(:first-child),
+#configuration-tabs-tabpane-interface .setting-section {max-width:810px}
+
+#configuration-tabs-tabpane-security .setting-section .setting>div:last-child,
+#configuration-tabs-tabpane-metadata-providers .setting-section .setting>div:last-child,
+#configuration-tabs-tabpane-services .setting-section .setting>div:last-child,
+#configuration-tabs-tabpane-system .setting-section .setting>div:last-child,
+#configuration-tabs-tabpane-library .setting-section .setting>div:last-child,
+#configuration-tabs-tabpane-interface .setting-section .setting>div:last-child,
+#configuration-tabs-tabpane-tasks .setting-section .setting>div:last-child {
+    min-width: 20px;
+    text-align: right;
+    width:auto;
+    
+}
+
+#configuration-tabs-tabpane-tasks .setting-section .collapsible-section .setting div:last-child {
+    margin-right: 95% !important;
+    margin-left: -12px;
+    margin-top: -15px;
+}
+
+
+#configuration-tabs-tabpane-system .setting-section .sub-heading {margin-bottom: 1.2rem}
 
 
 
