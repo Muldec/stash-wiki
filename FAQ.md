@@ -18,7 +18,8 @@
 - [What's the best way to add metadata to Stash?](#whats-the-best-way-to-add-metadata-to-stash)
 - [How do I add galleries?](#how-do-i-add-galleries)
 - [How do I rename or relocate a content folder?](#how-do-i-rename-or-relocate-a-library-folder)
-
+## Scraping
+- [How do I scrape webpages behind paywalls/login/cloudfare?](#scrape-behind-paywall)
 ## Troubleshooting
 - [Known Issues](#known-issues)
 - [FFMPEG Errors](#stash-is-showing-a-ffmpeg-not-found-error)
@@ -84,6 +85,11 @@ The basepath defaults to `/`. When running stash via a reverse proxy in a subpat
 
 ## How do I add galleries?
 For gallery-related issues check the relevant Wiki [section](https://github.com/stashapp/stash/wiki/Galleries).
+
+# Scraping
+## Scrape behind paywall
+[There is a special way](https://github.com/stashapp/stash/wiki/Scrape-websites-that-require-user-login,-behind-paywalls-or-anti-scraping-cloudfare) to scrape behind paywalls, anti-scraping Cloudfare, or members only area.
+
 # Troubleshooting
 ## Known Issues
 - Performer images uploaded in WebP format will not display on versions of Safari prior to version 13 or on anything earlier than MacOS Big Sur. This is a [limitation of Safari](https://caniuse.com/webp).  As a workaround, ensure you are uploading performer images in jpg or png format.
