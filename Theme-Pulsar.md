@@ -52,11 +52,14 @@ Enjoy!
 
 
 ```
-/*	StashApp Pulsar Theme - Fonzie 2020-21 v1.8  	 */
+/*	StashApp Pulsar Theme - Fonzie 2020-21 v1.8.1  	 */
 /* ---------------------------------------------------- */
 /* --------- Updated to Stash version 0.12.0 ---------- */
 
 /* 
+	Bug Fixes: Overlap of Help & Ssettings" buttons in the navbar, as well 
+	as the Identify task
+
 	Complete overhaul of the Settings page
 	
 	Bug Fix: Background-color in the navigation bar
@@ -128,6 +131,8 @@ button.minimal.brand-link.d-inline-block.btn.btn-primary {
 nav.bg-dark {background: rgba(10, 20, 25, 0.50)!important;}
 .bg-dark {background:none !important;background-color:none !Important}
 .form-group .bg-dark {background: rgba(10, 20, 25, 0.20)!important;}
+
+.navbar-buttons.navbar-nav a.nav-utility {margin-right:9px}
 
 /* --- The space between the Navigation Bar and the rest of the page --- */
 .main { margin-top:18px }
@@ -831,6 +836,14 @@ div.tagger-container .btn-link {
 #queue-viewer .current {background-color: rgba(25,60,40,0.40);}
 #queue-viewer .mb-2:hover, #queue-viewer .my-2:hover {background-color: rgba(15,20,30,0.28);}
 
+#scene-edit-details .edit-buttons-container {
+	background-color: rgba(0,0,0,0.0);
+	position: relative; 
+	margin-bottom:15px;
+}
+
+#scene-edit-details .form-group {margin-bottom:0.65rem;}
+
 
 
 
@@ -1352,7 +1365,12 @@ div.dropdown-menu .dropdown-item:focus,div.dropdown-menu .dropdown-item:hover,di
 	.modal-dialog .modal-content .form-label[for~="tags"],
 	.modal-dialog .modal-content .form-label[for~="performers"] {margin-top:48px;}
 	.modal-dialog .modal-content .button-group-above {margin-left:9px}
+	.modal-dialog .scraper-sources.form-group h5 {margin-top:20px}
+	.modal-dialog .modal-content .field-options-table {width:98%}
+
+	.modal-dialog.modal-lg .modal-content .form-group {display: inline;}
 }
+
 
 div.modal-body b, .form-label h6 {text-shadow: var(--std-txt-shadow);}
 
@@ -1433,15 +1451,6 @@ div.movie-card.grid-card.card hr, div.movie-card.grid-card.card p {display:none}
 	content: "-";
 }
 
-
-
-#scene-edit-details .edit-buttons-container {
-	background-color: rgba(0,0,0,0.0);
-	position: relative; 
-	margin-bottom:15px;
-}
-
-#scene-edit-details .form-group {margin-bottom:0.65rem;}
 
 
 
@@ -1828,7 +1837,6 @@ div.movie-card.grid-card.card hr, div.movie-card.grid-card.card p {display:none}
 
 
 #configuration-tabs-tabpane-system .setting-section .sub-heading {margin-bottom: 1.2rem}
-
 
 
 ```
