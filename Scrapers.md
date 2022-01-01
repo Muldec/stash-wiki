@@ -19,8 +19,6 @@ This is the most common type of scrapers, which use either XPath parser to pin-p
 This type of scrapers is mostly the same as XPath/JSON scrapers, except it will launch a headless Chrome browser to retrieve the information from websites. It can also get cookies, simulate a mouse click and other actions. These scrapers have `useCDP: true` setting in them.
 #### Python Scrapers
 This type of scrapers will launch python scripts to retrieve information from websites. Python script is powerful, versatile and cross-platform. So this kind of scrapers usually can do things much more than regular scrapers. To install this kind of scrapers, you need to copy not only the .yml file, but also all the .py files that associated with it.
-#### Visible CDP scrapers
-This type of scrapers can bypass the paywall, cloudfare, members only area or other obstacles. [Details Here.](https://github.com/stashapp/stash/wiki/Scrape-websites-that-require-user-login,-behind-paywalls-or-anti-scraping-cloudfare) This kind of scrapers are too new and not in the scrapers repo yet.
 
 ## More Details
 You can view the [detail information about scrapers here](https://github.com/stashapp/stash/blob/develop/ui/v2.5/src/docs/en/Scraping.md) or [Community Scrapers Readme here](https://github.com/stashapp/CommunityScrapers).
