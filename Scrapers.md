@@ -17,13 +17,13 @@ To install a scraper:
 
 ### By Searching Type
 - **Fragment**<br>
-This kind of scrapers will fetch the metadata from a website, by using existing data from Stash, like a scene's file name, performer's name...etc. Fragment scrapers will get all the data Stash knows about that scene/performer/gallery, so it's quite flexible when fetching information.
+This kind of scrapers will fetch the metadata from a website, by using existing data from Stash, like a scene's file name, performer's name...etc. Fragment scrapers will get all the data Stash knows about that scene/performer/gallery, so it's quite flexible when fetching information.<br>
 Scrapers includes: AdultTimeAPI.yml, JavLibrary.yml, ThePornDB.yml
 - **Search By Name**<br>
-A Search-By-Name scraper will get only "name" input from a scene or performer, then it will search a website with that name, and return a list of results.
+A Search-By-Name scraper will get only "name" input from a scene or performer, then it will search a website with that name, and return a list of results.<br>
 Scrapers includes: Babepedia.yml, FreeonesCommunity.yml, IAFD.yml
 - **Search By URL**<br>
-Most scrapers fetch metadata from a given URL, either by using XPath, JSON, or scripts. For this kind of scrapers you need to know the URL for that scene/performer/gallery/movie so they can extract information from it.
+Most scrapers fetch metadata from a given URL, either by using XPath, JSON, or scripts. For this kind of scrapers you need to know the URL for that scene/performer/gallery/movie so they can extract information from it.<br>
 Scrapers includes: All other scrapers.
 
 ### By Implementation
