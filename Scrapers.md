@@ -1,5 +1,6 @@
 # Scrapers
-Scrapers are the way to retrieve information from websites for your movies/scenes/galleries/performers...etc. Using scrapers wisely, you can avoid typing information manually and repetitively. They can help you quickly establish links between movies/scenes and performers/studios, add relative tags, then download covers/posters for easy recognition. It's a great feature to organize your video or image collections.
+Scrapers are the way to retrieve information from websites for your movies/scenes/galleries/performers...etc. Using scrapers wisely, you can avoid typing information manually and repetitively. They can help you quickly establish links between movies/scenes and performers/studios, add relative tags, then download covers/posters for easy recognition. It's a great feature to organize your video or image collections.<br>
+All scrapers are ".yml" files. Some scrapers like script scrapers also come with their own ".py" files or ".js" files.
 
 ## Installation
 To install a scraper:
@@ -13,11 +14,24 @@ To install a scraper:
 5) You will preview the scrape result before you commit the change. Check on the left will keep the original value, check on the right will make the change.
 
 ## Scraper Types
-#### XPath and JSON Scrapers
+
+### By Searching Type
+- **Fragment**<br>
+This kind of scrapers will fetch the metadata from a website, by using existing data from Stash, like a scene's file name, performer's name...etc. Fragment scrapers will get all the data Stash knows about that scene/performer/gallery, so it's quite flexible when fetching information.
+Scrapers includes: AdultTimeAPI.yml, JavLibrary.yml, ThePornDB.yml
+- **Search By Name**<br>
+A Search-By-Name scraper will get only "name" input from a scene or performer, then it will search a website with that name, and return a list of results.
+Scrapers includes: Babepedia.yml, FreeonesCommunity.yml, IAFD.yml
+- **Search By URL**<br>
+Most scrapers fetch metadata from a given URL, either by using XPath, JSON, or scripts. For this kind of scrapers you need to know the URL for that scene/performer/gallery/movie so they can extract information from it.
+Scrapers includes: All other scrapers.
+
+### By Implementation
+- **XPath and JSON Scrapers**<br>
 This is the most common type of scrapers, which use either XPath parser to pin-point the information and retrieve them, or send out JSON requests to get the information. xpathScraper and jsonScraper can be mixed in the same .yml file.
-#### CDP Scrapers
+- **CDP Scrapers**<br>
 This type of scrapers is mostly the same as XPath/JSON scrapers, except it will launch a headless Chrome browser to retrieve the information from websites. It can also get cookies, simulate a mouse click and other actions. These scrapers have `useCDP: true` setting in them.
-#### Python / Javascript Scrapers
+- **Python / Javascript Scrapers**<br>
 This type of scrapers will launch python or javascripts to retrieve information from websites. Script scrapers are powerful, versatile and cross-platform. So they usually can do much more than regular scrapers. To install this kind of scrapers, you need to copy not only the .yml file, but also all the script files like .py or .js that associated with it.
 
 ## More Details
