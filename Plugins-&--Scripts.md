@@ -39,4 +39,4 @@ Integrations are repositories developed to integrate Stash into other programs.
 
 Category | Script | Author | Description
 -|-|-|-
-Kodi | [plugin.video.stash](https://github.com/gitgiggety/plugin.video.stashn) | gitgiggety | plugin.video.stash is an add-on for the Kodi home theater center software to incorporate Stash, an organizer for your porn
+Kodi | [plugin.video.stash](https://github.com/gitgiggety/plugin.video.stash) | gitgiggety | plugin.video.stash is an add-on for the Kodi home theater center software to incorporate Stash, an organizer for your porn
