@@ -134,7 +134,7 @@ This will hide the large scene scrubber under the video player, and max out the 
 }
 ```
 
-## Show larger performer image in performer card for desktop
+## Show a larger image in performer's page for desktop
 ```css
 .performer-image-container{
   flex: 0 0 50%;
