@@ -134,6 +134,19 @@ This will hide the large scene scrubber under the video player, and max out the 
 }
 ```
 
+## Show larger performer image in performer card for desktop
+```css
+.performer-image-container{
+  flex: 0 0 50%;
+  max-width: 50%;
+}
+
+.col-md-8 {
+  flex: 0 0 50%;
+  max-width: 50%;
+}
+```
+
 ## Move the buttons in the Performer's edit panel to the top instead of bottom
 ```css
 /* [Performers tab] Move the buttons in the Performer's edit panel to the top instead of bottom */
