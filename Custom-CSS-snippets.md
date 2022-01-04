@@ -148,6 +148,7 @@ This will hide the large scene scrubber under the video player, and max out the 
 ```
 ## Show larger performer images in performers list.
 ```css
+/* original value: height: 30rem; min-width:13.25rem; */
 .performer-card-image{
   height: 45rem;
   min-width: 20rem;
