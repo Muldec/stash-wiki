@@ -140,7 +140,7 @@ This will hide the large scene scrubber under the video player, and max out the 
   flex: 0 0 50%;
   max-width: 50%;
 }
-
+/* Changing .col-md-8 settings also affects studios and tags display. 50% should be good enough. */
 .col-md-8 {
   flex: 0 0 50%;
   max-width: 50%;
