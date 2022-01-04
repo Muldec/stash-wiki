@@ -146,6 +146,13 @@ This will hide the large scene scrubber under the video player, and max out the 
   max-width: 50%;
 }
 ```
+## Show larger performer images in performers list.
+```css
+.performer-card-image{
+  height: 45rem;
+  min-width: 20rem;
+}
+```
 
 ## Move the buttons in the Performer's edit panel to the top instead of bottom
 ```css
