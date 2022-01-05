@@ -84,7 +84,7 @@ The basepath defaults to `/`. When running stash via a reverse proxy in a subpat
 > **⚠️ Note:** Don't forget to click `Save` after updating these directories!
 
 ## How do I add galleries?
-For gallery-related issues check the relevant Wiki [section](https://github.com/stashapp/stash/wiki/Galleries).
+For gallery-related issues check the relevant Documentation [section](https://github.com/stashapp/stash/blob/develop/ui/v2.5/src/docs/en/Galleries.md).
 
 # Scraping
 ## Scrape behind paywall
