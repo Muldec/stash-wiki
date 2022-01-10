@@ -3,10 +3,9 @@ A sample configuration of headers that need to be set mentioned [here](https://g
 ```bash
 location / {
     proxy_pass http://127.0.0.1:9999;
-    proxy_set_header Host $host;
+    proxy_set_header Host $http_host;
     proxy_set_header X-Real-IP $remote_addr;
     proxy_set_header X-Forwarded-For $remote_addr;
-    proxy_set_header X-Forwarded-Port $server_port;
     proxy_set_header X-Forwarded-Proto $scheme;
 }
 ```
@@ -56,6 +55,7 @@ server {
         set $upstream_port 9999;
         set $upstream_proto http;
         proxy_pass $upstream_proto://$upstream_app:$upstream_port;
+        proxy_set_header Host $http_host;
     }
 
 }
@@ -79,7 +79,7 @@ server {
            proxy_http_version 1.1;
            proxy_set_header Upgrade $http_upgrade;
            proxy_set_header Connection "Upgrade";
-           proxy_set_header Host $host;
+           proxy_set_header Host $http_host;
            proxy_set_header X-Real-IP $remote_addr;
            proxy_set_header X-Forwarded-For $remote_addr;
            proxy_set_header X-Forwarded-Port $server_port;
