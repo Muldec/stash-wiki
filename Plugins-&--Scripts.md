@@ -15,7 +15,7 @@ Downloader | [YT-DL Downloader](https://github.com/niemands/StashPlugins) | niem
 Images | [Gallery Tags](https://github.com/niemands/StashPlugins) | niemands | Copy information from attached scene to galleries   |
 Images | [Update Image Titles](https://github.com/niemands/StashPlugins) | niemands | Update all image titles (Fixes natural sort)        |
 Maintenance | [Duplicate Finder](https://github.com/WithoutPants/stash-plugin-duplicate-finder) | WithoutPants | Detects and marks duplicate scenes within Stash
-Metadata | [Performer Creator](https://github.com/com1234475/stash-plugin-performer-creator) | com1234475 | Creates performers from scenes
+Metadata | [Performer Creator](https://github.com/com1234475/stash-plugin-performer-creator) | com1234475 | Creates performers from scenes based on filenames.
 Metadata | [Set PH Urls](https://github.com/niemands/StashPlugins) | niemands | Add urls to pornhub scenes downloaded by Youtube-dl |
 Scraping | [Bulk URL Scraper](https://github.com/niemands/StashPlugins) | niemands | Bulk scene url scraping                             |
 Scraping | [OnlyFans Scraper](https://github.com/ALonelyJuicebox/OFMetadataToStash) | ALonelyJuicebox | Scrape scene and performer info from OnlyFans 
