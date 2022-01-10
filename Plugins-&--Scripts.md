@@ -1,11 +1,9 @@
-# Plugins
-Stash plugins add further features that Stash doesn't itself provide.
+# Third-Party Plugins
+Stash plugins add further features that Stash doesn't itself provide.  There are also several [officially hosted plugins and scripts](https://github.com/stashapp/CommunityScripts/blob/main/PLUGINS-LIST.md) available via the CommunityScripts repository. This document contains a list of plugins and scripts created by users and contributors.
 
 To install a plugin, save them to `%USERPROFILE%\.stash\plugins` on Windows or `/root/.stash/plugins` on Unix systems (Mac, Linux, etc.). The `plugins` directory won't exist by default so you will have to create it. Once installed, go to the Plugins page in your Stash settings and reload plugins.
 
-A community-curated repository of scripts and plugins is available here: https://github.com/stashapp/CommunityScripts
-
-**Note: these plugins are created by third parties and not officially affiliated or supported by Stash.  If you have issues, please reach out to the original creators.**
+**Note: these plugins are created by third parties and not officially affiliated or supported by the core Stash team.  If you have issues, please reach out to the original creators.**
 
 ### List of Plugins
 
