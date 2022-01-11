@@ -103,21 +103,15 @@ Reduce left and right padding on Scene and Performer grid pages allowing for mor
 
 ## Hide the scene scrubber
 
-This will hide the large scene scrubber under the video player, and max out the player's height.
+This will hide the large scene scrubber under the video player and max out the player's height.
 
 ![image](https://user-images.githubusercontent.com/66393006/121396473-1451a000-c95c-11eb-9467-61a2cc23378e.png)
 
 ```css
-/* [Scenes tab] Hide the scene scrubber */
+/* [Scenes tab] Hide the scene scrubber and max out the player's height */
 
 .scrubber-wrapper {
   display: none;
-}
-
-/* [Scenes tab] Max out the scene player's height */
-
-#jwplayer-container > div:first-child {
-  height: 100%;
 }
 ```
 
