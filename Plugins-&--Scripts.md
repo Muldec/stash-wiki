@@ -9,7 +9,7 @@ To install a plugin, save them to `%USERPROFILE%\.stash\plugins` on Windows or `
 
 Category | Plugin | Author | Description
 -|-|-|-
-Downloader | [YT-DL Downloader](https://github.com/niemands/StashPlugins) | niemands | Download Videos automated with yt-dl and add the scrape tag for burl_url_scraper |
+Downloader | [YT-DL Downloader](https://github.com/niemands/StashPlugins) | niemands | Download Videos automated with yt-dl and add the scrape tag for Bulk URL Scraper |
 Images | [Gallery Tags](https://github.com/niemands/StashPlugins) | niemands | Copy information from attached scene to galleries   |
 Images | [Update Image Titles](https://github.com/niemands/StashPlugins) | niemands | Update all image titles (Fixes natural sort)        |
 Maintenance | [Duplicate Finder](https://github.com/WithoutPants/stash-plugin-duplicate-finder) | WithoutPants | Detects and marks duplicate scenes within Stash
