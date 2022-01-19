@@ -87,3 +87,12 @@ server {
     }
 
 }
+```
+
+A sample configuration for Apache:
+```
+ProxyPass "/stash" "http://127.0.0.1:9999"
+ProxyPassReverse "/stash" "http://127.0.0.1:9999"
+RequestHeader setIfEmpty X-Forwarded-Prefix "/stash"
+ProxyPreserveHost on
+```
