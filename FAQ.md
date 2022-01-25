@@ -76,7 +76,7 @@ The basepath defaults to `/`. When running stash via a reverse proxy in a subpat
 
 * Stash includes a single scraper, but you can add more via the [CommunityScrapers repo](https://github.com/stashapp/CommunityScrapers). See the README for installation and usage instructions.
 * Pierre Delecto wrote [a Python script](https://github.com/ThePornDatabase/stash_theporndb_scraper) for scraping from ThePornDB. This is arguably the fastest way to mass create studios / performers and populate scene data.
-* StashDB is a service that allows for crowdsourcing of porn metadata. Check the pinned messages in the #stash-box-qa2 channel in Discord to start using it.
+* StashDB is a service that allows for crowdsourcing of porn metadata. Check the pinned messages in the #stashbox-invites channel in Discord to start using it.
 
 ## How do I rename or relocate a library folder?
 **If you need to move or rename a folder**, you can remove the existing directory from your library and readd the new location. Stash will recognize the files on the next scan and re-link to the new location. **Do not run a Clean in between these steps, or you will lose the information from your relocated folders** (your files will not be affected).
