@@ -1,5 +1,21 @@
-The use of nginx as a reverse proxy for stash is possible. 
-A sample configuration of headers that need to be set mentioned [here](https://github.com/stashapp/stash/pull/134) is 
+The use of a reverse proxy for stash is possible. 
+## General
+Generally, the following headers will need to be set (check your proxy's documentation for how to configure) .
+- Host (http host)
+- X-Real-IP
+- X-Forwarded-For
+- X-Forwarded-Proto
+
+See [issue 134](https://github.com/stashapp/stash/pull/134) for more information.
+
+## Setting External URL
+You can set the base URL that will be served by Stash by adding an **external_host: ** setting in your Stash config.yml and assigning it the full publicly accessible url
+```
+external_site: http://example.domain.com
+```
+
+## Server Configuration Examples
+### NGinx
 ```bash
 location / {
     proxy_pass http://127.0.0.1:9999;
@@ -9,18 +25,7 @@ location / {
     proxy_set_header X-Forwarded-Proto $scheme;
 }
 ```
-If needed you can adjust the **external_host** setting to your external address as mentioned [here](https://github.com/stashapp/stash/pull/369)
-
-In order for the websocket to work, you may need to also add these lines to your server block (`proxy.conf` file in the Letencrypt Unraid docker container for instance) as mentioned [here](https://github.com/stashapp/stash/issues/532) should fix the issue.
-
-```bash
-proxy_http_version 1.1;
-proxy_set_header Upgrade $http_upgrade;
-proxy_set_header Connection "upgrade";
-```
-
-In some cases with big database files you might encounter `504` errors during stash db migration due to timeout. Adjusting the `proxy_read_timeout` value ( `proxy.conf` file in Letencrypt/Swag docker container)
-
+## NGinX + Docker (Linuxserver Letsencrypt)
 If you are using the linuxserver letencrypt docker you can use create a `stash.subdomain.conf` file in your `proxy-confs` folder and use this as the config:
 ```bash
 # make sure that your dns has a cname set for stash
@@ -61,6 +66,8 @@ server {
 }
 ```
 
+### Nginx with external_host
+
 Another example for `nginx`:
 
 In this case we are using `stash.home` as our domain and `192.168.0.1` is stash's ip so edit acccordingly.
@@ -89,10 +96,39 @@ server {
 }
 ```
 
-A sample configuration for Apache:
+### Apache
 ```
 ProxyPass "/stash" "http://127.0.0.1:9999"
 ProxyPassReverse "/stash" "http://127.0.0.1:9999"
 RequestHeader setIfEmpty X-Forwarded-Prefix "/stash"
 ProxyPreserveHost on
+```
+
+
+### Caddy
+```
+example.domain.com
+
+reverse_proxy 127.0.0.1:9999 {
+	header_up X-Forwarded-Host {host}
+	header_up Host {upstream_hostport}
+	header_up X-Real-IP {remote_host}
+	header_up X-Forwarded-For {remote_host}
+	header_up X-Forwarded-Port {server_port}
+	header_up X-Forwarded-Proto {scheme}
+}
+}
+```
+
+## Troubleshooting
+**504 Errors** 
+- In some cases with big database files you might encounter `504` errors during stash db migration due to timeout. Adjusting the `proxy_read_timeout` value ( `proxy.conf` file in Letencrypt/Swag docker container)
+
+**422 Errors**
+- In order for the websocket to work, you may need to also add these lines to your server block (`proxy.conf` file in the Letencrypt Unraid docker container for instance) as mentioned [here](https://github.com/stashapp/stash/issues/532) should fix the issue.
+
+```bash
+proxy_http_version 1.1;
+proxy_set_header Upgrade $http_upgrade;
+proxy_set_header Connection "upgrade";
 ```
