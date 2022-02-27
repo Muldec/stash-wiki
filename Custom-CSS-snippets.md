@@ -115,6 +115,17 @@ This will hide the large scene scrubber under the video player and max out the p
 }
 ```
 
+## Hide the truncated text
+
+This will hide the truncated text that appears under the tile and date.
+
+```css
+/* [Scenes Tab] - Hide the truncated text on scene card */
+
+.TruncatedText.scene-card__description { 
+   display: none;
+}
+```
 
 # Performers
 
