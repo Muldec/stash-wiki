@@ -162,7 +162,7 @@ This will hide the truncated text that appears under the tile and date.
 
 ## Move the buttons in the Performer's edit panel to the top instead of bottom
 ```css
-/* [Performers tab] Move the buttons in the Performer's edit panel to the top instead of bottom */
+/* [Performers tab] Move the buttons in the Performer's edit panel to the top instead of bottom (in newer version of Stash, the buttons are already positioned both at top and bottom.  */
 
 form#performer-edit {
     display: flex;
@@ -174,6 +174,22 @@ form#performer-edit {
 #performer-edit > .row:last-child {
     order: 0;
     margin-bottom: 1rem;
+}
+```
+
+## Move the tags row in the Performer's edit panel to the second position (just after name)
+```css
+/* [Performers tab] Move the tags row in the Performer's edit panel to the second position (just after name).  */
+
+form#performer-edit {
+    display: flex;
+    flex-direction: column;
+}
+#performer-edit > .row:nth-child(21) {
+    order: -1;
+}
+#performer-edit > .row:first-child {
+    order: -2;
 }
 ```
 
