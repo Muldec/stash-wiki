@@ -20,4 +20,4 @@ If you would like to develop your own theme, we have a [reference guide of CSS s
 | Night | ![Screenshot of Night Theme](https://user-images.githubusercontent.com/3514095/110681521-ea93ac00-81a7-11eb-98ae-27adacb2aa6d.png) | https://github.com/stashapp/stash/wiki/Theme-Night |
 | Plex | ![Screenshot of Plex Theme](https://user-images.githubusercontent.com/3514095/110681550-f1baba00-81a7-11eb-8f1f-90a65727934b.png) | https://github.com/stashapp/stash/wiki/Theme-Plex |
 | Black Hole | ![Screenshot of Black Hole Theme](https://i.imgur.com/Eo0ZUzu.png) | https://github.com/stashapp/stash/wiki/Theme-Black-Hole |
-| Modern Dark | ![Screenshot of Modern Dark](https://user-images.githubusercontent.com/72030708/158081348-aa1a018d-0fd8-4317-aff9-0eab754d7dd3.jpeg) | https://github.com/stashapp/stash/wiki/Modern-Dark |
+| Modern Dark | ![Screenshot of Modern Dark](https://user-images.githubusercontent.com/72030708/158081426-d0f8c2df-cd68-4344-9de5-100d119b1e1c.jpeg) | https://github.com/stashapp/stash/wiki/Modern-Dark |
