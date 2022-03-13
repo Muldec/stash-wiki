@@ -1,6 +1,5 @@
 &nbsp;
 <p align="center">
-    <img src="https://user-images.githubusercontent.com/63812189/79496351-dddbf780-7fda-11ea-9e68-46d0eeb4e92f.png"  alt="Modern Dark Theme" />
 <br/>
     <a href="https://discord.gg/2TsNFKt">
         <img src="https://img.shields.io/discord/559159668438728723.svg?logo=discord" alt="Discord" />
