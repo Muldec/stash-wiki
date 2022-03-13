@@ -353,7 +353,7 @@ option {
     .ml-auto.btn-group { display: none; }
     .stats-element { flex-grow: 1; margin: auto 0rem; }
     .stats { margin-left: 0px; }
-    .top-nav { bottom: 0; top: auto; padding-bottom: 20px; }
+    .top-nav { bottom: 0; top: auto; }
     div[data-rb-event-key="/images"] { display: none; }
     div[data-rb-event-key="/scenes/markers"] { display: none; }
 }
