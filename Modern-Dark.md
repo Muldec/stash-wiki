@@ -6,7 +6,7 @@
     </a>
 </p>
 
-![](https://media.discordapp.net/attachments/644934273459290145/938694529861705728/Web_capture_3-2-2022_11319_192.168.4.144.jpeg?width=1609&height=905)
+![Modern Dark](https://user-images.githubusercontent.com/72030708/158081810-9d866204-2c8a-4270-a961-b1421f178f46.jpg)
 &nbsp;
 
 This theme was inspired by Plex Interface. Installation is quick and easy so you should be ready to install it in just a few simple steps. 
