@@ -41,7 +41,7 @@ Enjoy!
 
 
 ```css
-/* Modern Dark Theme by cj13 v1.0 */
+/* Modern Dark Theme by cj13 v1.1 */
 
 :root {
   --nav-color: #212121;
@@ -356,6 +356,8 @@ option {
     .top-nav { bottom: 0; top: auto; }
     div[data-rb-event-key="/images"] { display: none; }
     div[data-rb-event-key="/scenes/markers"] { display: none; }
+    .row.justify-content-center.scene-performers { max-height: 450px; display: flex; flex-direction: column; overflow: auto; }
+    .scene-tabs { max-height: 100%; }
 }
 
 dd {
