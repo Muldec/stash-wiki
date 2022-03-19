@@ -5,13 +5,6 @@ Stash is a web front-end app for serving and organizing your porn. Stash current
 # Quick Links
 
 ## Getting the Latest Stash
-
-You can get the latest Stash for each platform via the following links:
-
- * [Windows       | x64](https://github.com/danivict/synthwave-vscode/releases/download/v0.0.7/stash-win.zip)
- * [Linux         | x64](https://github.com/stashapp/stash/releases)
- * [macOS         | x64](https://github.com/stashapp/stash/releases)
-
 [Synology NAS](https://github.com/stashapp/stash/wiki/Installing-on-Synology-NAS) • [UNRAID](https://github.com/stashapp/stash/wiki/Unraid-Support) • [TrueNAS/FreeNAS](https://github.com/stashapp/stash/wiki/Installing-on-FreeNAS-TrueNAS) • [Using A Reverse Proxy](https://github.com/stashapp/stash/wiki/Reverse-proxy)
 ## Advanced Configuration And Troubleshooting
 [Command-Line Flags](https://github.com/stashapp/stash/wiki/Advanced-Configuration-Options) • [Troubleshooting Video Playback Issues](https://github.com/stashapp/stash/wiki/Troubleshooting-video-playback-issues)
