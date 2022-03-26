@@ -356,7 +356,7 @@ option {
     .top-nav { bottom: 0; top: auto; }
     div[data-rb-event-key="/images"] { display: none; }
     div[data-rb-event-key="/scenes/markers"] { display: none; }
-    .row.justify-content-center.scene-performers { max-height: 450px; display: flex; flex-direction: column; overflow: auto; }
+    .row.justify-content-center.scene-performers { max-height: 450px; display: flex; flex-direction: column; overflow: auto; border-top: solid 2px #2d3035; border-bottom: solid 2px #2d3035; padding-top: .5rem; padding-bottom: .5rem; }
     .scene-tabs { max-height: 100%; }
 }
 
