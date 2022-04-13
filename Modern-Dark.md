@@ -41,8 +41,8 @@ Enjoy!
 
 
 ```css
-/* Modern Dark Theme by cj13 v1.1 */
-:root {
+/* Modern Dark Theme by cj13 v1.2 */
+ :root {
      --nav-color: #212121;
      --body-color: #191919;
      --card-color: #2a2a2a;
@@ -271,6 +271,9 @@ Enjoy!
      background-position: center;
 }
  @media (max-width: 575.98px) and (orientation: portrait) {
+     .scene-card-preview-image {
+         height: calc(100vw * (9 / 16));
+    }
      .gallery-tabs .mr-auto.nav.nav-tabs {
          display: grid;
          grid-auto-flow: column;
@@ -301,25 +304,26 @@ Enjoy!
          top: 0px;
     }
      .scene-tabs .mr-auto.nav.nav-tabs {
-         display: grid;
-         max-height: 3rem;
-         grid-auto-flow: column;
          background-color: #121212;
-         position: fixed;
+         display: grid;
+         grid-auto-flow: column;
          height: 3rem;
-         top: calc(100vw * (9 / 16));
-         right: 0;
          left: 0;
-         padding-top: .1rem;
-         text-align: center;
-         z-index: 0;
-         margin-bottom: 0rem;
          margin: 0;
-         height: 3rem;
+         margin-bottom: 0;
+         max-height: 3rem;
+         padding-bottom: 2.2rem;
+         padding-top: 0.1rem;
+         position: fixed;
+         right: 0;
+         text-align: center;
+         top: calc(100vw * (9 / 16));
+         white-space: nowrap;
+         z-index: 20;
     }
      .scene-tabs.order-xl-first.order-last {
-         height: calc(100vh - (100vw * (9 / 16) + 6.5rem));
-         top: calc((100vw * (9 / 16)) + 3rem);
+         height: calc(100vh - (100vw * (9 / 16) + 8.5rem));
+         top: calc((100vw * (9 / 16)) + 5rem);
          position: fixed;
     }
      .tab-content {
@@ -360,8 +364,10 @@ Enjoy!
      #performer-details-tab-operations{
          display: none;
     }
-     .ml-auto.btn-group {
-         display: none;
+     .scene-tabs .ml-auto.btn-group {
+         position: fixed;
+         right: 1rem;
+         top: calc((100vw * (9 / 16)) + 2.7rem);
     }
      .stats-element {
          flex-grow: 1;
@@ -516,7 +522,7 @@ Enjoy!
 /* .gallery-tabs, .scene-tabs, .scene-player-container {
      background-color: var(--nav-color);
 }
-*/
+ */
  .react-select__menu-portal {
      z-index: 2;
 }
