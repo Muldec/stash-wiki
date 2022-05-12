@@ -11,7 +11,7 @@ See [issue 134](https://github.com/stashapp/stash/pull/134) for more information
 ## Setting External URL
 You can set the base URL that will be served by Stash by adding an **external_host: ** setting in your Stash config.yml and assigning it the full publicly accessible url
 ```
-external_site: http://example.domain.com
+external_host: http://example.domain.com
 ```
 
 ## Server Configuration Examples
