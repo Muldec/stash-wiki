@@ -102,6 +102,12 @@ ProxyPass "/stash" "http://127.0.0.1:9999"
 ProxyPassReverse "/stash" "http://127.0.0.1:9999"
 RequestHeader setIfEmpty X-Forwarded-Prefix "/stash"
 ProxyPreserveHost on
+
+# to enable websockets
+RewriteEngine on
+RewriteCond %{HTTP:Upgrade} websocket [NC]
+RewriteCond %{HTTP:Connection} upgrade [NC]
+RewriteRule ^/?(.*) "ws://127.0.0.1:9999/$1" [P,L]
 ```
 
 
