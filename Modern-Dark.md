@@ -21,7 +21,8 @@ div[data-rb-event-key="/images"] {
 }
 div[data-rb-event-key="/scenes/markers"] {
    display: none;
-}```
+}
+```
 
 &nbsp;
 # Install
