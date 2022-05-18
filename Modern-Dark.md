@@ -299,10 +299,6 @@ Enjoy!
      body {
          padding: 0rem 0 5rem;
     }
-     .VideoPlayer {
-         position: fixed;
-         top: 0px;
-    }
      .scene-tabs .mr-auto.nav.nav-tabs {
          background-color: #121212;
          display: grid;
