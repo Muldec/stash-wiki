@@ -9,9 +9,19 @@
 ![Modern Dark](https://user-images.githubusercontent.com/72030708/158081810-9d866204-2c8a-4270-a961-b1421f178f46.jpg)
 &nbsp;
 
-This theme was inspired by Plex Interface. Installation is quick and easy so you should be ready to install it in just a few simple steps. 
+This theme was inspired by Plex Interface. Installation is quick and easy, so you should be ready to install it in just a few simple steps. 
 
-Feel free to experiment with CSS and modify it to fit your needs. In case you have any issues or improvements DM me on Discord!
+Feel free to experiment with CSS and modify it to fit your needs. In case you have any issues or improvements, DM me on Discord!
+
+**Note:** The Images and Markers pages are hidden on mobile in this theme to keep a perfect 2x3 nav menu. Those pages can be restored by commenting out or removing the following section:
+
+```
+div[data-rb-event-key="/images"] {
+   display: none;
+}
+div[data-rb-event-key="/scenes/markers"] {
+   display: none;
+}```
 
 &nbsp;
 # Install
@@ -24,7 +34,7 @@ Feel free to experiment with CSS and modify it to fit your needs. In case you ha
 
 **3.** Copy&Paste [CSS Code](#css-code) to the Custom CSS text area. 
 
-**4.** In your config.yml file update the value of `theme_color` property to `#191919`.
+**4.** In your config.yml file, update the value of the `theme_color` property to `#191919`.
 
 &nbsp;
 
