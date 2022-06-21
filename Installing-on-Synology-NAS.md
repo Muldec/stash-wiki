@@ -89,7 +89,7 @@ wget https://github.com/stashapp/stash/releases/download/[version]/CHECKSUMS_SHA
 sha1sum -c --ignore-missing CHECKSUMS_SHA1
 
 # you should see a line that says `stash-linux-arm64v8: OK`
-``` 
+```
 
 5. Clean up unnecessary file
 ```
@@ -111,7 +111,7 @@ wget https://johnvansickle.com/ffmpeg/releases/ffmpeg-release-arm64-static.tar.x
 md5sum -c ffmpeg-release-arm64-static.tar.xz.md5
 
 # you should see a line that says `ffmpeg-release-arm64-static.tar.xz: OK`
-``` 
+```
 
 8. Unpack & move ffmpeg to the .stash/ folder
 ```
@@ -126,20 +126,39 @@ rm ffmpeg-release-arm64-static.tar.xz.md5
 rm -rd ffmpeg-4.4-arm64-static/
 ```
 
+10. Prepare a python environment (for scrapers)
+```
+sudo -H python -m ensurepip --upgrade
+python3 -m venv stash-env
+source stash-env/bin/activate
+pip3 install pipreqs
+```
+
+Whenever you install a new scraper, do the following from the _stash_ user home directory
+
+```
+source stash-env/bin/activate
+cd your_scraper_directory
+pipreqs .
+sudo pip3 install -r requirements.txt
+```
+
 ### Configure your NAS to run Stash upon startup
 
-10. Create the service file by running `cat > /etc/systemd/system/stash.service' and copy/pasting the following, and hitting CTRL+D when it's done to save the file (hit again if you are not back to the prompt) :
+10. Create the service file by running `cat > /etc/systemd/system/stash.service`, copy/pasting the following, and hitting CTRL+D when it's done to save the file (hit again if you are not back to the prompt) :
 ```
 [Unit]
 Description=Run Stash at startup
 After=network.target
- 
+
 [Service]
 Type=simple
 User=stash
-ExecStart=/var/services/homes/stash/stash-linux-arm64v8
+ExecStart=/bin/bash -c '\
+   source /var/services/homes/stash/stash-env/bin/activate stash-env; \
+   exec /var/services/homes/stash/stash-linux-arm64v8'
 Restart=on-failure
- 
+
 [Install]
 WantedBy=multi-user.target
 # end
@@ -155,12 +174,3 @@ sudo systemctl enable stash.service
 ### Verify that it is working
 
 You can now access to stash by navigating to your NAS url on port 9999 : `http://nas-hostname:9999`
-
-Note : If you plan to use scrapers, some of them requires python (installed by default on DSM) and some dependencies. To install all missing dependencies, SSH to your NAS, navigate to the directory where your python scrapers are located, and to the following :
-
-```
-sudo -H python -m ensurepip --upgrade
-pip3 install pipreqs
-pipreqs .
-sudo -H pip3 install -r requirements.txt
-```
