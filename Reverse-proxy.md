@@ -107,7 +107,7 @@ ProxyPreserveHost on
 RewriteEngine on
 RewriteCond %{HTTP:Upgrade} websocket [NC]
 RewriteCond %{HTTP:Connection} upgrade [NC]
-RewriteRule ^/?(.*) "ws://127.0.0.1:9999/$1" [P,L]
+RewriteRule ^/?stash/(.*) "ws://127.0.0.1:9999/$1" [P,L]
 ```
 
 
