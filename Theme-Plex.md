@@ -7,6 +7,11 @@
     </a>
 </p>
 
+# Move notification
+Plex Theme has moved to the [Community Scripts](https://github.com/stashapp/CommunityScripts/tree/main/themes/plex) repo. Get the latest version from there. Everything below is not up to date and may be removed in a future update.
+
+***
+
 <img src="https://user-images.githubusercontent.com/63812189/79505197-e3403e80-7fe8-11ea-8bcb-9437ee9d90ad.png" />
 &nbsp;
 
