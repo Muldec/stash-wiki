@@ -104,3 +104,16 @@ _Example using curl_
 
 
 `curl -X POST -H "Content-Type: application/json" --data '{ "query": "{ scrapeFreeonesPerformerList (query: \"bella\" ) }" }' localhost:9998/graphql`
+
+### Get System Status
+Request: `HTTP-POST`
+```json
+{
+  "query": "{ systemStatus { databaseSchema databasePath configPath appSchema status } }" 
+}
+```
+
+_Example using curl_
+
+`curl -X POST -H "Content-Type: application/json" --data '{ "query": "{ systemStatus { appSchema status } }" }' localhost:9999/graphql`
+
