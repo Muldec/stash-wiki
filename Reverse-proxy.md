@@ -103,13 +103,37 @@ ProxyPassReverse "/stash" "http://127.0.0.1:9999"
 RequestHeader setIfEmpty X-Forwarded-Prefix "/stash"
 ProxyPreserveHost on
 
+# for name resolution
+ServerAdmin admin@example.com
+ServerName example.com
+ServerAlias stash.example.com
+
 # to enable websockets
 RewriteEngine on
 RewriteCond %{HTTP:Upgrade} websocket [NC]
 RewriteCond %{HTTP:Connection} upgrade [NC]
 RewriteRule ^/?stash/(.*) "ws://127.0.0.1:9999/$1" [P,L]
+
+# to add SSL
+SSLEngine on
+SSLCertificateFile /path/to/cert.pem
+SSLCertificateKeyFile /path/to/cert.key
 ```
 
+#### Prerequisites
+
+```
+sudo a2enmod proxy
+sudo a2enmod proxy_http
+sudo a2enmod proxy_balancer
+sudo a2enmod lbmethod_byrequests
+
+sudo a2enmod rewrite
+sudo a2enmod headers
+
+# for SSL
+sudo a2enmod ssl
+```
 
 ### Caddy
 ```
