@@ -20,6 +20,7 @@ Scraping | [OnlyFans Scraper](https://github.com/ALonelyJuicebox/OFMetadataToSta
 Scraping | [Scrape with](https://github.com/Tweeticoats/stash-plugin-scrape_with)|Tweeticoats | Batch scrape scenes and performers. For example tag a scene with scrape_with_xbvr and run the task to run that scraper. Run artist scrapers on all performers missing a url. Run the performer image scraper on all performers.
 Other  | [stash-deovr](https://github.com/Tweeticoats/stash-deovr) | Tweeticoats | Create an index json file /deovr used by the vr player allowing you to use DeoVR to play 2d and 3d videos from stash.
 Other | [Stash_helper](https://github.com/philpw99/Stash_Helper) | philpw99 | Adds some windows-specific tools to Stash (navigate from icon, installation help, etc)
+Other | [stash-vr](https://github.com/o-fl0w/stash-vr) | o-fl0w | Watch your stash library in VR.
 
 # Scripts
 Scripts are standalone programs that can interact with stash either through graphql queries or by directly editing stash's database/files.
